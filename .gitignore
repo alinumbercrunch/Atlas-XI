@@ -1,0 +1,20 @@
+# Dependencies
+node_modules/
+
+# Local data (regenerable by the scrapers)
+data/
+*.sqlite
+*.sqlite3
+*.db
+
+# Env & secrets
+.env
+.env.*
+
+# Logs
+*.log
+npm-debug.log*
+
+# OS / editor
+.DS_Store
+Thumbs.db
