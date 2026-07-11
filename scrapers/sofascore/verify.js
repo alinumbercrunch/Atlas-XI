@@ -12,7 +12,9 @@ async function apiGet(page, url) {
   const status = resp?.status();
   const body = await page.evaluate(() => document.body.innerText);
   let json = null;
-  try { json = JSON.parse(body); } catch {}
+  try {
+    json = JSON.parse(body);
+  } catch {}
   return { status, json };
 }
 
@@ -30,14 +32,25 @@ async function main() {
   const search = await step("search 'Ziyech'", `${API}/search/all?q=Ziyech&page=0`);
   const results = search?.results || [];
   const player = results.find((r) => r.type === "player")?.entity;
-  if (!player) { console.log("❌ no player in search results:", JSON.stringify(search).slice(0, 200)); await browser.close(); process.exit(1); }
+  if (!player) {
+    console.log("❌ no player in search results:", JSON.stringify(search).slice(0, 200));
+    await browser.close();
+    process.exit(1);
+  }
   console.log(`     → ${player.name} (id ${player.id}), team ${player.team?.name}`);
 
   // 2) Recent matches for that player.
-  const last = await step(`player ${player.id} recent events`, `${API}/player/${player.id}/events/last/0`);
+  const last = await step(
+    `player ${player.id} recent events`,
+    `${API}/player/${player.id}/events/last/0`,
+  );
   const events = last?.events || [];
   console.log(`     → ${events.length} recent events`);
-  if (!events.length) { console.log("❌ no events"); await browser.close(); process.exit(1); }
+  if (!events.length) {
+    console.log("❌ no events");
+    await browser.close();
+    process.exit(1);
+  }
 
   // 3) Per-match rating + minutes for the last few matches — this is the rating fuel.
   console.log("  per-match performance (rating × minutes):");
@@ -59,10 +72,15 @@ async function main() {
 
   await browser.close();
   const ok = got >= 1;
-  console.log(ok
-    ? `\n[verify] ✅ Full pipeline works — pulled ${got} matches with rating + minutes. Phase 0 DONE.`
-    : "\n[verify] ❌ Could not read per-match rating/minutes.");
+  console.log(
+    ok
+      ? `\n[verify] ✅ Full pipeline works — pulled ${got} matches with rating + minutes. Phase 0 DONE.`
+      : "\n[verify] ❌ Could not read per-match rating/minutes.",
+  );
   process.exit(ok ? 0 : 1);
 }
 
-main().catch((e) => { console.error("[verify] fatal:", e); process.exit(1); });
+main().catch((e) => {
+  console.error("[verify] fatal:", e);
+  process.exit(1);
+});
