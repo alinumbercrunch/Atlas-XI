@@ -8,7 +8,7 @@ import globals from "globals";
 // and a dedicated config block for *.astro / ESM files.
 export default [
   {
-    ignores: ["node_modules/", "data/", ".husky/", "**/*.min.js"],
+    ignores: ["node_modules/", "data/", "coverage/", ".husky/", "**/*.min.js"],
   },
   js.configs.recommended,
   {
@@ -32,6 +32,25 @@ export default [
       ecmaVersion: "latest",
       sourceType: "module",
       globals: { ...globals.node },
+    },
+  },
+  {
+    // Vitest tests: ESM, run through Vite; globals enabled in vitest.config.mjs.
+    files: ["**/*.{test,spec}.{js,mjs}"],
+    languageOptions: {
+      sourceType: "module",
+      globals: {
+        ...globals.node,
+        describe: "readonly",
+        it: "readonly",
+        test: "readonly",
+        expect: "readonly",
+        vi: "readonly",
+        beforeEach: "readonly",
+        afterEach: "readonly",
+        beforeAll: "readonly",
+        afterAll: "readonly",
+      },
     },
   },
   prettier,

@@ -1,6 +1,9 @@
 # Dependencies
 node_modules/
 
+# Test coverage
+coverage/
+
 # Local data (regenerable by the scrapers)
 data/
 *.sqlite

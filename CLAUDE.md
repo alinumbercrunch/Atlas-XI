@@ -23,9 +23,20 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
 ```bash
 npm install && npx playwright install chromium   # first-time setup
 npm run verify:sofascore                          # proves the SofaScore pipeline
+npm test            # Vitest      (test:watch, test:coverage)
 npm run lint        # ESLint      (npm run lint:fix to autofix)
 npm run format      # Prettier    (npm run format:check to verify)
 ```
+
+## Engineering standards (apply to EVERY feature)
+
+1. **Clean, efficient syntax** — readable, idiomatic, no cleverness for its own sake. Match the surrounding style.
+2. **No redundancy / duplication** — reuse `lib/` helpers and existing code; extract shared logic instead of copy-pasting.
+3. **Safeguards & edge cases** — scrapers hit messy/inconsistent HTML & JSON. Validate inputs; handle missing/malformed
+   fields, empty results, network failures, timeouts, and rate limits. Fail loudly with useful messages, never silently.
+4. **Iterate to confirm** — actually run the code/tests and observe real behavior before calling it done. Don't assume.
+5. **Test every feature** — **Vitest**. Unit-test pure logic (e.g. the rating engine) with real numbers; test parsers
+   against **saved fixtures** (`__fixtures__/`), not live network. Keep unit tests fast and deterministic.
 
 ## Critical gotchas
 
@@ -46,7 +57,12 @@ npm run format      # Prettier    (npm run format:check to verify)
 - **Astro tooling** (`eslint-plugin-astro`, `prettier-plugin-astro`) is intentionally deferred to Phase 6 —
   don't add it before the frontend exists (marker in `eslint.config.mjs`).
 
+## Maintenance
+
+**After each feature, update this file if anything changed** — new commands, conventions, gotchas, or the
+Status line below. Keep it current so it stays trustworthy; don't let it drift from reality.
+
 ## Status
 
-Phase 0 (SofaScore access) ✅ done. **Next: Phase 1** — write `db/schema.sql` + seed the `leagues` table
-(17 divisions + coefficients from PLAN.md §3).
+Phase 0 (SofaScore access) ✅ done. Tooling in place: ESLint, Prettier, Husky, **Vitest**.
+**Next: Phase 1** — write `db/schema.sql` + seed the `leagues` table (17 divisions + coefficients from PLAN.md §3).
