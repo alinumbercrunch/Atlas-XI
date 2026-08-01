@@ -213,9 +213,11 @@ DB / API at build time (fast static pages) with islands for the interactive filt
       `ingest.js` (upsert matches + player_match_stats), `run.js` (`npm run sofa:stats`). Verified live: Bilal Nadir →
       24 stat rows (rating+minutes) into SQLite. 23 new tests (61 total). Matches store `sofascore_unique_tournament_id`;
       `league_id` mapping deferred (see Phase 4).
-- [ ] **Phase 4 — Rating engine.** First map `matches.sofascore_unique_tournament_id` → `league_id` (populate
-      `leagues.sofascore_tournament_id`; decide how cups are weighted). Then implement the fair score
-      (minutes-weight + shrinkage + per-match coefficient, skipping null ratings) + Best XI; compute `player_scores`.
+- [x] **Phase 4 — Rating engine. ✅ DONE.** All 16 SofaScore tournament ids verified + seeded into
+      `leagues.sofascore_tournament_id`. `rating/score.js` (pure: minutes-weighted rating → Bayesian shrinkage →
+      minutes-weighted league coefficient; Best XI via optimal max-weight assignment). `rating/run.js`
+      (`npm run rate`): maps matches→leagues, computes `player_scores`, builds Best XI. **Cups excluded (league only).**
+      Min-minutes gate 450. Verified live (Bilal Nadir 5.683). 19 new tests (72 total).
 - [ ] **Phase 5 — ETL orchestration.** One re-runnable refresh command; idempotent upserts; rate-limiting; logging.
 - [ ] **Phase 6 — API + Astro frontend.** Endpoints + the two UI views (Best XI, Browse & rank).
 

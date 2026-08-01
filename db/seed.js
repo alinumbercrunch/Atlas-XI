@@ -8,14 +8,15 @@ const CURRENT_SEASON = { id: "2025-2026", label: "2025/26", startYear: 2025, isC
 // (re-running updates coefficients/labels if they changed).
 function seed(db) {
   const upsertLeague = db.prepare(`
-    INSERT INTO leagues (id, name, country, country_code, tier, coefficient)
-    VALUES (@id, @name, @country, @countryCode, @tier, @coefficient)
+    INSERT INTO leagues (id, name, country, country_code, tier, coefficient, sofascore_tournament_id)
+    VALUES (@id, @name, @country, @countryCode, @tier, @coefficient, @sofascoreTournamentId)
     ON CONFLICT(id) DO UPDATE SET
       name = excluded.name,
       country = excluded.country,
       country_code = excluded.country_code,
       tier = excluded.tier,
-      coefficient = excluded.coefficient
+      coefficient = excluded.coefficient,
+      sofascore_tournament_id = excluded.sofascore_tournament_id
   `);
   const upsertSeason = db.prepare(`
     INSERT INTO seasons (id, label, start_year, is_current)

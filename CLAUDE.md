@@ -21,7 +21,10 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
   `match.js` (accent-aware name+club matcher), `ingest.js` (matches + player_match_stats), `run.js`
   (`npm run sofa:stats`), `verify.js` (Phase 0 proof), `__fixtures__/` (saved JSON)
 - `db/` — SQLite via `better-sqlite3`: `schema.sql`, `index.js` (`getDb`/`initSchema`, in-memory via `:memory:`),
-  `leagues.js` (16-division data), `seed.js` (idempotent). `rating/` _(Phase 4)_ · `etl/` _(Phase 5)_ · `web/` Astro _(Phase 6)_
+  `leagues.js` (16-division data + SofaScore tournament ids), `seed.js` (idempotent).
+- `rating/` — `score.js` (pure fair-score math + Best XI assignment), `run.js` (`npm run rate`: map matches→leagues,
+  compute `player_scores`, Best XI). Cups excluded (league matches only); min-minutes gate 450.
+- `etl/` _(Phase 5)_ · `web/` Astro _(Phase 6)_
 - SQLite data is regenerable by the scrapers → **git-ignored** (`*.sqlite`, `data/`).
 
 ## Commands
@@ -71,10 +74,9 @@ Status line below. Keep it current so it stays trustworthy; don't let it drift f
 
 ## Status
 
-Phases 0–3 ✅: SofaScore access · schema + 16-league seed · TM discovery+eligibility · SofaScore stats (all live
-end-to-end into SQLite). 61 tests. Tooling: ESLint, Prettier, Husky, Vitest.
-**Populate order:** `npm run tm:discover` (players) → `npm run sofa:stats` (per-match rating+minutes).
-**Next: Phase 4 — rating engine.** First map `matches.sofascore_unique_tournament_id` → `league_id` (fill
-`leagues.sofascore_tournament_id`; Botola uniqueTournament=937; decide cup handling). Then the fair score
-(minutes-weight → shrinkage → per-match coefficient, skip null ratings) + Best XI → `player_scores`.
-Facts: TM Morocco list = land_id=107; SofaScore stats fields = rating/minutesPlayed/goals/goalAssist; season "25/26".
+Phases 0–4 ✅: SofaScore access · schema + seed · TM discovery+eligibility · SofaScore stats · rating engine + Best XI
+(all live end-to-end into SQLite). 72 tests. Tooling: ESLint, Prettier, Husky, Vitest.
+**Populate order:** `npm run tm:discover` → `npm run sofa:stats` → `npm run rate`.
+**Next: Phase 5 (ETL)** — one re-runnable refresh chaining the three, with logging/rate-limits; then Phase 6 (API + Astro).
+Facts: TM Morocco list = land_id=107; SofaScore stats = rating/minutesPlayed/goals/goalAssist; season "25/26";
+SofaScore tournament ids seeded in leagues; cups excluded from ratings; Best XI min-minutes gate 450.

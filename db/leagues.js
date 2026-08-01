@@ -1,4 +1,5 @@
-// The 16 divisions Atlas XI tracks, with hand-set league-strength coefficients (PLAN.md §3).
+// The 16 divisions Atlas XI tracks, with hand-set league-strength coefficients (PLAN.md §3)
+// and verified SofaScore uniqueTournament ids (used to map matches -> leagues).
 // Ordered by coefficient (strongest first). Coefficients are v1 starters and tunable.
 const LEAGUES = [
   {
@@ -8,6 +9,7 @@ const LEAGUES = [
     countryCode: "ENG",
     tier: 1,
     coefficient: 1.0,
+    sofascoreTournamentId: 17,
   },
   {
     id: "esp-1",
@@ -16,6 +18,7 @@ const LEAGUES = [
     countryCode: "ESP",
     tier: 1,
     coefficient: 0.95,
+    sofascoreTournamentId: 8,
   },
   {
     id: "ger-1",
@@ -24,6 +27,7 @@ const LEAGUES = [
     countryCode: "GER",
     tier: 1,
     coefficient: 0.92,
+    sofascoreTournamentId: 35,
   },
   {
     id: "ita-1",
@@ -32,6 +36,7 @@ const LEAGUES = [
     countryCode: "ITA",
     tier: 1,
     coefficient: 0.92,
+    sofascoreTournamentId: 23,
   },
   {
     id: "fra-1",
@@ -40,6 +45,7 @@ const LEAGUES = [
     countryCode: "FRA",
     tier: 1,
     coefficient: 0.85,
+    sofascoreTournamentId: 34,
   },
   {
     id: "por-1",
@@ -48,6 +54,7 @@ const LEAGUES = [
     countryCode: "POR",
     tier: 1,
     coefficient: 0.78,
+    sofascoreTournamentId: 238,
   },
   {
     id: "ned-1",
@@ -56,6 +63,7 @@ const LEAGUES = [
     countryCode: "NED",
     tier: 1,
     coefficient: 0.75,
+    sofascoreTournamentId: 37,
   },
   {
     id: "bel-1",
@@ -64,6 +72,7 @@ const LEAGUES = [
     countryCode: "BEL",
     tier: 1,
     coefficient: 0.72,
+    sofascoreTournamentId: 38,
   },
   {
     id: "eng-2",
@@ -72,6 +81,7 @@ const LEAGUES = [
     countryCode: "ENG",
     tier: 2,
     coefficient: 0.66,
+    sofascoreTournamentId: 18,
   },
   {
     id: "ger-2",
@@ -80,8 +90,17 @@ const LEAGUES = [
     countryCode: "GER",
     tier: 2,
     coefficient: 0.62,
+    sofascoreTournamentId: 44,
   },
-  { id: "ita-2", name: "Serie B", country: "Italy", countryCode: "ITA", tier: 2, coefficient: 0.6 },
+  {
+    id: "ita-2",
+    name: "Serie B",
+    country: "Italy",
+    countryCode: "ITA",
+    tier: 2,
+    coefficient: 0.6,
+    sofascoreTournamentId: 53,
+  },
   {
     id: "esp-2",
     name: "Segunda División",
@@ -89,6 +108,7 @@ const LEAGUES = [
     countryCode: "ESP",
     tier: 2,
     coefficient: 0.6,
+    sofascoreTournamentId: 54,
   },
   {
     id: "fra-2",
@@ -97,6 +117,7 @@ const LEAGUES = [
     countryCode: "FRA",
     tier: 2,
     coefficient: 0.58,
+    sofascoreTournamentId: 182,
   },
   {
     id: "sco-1",
@@ -105,6 +126,7 @@ const LEAGUES = [
     countryCode: "SCO",
     tier: 1,
     coefficient: 0.55,
+    sofascoreTournamentId: 36,
   },
   {
     id: "mar-1",
@@ -113,6 +135,7 @@ const LEAGUES = [
     countryCode: "MAR",
     tier: 1,
     coefficient: 0.5,
+    sofascoreTournamentId: 937,
   },
   {
     id: "ned-2",
@@ -121,6 +144,7 @@ const LEAGUES = [
     countryCode: "NED",
     tier: 2,
     coefficient: 0.48,
+    sofascoreTournamentId: 131,
   },
 ];
 
