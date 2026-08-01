@@ -15,7 +15,8 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
 - `lib/` — shared HTTP + HTML helpers (`fetchWithHeaders.js`, `parseHtml.js`)
 - `scrapers/transfermarkt/` — axios/fetch + cheerio (discovery, eligibility) _(Phase 2)_
 - `scrapers/sofascore/` — **Playwright** (per-match ratings & minutes); `verify.js` is the working proof
-- `db/` — SQLite via `better-sqlite3` _(Phase 1)_ · `rating/` _(Phase 4)_ · `etl/` _(Phase 5)_ · `web/` Astro _(Phase 6)_
+- `db/` — SQLite via `better-sqlite3`: `schema.sql`, `index.js` (`getDb`/`initSchema`, in-memory via `:memory:`),
+  `leagues.js` (16-division data), `seed.js` (idempotent). `rating/` _(Phase 4)_ · `etl/` _(Phase 5)_ · `web/` Astro _(Phase 6)_
 - SQLite data is regenerable by the scrapers → **git-ignored** (`*.sqlite`, `data/`).
 
 ## Commands
@@ -23,6 +24,7 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
 ```bash
 npm install && npx playwright install chromium   # first-time setup
 npm run verify:sofascore                          # proves the SofaScore pipeline
+npm run db:seed                                   # create+seed SQLite (leagues + current season)
 npm test            # Vitest      (test:watch, test:coverage)
 npm run lint        # ESLint      (npm run lint:fix to autofix)
 npm run format      # Prettier    (npm run format:check to verify)
@@ -64,5 +66,5 @@ Status line below. Keep it current so it stays trustworthy; don't let it drift f
 
 ## Status
 
-Phase 0 (SofaScore access) ✅ done. Tooling in place: ESLint, Prettier, Husky, **Vitest**.
-**Next: Phase 1** — write `db/schema.sql` + seed the `leagues` table (17 divisions + coefficients from PLAN.md §3).
+Phase 0 (SofaScore access) ✅ · Phase 1 (schema + 16-league seed, 15 tests) ✅. Tooling: ESLint, Prettier, Husky, Vitest.
+**Next: Phase 2** — Transfermarkt discovery + eligibility (targeted Morocco-nationality lists → enrich → `eligibility_status`).

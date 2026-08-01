@@ -48,7 +48,7 @@ A-team vs youth, plus citizenship and place of birth.
 | 9   | 🏴 England     | Premier League       | Championship        |
 | 10  | 🏴 Scotland    | Scottish Premiership | —                   |
 
-17 divisions total. Because discovery is nationality-driven (not per-league crawling), adding divisions is cheap —
+16 divisions total. Because discovery is nationality-driven (not per-league crawling), adding divisions is cheap —
 we just filter the Moroccan-player set to those whose current club sits in one of these divisions.
 
 ## 2. Features (kept deliberately simple)
@@ -196,8 +196,10 @@ DB / API at build time (fast static pages) with islands for the interactive filt
 
 - [x] **Phase 0 — Playwright spike. ✅ DONE (2026-07-11).** Proved Cloudflare bypass + full rating pipeline
       (search → player → matches → per-match rating/minutes), all HTTP 200. Endpoints documented in §4.
-- [ ] **Phase 1 — Scope & schema.** Resolve source IDs for all 17 divisions, verify Botola coverage (official site if needed),
-      write `db/schema.sql`, seed `leagues` + coefficients.
+- [x] **Phase 1 — Schema + leagues seed. ✅ DONE.** `db/schema.sql` (leagues, clubs, players w/ eligibility_status,
+      overrides, seasons, matches, player_match_stats, player_scores), `db/index.js` (connection + PRAGMAs + schema init),
+      `db/leagues.js` + `db/seed.js` (16 divisions + coefficients + current season, idempotent). 15 passing tests.
+      _Remaining for later: resolve SofaScore/Transfermarkt source IDs per league (deferred to when scrapers need them)._
 - [ ] **Phase 2 — Transfermarkt discovery + eligibility.** Targeted Morocco-nationality lists → enrich profiles
       (caps split A vs youth, citizenship, position, market value); set `eligibility_status`
       (eligible / review / excluded); apply `overrides`.
@@ -216,5 +218,5 @@ Run **Phase 0**: add Playwright, write the SofaScore spike, confirm we can pull 
 - Botola data source — confirm whether SofaScore covers it or we need the official site (Phase 1).
 - Nothing committed to git yet; first commit after Phase 0 succeeds.
 
-_Settled: league list (17 divisions), hand-set coefficients, Astro frontend, three-state eligibility,
+_Settled: league list (16 divisions), hand-set coefficients, Astro frontend, three-state eligibility,
 targeted+overrides discovery, per-match league weighting._

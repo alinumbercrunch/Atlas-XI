@@ -6,6 +6,7 @@
   "license": "UNLICENSED",
   "scripts": {
     "verify:sofascore": "node scrapers/sofascore/verify.js",
+    "db:seed": "node db/seed.js",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",
