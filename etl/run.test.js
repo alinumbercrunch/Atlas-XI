@@ -34,6 +34,13 @@ function makeDeps(calls) {
         return { saved: 0, skipped: 0, missing: 0 };
       },
     },
+    competitions: {
+      buildClubLeagueMap: async () => {
+        calls.push("clubmap");
+        return new Map();
+      },
+      applyClubLeagues: () => 0,
+    },
   };
 }
 
@@ -45,6 +52,7 @@ describe("runEtl", () => {
     expect(calls).toEqual([
       "discover",
       "stats",
+      "clubmap",
       "resolve",
       "clubleagues",
       "compute",

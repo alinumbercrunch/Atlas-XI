@@ -15,7 +15,8 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
 - `lib/` — shared HTTP + HTML helpers (`fetchWithHeaders.js`, `parseHtml.js`)
 - `scrapers/transfermarkt/` — fetch + cheerio. `parse.js` (profile/search parsers), `eligibility.js` (pure 3-state
   classifier), `client.js` (throttled `TransfermarktClient`, injectable `fetchImpl`), `discover.js` (paginate Morocco
-  most-valuable list, land_id=107), `ingest.js` (upsert players + clubs), `run.js` (orchestrator, `npm run tm:discover`),
+  most-valuable list, land_id=107), `ingest.js` (upsert players + clubs), `competitions.js` (authoritative
+  club→league map from TM competition pages, `npm run tm:clubs`), `run.js` (orchestrator, `npm run tm:discover`),
   `__fixtures__/` (real saved TM pages).
 - `scrapers/sofascore/` — **Playwright**. `client.js` (`SofascoreClient`), `parse.js` (search/events/stats),
   `match.js` (accent-aware name+club matcher), `ingest.js` (matches + player_match_stats), `run.js`
@@ -79,7 +80,8 @@ Status line below. Keep it current so it stays trustworthy; don't let it drift f
 
 **All 6 phases ✅** — SofaScore access · schema+seed · TM discovery+eligibility · SofaScore stats · rating engine+Best XI ·
 ETL orchestration · Astro frontend (Best XI + Browse). 80 tests. Tooling: ESLint, Prettier, Husky, Vitest.
-**Run it:** `npm run etl` (populate) → `npm run web:build` (or `web:dev`) to see the site.
+**Run it:** `npm run etl` (populate: discover → stats → clubmap → rate → images) → `npm run web:build` (or `web:dev`).
+Browse labels a player by his **current club's league** (TM competition map); score still reflects actual minutes.
 **v1 is feature-complete.** Likely next work: a full data populate (long scrape), tuning coefficients/baseline/K,
 club→league mapping, SSR API endpoints if live data is wanted, deploy.
 Facts: TM Morocco list = land_id=107; SofaScore stats = rating/minutesPlayed/goals/goalAssist; season "25/26";

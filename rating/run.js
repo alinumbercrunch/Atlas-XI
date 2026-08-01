@@ -33,7 +33,8 @@ function resolveClubLeagues(db) {
          SELECT m.league_id FROM matches m
          WHERE (m.home_club_id = clubs.id OR m.away_club_id = clubs.id) AND m.league_id IS NOT NULL
          GROUP BY m.league_id ORDER BY COUNT(*) DESC LIMIT 1
-       )`,
+       )
+       WHERE league_id IS NULL`, // only fill gaps; TM competition mapping is authoritative
     )
     .run().changes;
 }
