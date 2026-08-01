@@ -1,0 +1,120 @@
+{
+  "player": {
+    "name": "Hakim Ziyech",
+    "firstName": "",
+    "lastName": "",
+    "slug": "hakim-ziyech",
+    "shortName": "H. Ziyech",
+    "position": "M",
+    "jerseyNumber": "30",
+    "height": 181,
+    "userCount": 80397,
+    "gender": "M",
+    "sofascoreId": "HZiyech",
+    "id": 249437,
+    "marketValueCurrency": "EUR",
+    "dateOfBirthTimestamp": 732499200,
+    "proposedMarketValueRaw": {
+      "value": 2100000,
+      "currency": "EUR"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "حكيم زياش",
+        "bn": "হাকিম জিয়েচ",
+        "hi": "हाकिम जीच",
+        "ru": "Хаким Зиех"
+      },
+      "shortNameTranslation": {
+        "ar": "ح. زياش",
+        "bn": "এইচ. জিয়েচ",
+        "hi": "एच. जीच",
+        "ru": "Х. Зиех"
+      }
+    }
+  },
+  "team": {
+    "name": "Wydad Casablanca",
+    "slug": "wydad-casablanca",
+    "shortName": "WAC",
+    "gender": "M",
+    "sport": {
+      "name": "Football",
+      "slug": "football",
+      "id": 1
+    },
+    "userCount": 187207,
+    "nameCode": "WAC",
+    "disabled": false,
+    "national": false,
+    "type": 0,
+    "id": 36268,
+    "teamColors": {
+      "primary": "#ff0000",
+      "secondary": "#ff0000",
+      "text": "#ff0000"
+    },
+    "fieldTranslations": {
+      "nameTranslation": {
+        "ar": "نادي الوداد الرياضي",
+        "ru": "Видад АК"
+      },
+      "shortNameTranslation": {
+        "ar": "الوداد الرياضي"
+      }
+    }
+  },
+  "statistics": {
+    "totalPass": 40,
+    "accuratePass": 26,
+    "totalLongBalls": 8,
+    "accurateLongBalls": 5,
+    "goalAssist": 0,
+    "accurateOwnHalfPasses": 6,
+    "totalOwnHalfPasses": 6,
+    "accurateOppositionHalfPasses": 20,
+    "totalOppositionHalfPasses": 34,
+    "totalCross": 3,
+    "accurateCross": 2,
+    "aerialLost": 0,
+    "aerialWon": 0,
+    "duelLost": 8,
+    "duelWon": 6,
+    "challengeLost": 1,
+    "dispossessed": 2,
+    "totalContest": 5,
+    "wonContest": 4,
+    "shotOffTarget": 2,
+    "onTargetScoringAttempt": 1,
+    "goals": 1,
+    "totalClearance": 0,
+    "outfielderBlock": 0,
+    "ballRecovery": 2,
+    "totalTackle": 2,
+    "wonTackle": 1,
+    "errorLeadToAShot": 0,
+    "ownGoals": 0,
+    "unsuccessfulTouch": 0,
+    "wasFouled": 0,
+    "fouls": 3,
+    "totalOffside": 0,
+    "minutesPlayed": 90,
+    "touches": 59,
+    "rating": 8.5,
+    "possessionLostCtrl": 17,
+    "expectedGoals": 0.83,
+    "expectedAssists": 0.24,
+    "keyPass": 4,
+    "ratingVersions": {
+      "original": 8.5,
+      "alternative": null
+    },
+    "totalShots": 3,
+    "statisticsType": {
+      "sportSlug": "football",
+      "statisticsType": "player"
+    }
+  },
+  "position": "M",
+  "extra": null
+}

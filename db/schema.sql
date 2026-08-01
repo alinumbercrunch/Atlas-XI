@@ -73,14 +73,15 @@ CREATE TABLE IF NOT EXISTS seasons (
 );
 
 CREATE TABLE IF NOT EXISTS matches (
-  id                 INTEGER PRIMARY KEY,
-  sofascore_event_id INTEGER UNIQUE,
-  season_id          TEXT REFERENCES seasons(id) ON DELETE SET NULL,
-  league_id          TEXT REFERENCES leagues(id) ON DELETE SET NULL, -- for per-match coefficient
-  home_club_id       INTEGER REFERENCES clubs(id) ON DELETE SET NULL,
-  away_club_id       INTEGER REFERENCES clubs(id) ON DELETE SET NULL,
-  match_date         TEXT,                                           -- ISO date
-  competition        TEXT
+  id                             INTEGER PRIMARY KEY,
+  sofascore_event_id             INTEGER UNIQUE,
+  season_id                      TEXT REFERENCES seasons(id) ON DELETE SET NULL,
+  league_id                      TEXT REFERENCES leagues(id) ON DELETE SET NULL, -- per-match coefficient
+  sofascore_unique_tournament_id INTEGER,                        -- maps to a league later
+  home_club_id                   INTEGER REFERENCES clubs(id) ON DELETE SET NULL,
+  away_club_id                   INTEGER REFERENCES clubs(id) ON DELETE SET NULL,
+  match_date                     TEXT,                           -- ISO date
+  competition                    TEXT
 );
 
 CREATE TABLE IF NOT EXISTS player_match_stats (

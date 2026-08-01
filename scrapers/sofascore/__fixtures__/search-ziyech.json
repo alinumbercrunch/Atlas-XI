@@ -1,0 +1,59 @@
+{
+  "results": [
+    {
+      "entity": {
+        "id": 249437,
+        "name": "Hakim Ziyech",
+        "slug": "hakim-ziyech",
+        "userCount": 80398,
+        "team": {
+          "id": 36268,
+          "name": "Wydad Casablanca",
+          "nameCode": "WAC",
+          "slug": "wydad-casablanca",
+          "national": false,
+          "sport": {
+            "id": 1,
+            "slug": "football",
+            "name": "Football"
+          },
+          "userCount": 187208,
+          "teamColors": {
+            "primary": "#ff0000",
+            "secondary": "#ff0000",
+            "text": "#ff0000"
+          },
+          "gender": "M",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "الوداد الرياضي",
+              "ru": "Видад АК"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "deceased": false,
+        "country": {
+          "alpha2": "MA",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "shortName": "H. Ziyech",
+        "position": "M",
+        "jerseyNumber": "30",
+        "sofascoreId": "HZiyech",
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "ح. زياش",
+            "bn": "এইচ. জিয়েচ",
+            "hi": "एच. जीच",
+            "ru": "Х. Зиех"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "score": 34166.93,
+      "type": "player"
+    }
+  ]
+}

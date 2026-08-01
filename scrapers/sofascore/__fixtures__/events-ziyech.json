@@ -1,0 +1,6962 @@
+{
+  "events": [
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "UEFA Europa League",
+        "slug": "uefa-europa-league",
+        "category": {
+          "name": "Europe",
+          "slug": "europe",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 19,
+          "country": {},
+          "id": 1465,
+          "flag": "europe",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "أوروبا",
+              "bn": "ইউরোপ",
+              "hi": "यूरोप",
+              "ru": "Европа"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "UEFA Europa League",
+          "slug": "uefa-europa-league",
+          "secondaryColorHex": "#f37d25",
+          "category": {
+            "name": "Europe",
+            "slug": "europe",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 19,
+            "country": {},
+            "id": 1465,
+            "flag": "europe",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أوروبا",
+                "bn": "ইউরোপ",
+                "hi": "यूरोप",
+                "ru": "Европа"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 458180,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 679,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "bn": "উয়েফা ইউরোপা লীগ",
+              "ar": "الدوري الأوروبي",
+              "hi": "यूईएफए यूरोपा लीग",
+              "ru": "Лига Европы УЕФА"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 678,
+        "isGroup": false,
+        "id": 138315,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري الأوروبي",
+            "ru": "Лига Европы УЕФА"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "UEFA Europa League 24/25",
+        "year": "24/25",
+        "editor": false,
+        "seasonCoverageInfo": {},
+        "id": 61645
+      },
+      "roundInfo": {
+        "round": 6
+      },
+      "customId": "RMsllb",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "Malmö FF",
+        "slug": "malmo-ff",
+        "shortName": "Malmö",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 118004,
+        "nameCode": "MFF",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "SE",
+          "alpha3": "SWE",
+          "name": "Sweden",
+          "slug": "sweden"
+        },
+        "id": 1892,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#0099ff",
+          "secondary": "#0099ff",
+          "text": "#0099ff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "مالمو إف إف",
+            "ru": "Мальмё"
+          },
+          "shortNameTranslation": {
+            "ar": "مالمو",
+            "bn": "মালমো",
+            "hi": "माल्मो"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Galatasaray",
+        "slug": "galatasaray",
+        "shortName": "Galatasaray",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 1018831,
+        "nameCode": "GAL",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "TR",
+          "alpha3": "TUR",
+          "name": "Türkiye",
+          "slug": "turkiye"
+        },
+        "id": 3061,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff9900",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "غلطة سراي",
+            "bn": "গালাতাসারায়",
+            "hi": "गैलातसराय",
+            "ru": "Галатасарай"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "coverage": -1,
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 5,
+        "currentPeriodStartTimestamp": 1734029339
+      },
+      "changes": {
+        "changes": ["status.code", "status.description", "status.type"],
+        "changeTimestamp": 1734032385
+      },
+      "hasGlobalHighlights": false,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 12764250,
+      "slug": "galatasaray-malmo-ff",
+      "startTimestamp": 1734025500,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Stars League",
+        "slug": "stars-league",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Stars League",
+          "slug": "stars-league",
+          "primaryColorHex": "#ed1c24",
+          "secondaryColorHex": "#bb8c14",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 10097,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 825,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "دوري النجوم",
+              "bn": "স্টারস লিগ",
+              "hi": "स्टार्स लीग",
+              "ru": "Лига Звёзд"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 28,
+        "isGroup": false,
+        "isLive": false,
+        "id": 4051,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري النجوم القطري",
+            "bn": "স্টারস লীগ",
+            "hi": "स्टार्स लीग",
+            "ru": "Звёздная лига"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Stars League 24/25",
+        "year": "24/25",
+        "editor": false,
+        "id": 63717
+      },
+      "roundInfo": {
+        "round": 14
+      },
+      "customId": "PZmsQNr",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Umm-Salal SC",
+        "slug": "umm-salal-sc",
+        "shortName": "Umm-Salal",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 5782,
+        "nameCode": "UMM",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 32490,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#f55426",
+          "secondary": "#e0be29",
+          "text": "#e0be29"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أم صلال",
+            "hi": "उम्म-सलाल एससी",
+            "ru": "Умм-Салал"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "awayTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 1,
+        "period2": 0,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 3,
+        "currentPeriodStartTimestamp": 1738334006
+      },
+      "changes": {
+        "changes": ["status.code", "status.description", "status.type"],
+        "changeTimestamp": 1738336921
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13267711,
+      "slug": "al-duhail-umm-salal-sc",
+      "startTimestamp": 1738330200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Stars League",
+        "slug": "stars-league",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Stars League",
+          "slug": "stars-league",
+          "primaryColorHex": "#ed1c24",
+          "secondaryColorHex": "#bb8c14",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 10097,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 825,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "دوري النجوم",
+              "bn": "স্টারস লিগ",
+              "hi": "स्टार्स लीग",
+              "ru": "Лига Звёзд"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 28,
+        "isGroup": false,
+        "isLive": false,
+        "id": 4051,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري النجوم القطري",
+            "bn": "স্টারস লীগ",
+            "hi": "स्टार्स लीग",
+            "ru": "Звёздная лига"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Stars League 24/25",
+        "year": "24/25",
+        "editor": false,
+        "id": 63717
+      },
+      "roundInfo": {
+        "round": 15
+      },
+      "customId": "PNrsQNr",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Al-Wakrah",
+        "slug": "al-wakrah",
+        "shortName": "Al-Wakrah",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 7061,
+        "nameCode": "ALW",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44440,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#6a9afc",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الوكرة",
+            "ru": "Аль-Вакра"
+          },
+          "shortNameTranslation": {
+            "ar": "الوكرة",
+            "ru": "Аль-Вакра"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 4,
+        "injuryTime2": 10,
+        "currentPeriodStartTimestamp": 1738947104
+      },
+      "changes": {
+        "changes": ["status.code", "status.description", "status.type"],
+        "changeTimestamp": 1738950420
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13267713,
+      "slug": "al-duhail-al-wakrah",
+      "startTimestamp": 1738943100,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Stars League",
+        "slug": "stars-league",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Stars League",
+          "slug": "stars-league",
+          "primaryColorHex": "#ed1c24",
+          "secondaryColorHex": "#bb8c14",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 10097,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 825,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "دوري النجوم",
+              "bn": "স্টারস লিগ",
+              "hi": "स्टार्स लीग",
+              "ru": "Лига Звёзд"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 28,
+        "isGroup": false,
+        "isLive": false,
+        "id": 4051,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري النجوم القطري",
+            "bn": "স্টারস লীগ",
+            "hi": "स्टार्स लीग",
+            "ru": "Звёздная лига"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Stars League 24/25",
+        "year": "24/25",
+        "editor": false,
+        "id": 63717
+      },
+      "roundInfo": {
+        "round": 16
+      },
+      "customId": "IUpsQNr",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Al-Sadd",
+        "slug": "al-sadd",
+        "shortName": "Al-Sadd",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 47463,
+        "nameCode": "SAD",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 39733,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "السد",
+            "ru": "Аль-Садд СК"
+          },
+          "shortNameTranslation": {
+            "ar": "السد"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 4,
+        "injuryTime2": 9,
+        "currentPeriodStartTimestamp": 1740244185
+      },
+      "changes": {
+        "changes": ["time.injuryTime2", "status.code", "status.description", "status.type"],
+        "changeTimestamp": 1740247498
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13267723,
+      "awayRedCards": 1,
+      "slug": "al-duhail-al-sadd",
+      "startTimestamp": 1740240000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Stars League",
+        "slug": "stars-league",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Stars League",
+          "slug": "stars-league",
+          "primaryColorHex": "#ed1c24",
+          "secondaryColorHex": "#bb8c14",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 10097,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 825,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "دوري النجوم",
+              "bn": "স্টারস লিগ",
+              "hi": "स्टार्स लीग",
+              "ru": "Лига Звёзд"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 28,
+        "isGroup": false,
+        "isLive": false,
+        "id": 4051,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري النجوم القطري",
+            "bn": "স্টারস লীগ",
+            "hi": "स्टार्स लीग",
+            "ru": "Звёздная лига"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Stars League 24/25",
+        "year": "24/25",
+        "editor": false,
+        "id": 63717
+      },
+      "roundInfo": {
+        "round": 17
+      },
+      "customId": "QNrsohtb",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Al-Shahaniya",
+        "slug": "al-shahaniya",
+        "shortName": "Al-Shahaniya",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 3490,
+        "nameCode": "SHA",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 170364,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#2645a0",
+          "secondary": "#ba1823",
+          "text": "#ba1823"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الشحانية",
+            "ru": "Аль-Шахания"
+          },
+          "shortNameTranslation": {
+            "ar": "الشحانية"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 9,
+        "currentPeriodStartTimestamp": 1740754109
+      },
+      "changes": {
+        "changes": ["time.injuryTime2", "status.code", "status.description", "status.type"],
+        "changeTimestamp": 1740757680
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13267728,
+      "awayRedCards": 1,
+      "slug": "al-shahaniya-al-duhail",
+      "startTimestamp": 1740750300,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Stars League",
+        "slug": "stars-league",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Stars League",
+          "slug": "stars-league",
+          "primaryColorHex": "#ed1c24",
+          "secondaryColorHex": "#bb8c14",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 10097,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 825,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "دوري النجوم",
+              "bn": "স্টারস লিগ",
+              "hi": "स्टार्स लीग",
+              "ru": "Лига Звёзд"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 28,
+        "isGroup": false,
+        "isLive": false,
+        "id": 4051,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري النجوم القطري",
+            "bn": "স্টারস লীগ",
+            "hi": "स्टार्स लीग",
+            "ru": "Звёздная лига"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Stars League 24/25",
+        "year": "24/25",
+        "editor": false,
+        "id": 63717
+      },
+      "roundInfo": {
+        "round": 18
+      },
+      "customId": "QNrsTNr",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Al-Ahli Doha",
+        "slug": "al-ahli-doha",
+        "shortName": "Al-Ahli Doha",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 8663,
+        "nameCode": "AHL",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44443,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#008800",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الأهلي الدوحة",
+            "ru": "Аль-Ахли Доха СК"
+          },
+          "shortNameTranslation": {
+            "ar": "الأهلي الدوحة"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 4,
+        "display": 4,
+        "period1": 1,
+        "period2": 3,
+        "normaltime": 4
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 2,
+        "period2": 0,
+        "normaltime": 2
+      },
+      "time": {
+        "injuryTime1": 5,
+        "injuryTime2": 7,
+        "currentPeriodStartTimestamp": 1741462649
+      },
+      "changes": {
+        "changes": ["time.injuryTime2"],
+        "changeTimestamp": 1741473779
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13267738,
+      "slug": "al-ahli-doha-al-duhail",
+      "startTimestamp": 1741458600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Stars League",
+        "slug": "stars-league",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Stars League",
+          "slug": "stars-league",
+          "primaryColorHex": "#ed1c24",
+          "secondaryColorHex": "#bb8c14",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 10097,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 825,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "دوري النجوم",
+              "bn": "স্টারস লিগ",
+              "hi": "स्टार्स लीग",
+              "ru": "Лига Звёзд"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 28,
+        "isGroup": false,
+        "isLive": false,
+        "id": 4051,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري النجوم القطري",
+            "bn": "স্টারস লীগ",
+            "hi": "स्टार्स लीग",
+            "ru": "Звёздная лига"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Stars League 24/25",
+        "year": "24/25",
+        "editor": false,
+        "id": 63717
+      },
+      "roundInfo": {
+        "round": 19
+      },
+      "customId": "mLnsQNr",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Al-Gharafa",
+        "slug": "al-gharafa",
+        "shortName": "Al-Gharafa",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 18841,
+        "nameCode": "ALG",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 34312,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffff00",
+          "secondary": "#0047ab",
+          "text": "#0047ab"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الغرافة",
+            "ru": "Аль-Гарафа СК "
+          },
+          "shortNameTranslation": {
+            "ar": "الغرافة"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 4,
+        "currentPeriodStartTimestamp": 1743275007
+      },
+      "changes": {
+        "changes": ["status.code", "status.description", "status.type"],
+        "changeTimestamp": 1743277955
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13267690,
+      "slug": "al-duhail-al-gharafa",
+      "startTimestamp": 1743271200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Stars League",
+        "slug": "stars-league",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Stars League",
+          "slug": "stars-league",
+          "primaryColorHex": "#ed1c24",
+          "secondaryColorHex": "#bb8c14",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 10097,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 825,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "دوري النجوم",
+              "bn": "স্টারস লিগ",
+              "hi": "स्टार्स लीग",
+              "ru": "Лига Звёзд"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 28,
+        "isGroup": false,
+        "isLive": false,
+        "id": 4051,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري النجوم القطري",
+            "bn": "স্টারস লীগ",
+            "hi": "स्टार्स लीग",
+            "ru": "Звёздная лига"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Stars League 24/25",
+        "year": "24/25",
+        "editor": false,
+        "id": 63717
+      },
+      "roundInfo": {
+        "round": 20
+      },
+      "customId": "QNrsqhtb",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Al Shamal SC",
+        "slug": "al-shamal-sc",
+        "shortName": "Al Shamal SC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 7702,
+        "nameCode": "SHM",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 170366,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الشمال",
+            "ru": "Аль-Шамаль"
+          },
+          "shortNameTranslation": {
+            "ar": "الشمال"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 4,
+        "display": 4,
+        "period1": 3,
+        "period2": 1,
+        "normaltime": 4
+      },
+      "time": {
+        "injuryTime1": 6,
+        "injuryTime2": 5,
+        "currentPeriodStartTimestamp": 1743865687
+      },
+      "changes": {
+        "changes": ["time.injuryTime1"],
+        "changeTimestamp": 1743886896
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13267691,
+      "slug": "al-shamal-sc-al-duhail",
+      "startTimestamp": 1743861600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Stars League",
+        "slug": "stars-league",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Stars League",
+          "slug": "stars-league",
+          "primaryColorHex": "#ed1c24",
+          "secondaryColorHex": "#bb8c14",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 10097,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 825,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "دوري النجوم",
+              "bn": "স্টারস লিগ",
+              "hi": "स्टार्स लीग",
+              "ru": "Лига Звёзд"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 28,
+        "isGroup": false,
+        "isLive": false,
+        "id": 4051,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري النجوم القطري",
+            "bn": "স্টারস লীগ",
+            "hi": "स्टार्स लीग",
+            "ru": "Звёздная лига"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Stars League 24/25",
+        "year": "24/25",
+        "editor": false,
+        "id": 63717
+      },
+      "roundInfo": {
+        "round": 21
+      },
+      "customId": "QNrsUNr",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Al-Arabi SC",
+        "slug": "al-arabi-sc",
+        "shortName": "Al-Arabi",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 9282,
+        "nameCode": "ARA",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44444,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "النادي العربي",
+            "ru": "Аль-Араби Доха СК"
+          },
+          "shortNameTranslation": {
+            "ar": "العربي"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 1,
+        "period2": 0,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 5,
+        "injuryTime2": 9,
+        "currentPeriodStartTimestamp": 1744389386
+      },
+      "changes": {
+        "changes": ["time.injuryTime2", "status.code", "status.description", "status.type"],
+        "changeTimestamp": 1744392664
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13267707,
+      "slug": "al-arabi-sc-al-duhail",
+      "startTimestamp": 1744385400,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Stars League",
+        "slug": "stars-league",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Stars League",
+          "slug": "stars-league",
+          "primaryColorHex": "#ed1c24",
+          "secondaryColorHex": "#bb8c14",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 10097,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 825,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "دوري النجوم",
+              "bn": "স্টারস লিগ",
+              "hi": "स्टार्स लीग",
+              "ru": "Лига Звёзд"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 28,
+        "isGroup": false,
+        "isLive": false,
+        "id": 4051,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "دوري النجوم القطري",
+            "bn": "স্টারস লীগ",
+            "hi": "स्टार्स लीग",
+            "ru": "Звёздная лига"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Stars League 24/25",
+        "year": "24/25",
+        "editor": false,
+        "id": 63717
+      },
+      "roundInfo": {
+        "round": 22
+      },
+      "customId": "NNrsQNr",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Al Khor",
+        "slug": "al-khor",
+        "shortName": "Al Khor",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 2452,
+        "nameCode": "ALK",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44438,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#0047ab",
+          "secondary": "#3cc5ff",
+          "text": "#3cc5ff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الخُور",
+            "ru": "Аль-Хор"
+          },
+          "shortNameTranslation": {
+            "ar": "الخُور"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 4,
+        "injuryTime2": 4,
+        "currentPeriodStartTimestamp": 1744994229
+      },
+      "changes": {
+        "changes": ["status.code", "status.description", "status.type"],
+        "changeTimestamp": 1744997177
+      },
+      "hasGlobalHighlights": false,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13267720,
+      "slug": "al-duhail-al-khor",
+      "startTimestamp": 1744990200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Qatar Cup",
+        "slug": "qatar-cup",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Qatar Cup",
+          "slug": "qatar-cup",
+          "primaryColorHex": "#911d38",
+          "secondaryColorHex": "#dbc278",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 991,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 14627,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "كأس قطر",
+              "ru": "Кубок Катара"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 32189,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كأس قطر",
+            "ru": "Кубок Катара"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Qatar Cup 2025",
+        "year": "2025",
+        "editor": false,
+        "id": 74802
+      },
+      "roundInfo": {
+        "round": 28,
+        "name": "Semifinals",
+        "slug": "semifinals",
+        "cupRoundType": 2
+      },
+      "customId": "mLnsQNr",
+      "status": {
+        "code": 120,
+        "description": "AP",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Al-Gharafa",
+        "slug": "al-gharafa",
+        "shortName": "Al-Gharafa",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 18841,
+        "nameCode": "ALG",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 34312,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffff00",
+          "secondary": "#0047ab",
+          "text": "#0047ab"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الغرافة",
+            "ru": "Аль-Гарафа СК "
+          },
+          "shortNameTranslation": {
+            "ar": "الغرافة"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 4,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0,
+        "extra1": 0,
+        "extra2": 0,
+        "overtime": 0,
+        "penalties": 4
+      },
+      "awayScore": {
+        "current": 3,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0,
+        "extra1": 0,
+        "extra2": 0,
+        "overtime": 0,
+        "penalties": 3
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1745432220
+      },
+      "changes": {
+        "changes": ["status.code", "status.description", "status.type"],
+        "changeTimestamp": 1745434022
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13800331,
+      "slug": "al-duhail-al-gharafa",
+      "startTimestamp": 1745424000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "cupMatchesInRound": 1,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Amir Cup",
+        "slug": "amir-cup",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Amir Cup",
+          "slug": "amir-cup",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 1145,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 22412,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "كأس الأمير",
+              "ru": "Кубок Амир"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 6716,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كأس الأمير",
+            "ru": "Кубок Амир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Amir Cup 2025",
+        "year": "2025",
+        "editor": false,
+        "id": 75007
+      },
+      "roundInfo": {
+        "round": 5,
+        "name": "Round of 16",
+        "slug": "round-of-16",
+        "cupRoundType": 8
+      },
+      "customId": "ONrsQNr",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Al-Sailiya",
+        "slug": "al-sailiya",
+        "shortName": "Al-Sailiya",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 4342,
+        "nameCode": "ALS",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44439,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#000000",
+          "secondary": "#3344cc",
+          "text": "#3344cc"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "السيلية",
+            "ru": "Аль-Сайлия СК"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "homeScore": {
+        "current": 4,
+        "display": 4,
+        "period1": 4,
+        "period2": 0,
+        "normaltime": 4
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1746458953
+      },
+      "changes": {
+        "changes": ["time.currentPeriodStart"],
+        "changeTimestamp": 1746461653
+      },
+      "hasGlobalHighlights": false,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13830200,
+      "slug": "al-duhail-al-sailiya",
+      "startTimestamp": 1746454500,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "cupMatchesInRound": 1,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Qatar Cup",
+        "slug": "qatar-cup",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Qatar Cup",
+          "slug": "qatar-cup",
+          "primaryColorHex": "#911d38",
+          "secondaryColorHex": "#dbc278",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 991,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 14627,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "كأس قطر",
+              "ru": "Кубок Катара"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 32189,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كأس قطر",
+            "ru": "Кубок Катара"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Qatar Cup 2025",
+        "year": "2025",
+        "editor": false,
+        "id": 74802
+      },
+      "roundInfo": {
+        "round": 29,
+        "name": "Final",
+        "slug": "final",
+        "cupRoundType": 1
+      },
+      "customId": "IUpsQNr",
+      "status": {
+        "code": 120,
+        "description": "AP",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Al-Sadd",
+        "slug": "al-sadd",
+        "shortName": "Al-Sadd",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 47463,
+        "nameCode": "SAD",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 39733,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ffffff",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "السد",
+            "ru": "Аль-Садд СК"
+          },
+          "shortNameTranslation": {
+            "ar": "السد"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 6,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2,
+        "extra1": 0,
+        "extra2": 0,
+        "overtime": 0,
+        "penalties": 4
+      },
+      "awayScore": {
+        "current": 5,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2,
+        "extra1": 0,
+        "extra2": 0,
+        "overtime": 0,
+        "penalties": 3
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1746901440
+      },
+      "changes": {
+        "changes": ["status.code", "status.description", "status.type"],
+        "changeTimestamp": 1746903344
+      },
+      "hasGlobalHighlights": false,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13809091,
+      "slug": "al-duhail-al-sadd",
+      "startTimestamp": 1746892800,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "cupMatchesInRound": 1,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Amir Cup",
+        "slug": "amir-cup",
+        "category": {
+          "name": "Qatar",
+          "slug": "qatar",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "QA",
+            "alpha3": "QAT",
+            "name": "Qatar",
+            "slug": "qatar"
+          },
+          "id": 353,
+          "flag": "qatar",
+          "alpha2": "QA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "قطر",
+              "ru": "Катар"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Amir Cup",
+          "slug": "amir-cup",
+          "category": {
+            "name": "Qatar",
+            "slug": "qatar",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "QA",
+              "alpha3": "QAT",
+              "name": "Qatar",
+              "slug": "qatar"
+            },
+            "id": 353,
+            "flag": "qatar",
+            "alpha2": "QA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "قطر",
+                "ru": "Катар"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 1145,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 22412,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "كأس الأمير",
+              "ru": "Кубок Амир"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 6716,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كأس الأمير",
+            "ru": "Кубок Амир"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Amir Cup 2025",
+        "year": "2025",
+        "editor": false,
+        "id": 75007
+      },
+      "roundInfo": {
+        "round": 27,
+        "name": "Quarterfinals",
+        "slug": "quarterfinals",
+        "cupRoundType": 4
+      },
+      "customId": "knqsQNr",
+      "status": {
+        "code": 120,
+        "description": "AP",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "aggregatedWinnerCode": 1,
+      "homeTeam": {
+        "name": "Al-Rayyan",
+        "slug": "al-rayyan",
+        "shortName": "Al-Rayyan",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 21252,
+        "nameCode": "ALR",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 40660,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc3300",
+          "secondary": "#000000",
+          "text": "#000000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الريان",
+            "ru": "Аль-Райян СК"
+          },
+          "shortNameTranslation": {
+            "ar": "الريان"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Al Duhail",
+        "slug": "al-duhail",
+        "shortName": "Al Duhail",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 27599,
+        "nameCode": "DUH",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "QA",
+          "alpha3": "QAT",
+          "name": "Qatar",
+          "slug": "qatar"
+        },
+        "id": 44441,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#cc0033",
+          "secondary": "#cc0033",
+          "text": "#cc0033"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدحيل",
+            "ru": "Аль-Духаиль"
+          },
+          "shortNameTranslation": {
+            "ar": "الدحيل"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 7,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2,
+        "extra1": 0,
+        "extra2": 0,
+        "overtime": 0,
+        "penalties": 5
+      },
+      "awayScore": {
+        "current": 6,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2,
+        "extra1": 0,
+        "extra2": 0,
+        "overtime": 0,
+        "penalties": 4
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1747252080
+      },
+      "changes": {
+        "changes": [
+          "homeScore.extra1",
+          "homeScore.extra2",
+          "homeScore.overtime",
+          "awayScore.extra1",
+          "awayScore.extra2",
+          "awayScore.overtime"
+        ],
+        "changeTimestamp": 1747254217
+      },
+      "hasGlobalHighlights": false,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 13867667,
+      "slug": "al-duhail-al-rayyan",
+      "startTimestamp": 1747242900,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "cupMatchesInRound": 1,
+      "isEditor": false
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "CAF Confederations Cup, Group B",
+        "slug": "caf-confederations-cup-group-b",
+        "category": {
+          "name": "Africa",
+          "slug": "africa",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 16,
+          "country": {},
+          "id": 1466,
+          "flag": "africa",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "أفريقيا",
+              "ru": "Африка"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "CAF Confederations Cup",
+          "slug": "caf-confederations-cup",
+          "primaryColorHex": "#036f3a",
+          "secondaryColorHex": "#c5cbd8",
+          "category": {
+            "name": "Africa",
+            "slug": "africa",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 16,
+            "country": {},
+            "id": 1466,
+            "flag": "africa",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أفريقيا",
+                "ru": "Африка"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 40609,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 1115,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "كأس الكونفيدرالية الإفريقية",
+              "bn": "সিএএফ কনফেডারেশনস কাপ",
+              "hi": "सीएएफ कन्फेडरेशन कप",
+              "ru": "Кубок конфедераций КАФ"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": true,
+        "groupName": "Group B",
+        "groupSign": "B",
+        "isLive": false,
+        "id": 21763,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كأس الكونفدرالية الأفريقية، المجموعة B",
+            "bn": "সিএএফ কনফেডারেশন কাপ, গ্রুপ বি",
+            "hi": "सीएएफ कन्फेडरेशन कप, ग्रुप बी",
+            "ru": "Кубок конфедераций КАФ, Группа B"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "CAF Confederations Cup 25/26",
+        "year": "25/26",
+        "editor": false,
+        "id": 80446
+      },
+      "roundInfo": {
+        "round": 3
+      },
+      "customId": "tAosEBmc",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Maniema Union",
+        "slug": "maniema-union",
+        "shortName": "Maniema Union",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 4875,
+        "nameCode": "MUN",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "CD",
+          "alpha3": "COD",
+          "name": "DR Congo",
+          "slug": "dr-congo"
+        },
+        "id": 281329,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#00cc00",
+          "secondary": "#000000",
+          "text": "#000000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "مانيما يونيون",
+            "ru": "Маниема Юнион"
+          },
+          "shortNameTranslation": {
+            "ar": "مانيما يونيون",
+            "ru": "Маниема Юнион"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 3,
+        "injuryTime2": 4,
+        "currentPeriodStartTimestamp": 1769371450
+      },
+      "changes": {
+        "changes": ["status.code", "status.description", "status.type"],
+        "changeTimestamp": 1769374414
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 15013860,
+      "slug": "maniema-union-wydad-casablanca",
+      "startTimestamp": 1769367600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["top-competitions", "pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "CAF Confederations Cup, Group B",
+        "slug": "caf-confederations-cup-group-b",
+        "category": {
+          "name": "Africa",
+          "slug": "africa",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 16,
+          "country": {},
+          "id": 1466,
+          "flag": "africa",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "أفريقيا",
+              "ru": "Африка"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "CAF Confederations Cup",
+          "slug": "caf-confederations-cup",
+          "primaryColorHex": "#036f3a",
+          "secondaryColorHex": "#c5cbd8",
+          "category": {
+            "name": "Africa",
+            "slug": "africa",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 16,
+            "country": {},
+            "id": 1466,
+            "flag": "africa",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أفريقيا",
+                "ru": "Африка"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 40609,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 1115,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "كأس الكونفيدرالية الإفريقية",
+              "bn": "সিএএফ কনফেডারেশনস কাপ",
+              "hi": "सीएएफ कन्फेडरेशन कप",
+              "ru": "Кубок конфедераций КАФ"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": true,
+        "groupName": "Group B",
+        "groupSign": "B",
+        "isLive": false,
+        "id": 21763,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كأس الكونفدرالية الأفريقية، المجموعة B",
+            "bn": "সিএএফ কনফেডারেশন কাপ, গ্রুপ বি",
+            "hi": "सीएएफ कन्फेडरेशन कप, ग्रुप बी",
+            "ru": "Кубок конфедераций КАФ, Группа B"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "CAF Confederations Cup 25/26",
+        "year": "25/26",
+        "editor": false,
+        "id": 80446
+      },
+      "roundInfo": {
+        "round": 5
+      },
+      "customId": "tAosPYcc",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Nairobi United",
+        "slug": "nairobi-united",
+        "shortName": "Nairobi United",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 2769,
+        "nameCode": "BAL",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "KE",
+          "alpha3": "KEN",
+          "name": "Kenya",
+          "slug": "kenya"
+        },
+        "id": 257440,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نايروبي يونايتد",
+            "ru": "Найроби Юнайтед"
+          },
+          "shortNameTranslation": {
+            "ar": "نايروبي يونايتد",
+            "ru": "Найроби Юнайтед"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "injuryTime1": 2,
+        "injuryTime2": 6,
+        "currentPeriodStartTimestamp": 1770559553
+      },
+      "changes": {
+        "changes": ["status.code", "status.description", "status.type"],
+        "changeTimestamp": 1770562635
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 15013797,
+      "homeRedCards": 1,
+      "slug": "nairobi-united-wydad-casablanca",
+      "startTimestamp": 1770555600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["top-competitions", "pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "CAF Confederations Cup, Group B",
+        "slug": "caf-confederations-cup-group-b",
+        "category": {
+          "name": "Africa",
+          "slug": "africa",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 16,
+          "country": {},
+          "id": 1466,
+          "flag": "africa",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "أفريقيا",
+              "ru": "Африка"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "CAF Confederations Cup",
+          "slug": "caf-confederations-cup",
+          "primaryColorHex": "#036f3a",
+          "secondaryColorHex": "#c5cbd8",
+          "category": {
+            "name": "Africa",
+            "slug": "africa",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 16,
+            "country": {},
+            "id": 1466,
+            "flag": "africa",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أفريقيا",
+                "ru": "Африка"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 40609,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 1115,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "كأس الكونفيدرالية الإفريقية",
+              "bn": "সিএএফ কনফেডারেশনস কাপ",
+              "hi": "सीएएफ कन्फेडरेशन कप",
+              "ru": "Кубок конфедераций КАФ"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": true,
+        "groupName": "Group B",
+        "groupSign": "B",
+        "isLive": false,
+        "id": 21763,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كأس الكونفدرالية الأفريقية، المجموعة B",
+            "bn": "সিএএফ কনফেডারেশন কাপ, গ্রুপ বি",
+            "hi": "सीएएफ कन्फेडरेशन कप, ग्रुप बी",
+            "ru": "Кубок конфедераций КАФ, Группа B"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "CAF Confederations Cup 25/26",
+        "year": "25/26",
+        "editor": false,
+        "id": 80446
+      },
+      "roundInfo": {
+        "round": 6
+      },
+      "customId": "tAoslYJb",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Azam FC",
+        "slug": "azam-fc",
+        "shortName": "Azam FC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 41698,
+        "nameCode": "AZA",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "TZ",
+          "alpha3": "TZA",
+          "name": "Tanzania",
+          "slug": "tanzania"
+        },
+        "id": 212411,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#0000ff",
+          "secondary": "#ffff00",
+          "text": "#ffff00"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "عزام إف سي",
+            "bn": "আজম এফসি",
+            "hi": "अज़ाम एफसी",
+            "ru": "ФК Азам"
+          },
+          "shortNameTranslation": {
+            "ru": "Азам"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "injuryTime1": 5,
+        "injuryTime2": 5,
+        "currentPeriodStartTimestamp": 1771168160
+      },
+      "changes": {
+        "changes": ["status.code", "status.description", "status.type"],
+        "changeTimestamp": 1771171244
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": true,
+      "correctHalftimeAiInsight": true,
+      "id": 15013846,
+      "slug": "azam-fc-wydad-casablanca",
+      "startTimestamp": 1771164000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["top-competitions", "pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Botola Pro",
+        "slug": "botola",
+        "category": {
+          "name": "Morocco",
+          "slug": "morocco",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "MA",
+            "alpha3": "MAR",
+            "name": "Morocco",
+            "slug": "morocco"
+          },
+          "id": 303,
+          "flag": "morocco",
+          "alpha2": "MA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "المغرب",
+              "ru": "Марокко"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Botola Pro",
+          "slug": "botola-pro",
+          "primaryColorHex": "#03774c",
+          "secondaryColorHex": "#df180e",
+          "category": {
+            "name": "Morocco",
+            "slug": "morocco",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "MA",
+              "alpha3": "MAR",
+              "name": "Morocco",
+              "slug": "morocco"
+            },
+            "id": 303,
+            "flag": "morocco",
+            "alpha2": "MA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "المغرب",
+                "ru": "Марокко"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 29047,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 937,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "البطولة الإحترافية 1",
+              "bn": "বোতোলা প্রো",
+              "hi": "बोटोला प्रो",
+              "ru": "Ботола Про"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3640,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري المغربي لكرة القدم D1",
+            "bn": "বোটোলা প্রো ডি1",
+            "hi": "बोटोला प्रो डी1",
+            "ru": "Ботола Про"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Botola Pro D1 25/26",
+        "year": "25/26",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 78750
+      },
+      "roundInfo": {
+        "round": 13
+      },
+      "customId": "tAosZKGb",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Olympique Dcheira",
+        "slug": "olympique-dcheira",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 6078,
+        "nameCode": "ODC",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 204299,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#009900",
+          "secondary": "#000000",
+          "text": "#000000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أولمبيك الدشيرة",
+            "hi": "ओल्य्म्पिके द्चेइरा",
+            "ru": "Олимпик Дшерра"
+          },
+          "shortNameTranslation": {
+            "ar": "أولمبيك الدشيرة"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 5,
+        "display": 5,
+        "period1": 3,
+        "period2": 2,
+        "normaltime": 5
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1771715459
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime",
+          "awayScore.normaltime",
+          "time.currentPeriodStart"
+        ],
+        "changeTimestamp": 1771718159
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 15536819,
+      "slug": "olympique-dcheira-wydad-casablanca",
+      "startTimestamp": 1771711200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Botola Pro",
+        "slug": "botola",
+        "category": {
+          "name": "Morocco",
+          "slug": "morocco",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "MA",
+            "alpha3": "MAR",
+            "name": "Morocco",
+            "slug": "morocco"
+          },
+          "id": 303,
+          "flag": "morocco",
+          "alpha2": "MA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "المغرب",
+              "ru": "Марокко"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Botola Pro",
+          "slug": "botola-pro",
+          "primaryColorHex": "#03774c",
+          "secondaryColorHex": "#df180e",
+          "category": {
+            "name": "Morocco",
+            "slug": "morocco",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "MA",
+              "alpha3": "MAR",
+              "name": "Morocco",
+              "slug": "morocco"
+            },
+            "id": 303,
+            "flag": "morocco",
+            "alpha2": "MA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "المغرب",
+                "ru": "Марокко"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 29047,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 937,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "البطولة الإحترافية 1",
+              "bn": "বোতোলা প্রো",
+              "hi": "बोटोला प्रो",
+              "ru": "Ботола Про"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3640,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري المغربي لكرة القدم D1",
+            "bn": "বোটোলা প্রো ডি1",
+            "hi": "बोटोला प्रो डी1",
+            "ru": "Ботола Про"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Botola Pro D1 25/26",
+        "year": "25/26",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 78750
+      },
+      "roundInfo": {
+        "round": 14
+      },
+      "customId": "tAosVhH",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "RS Berkane",
+        "slug": "rs-berkane",
+        "shortName": "RS Berkane",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 58792,
+        "nameCode": "RSB",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 80395,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#f95100",
+          "secondary": "#000000",
+          "text": "#000000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نهضة بركان",
+            "ru": "Рсб Беркан"
+          },
+          "shortNameTranslation": {
+            "ar": "نهضة بركان"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1772406596
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime",
+          "awayScore.normaltime"
+        ],
+        "changeTimestamp": 1772410001
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 15536818,
+      "slug": "rs-berkane-wydad-casablanca",
+      "startTimestamp": 1772402400,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Botola Pro",
+        "slug": "botola",
+        "category": {
+          "name": "Morocco",
+          "slug": "morocco",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "MA",
+            "alpha3": "MAR",
+            "name": "Morocco",
+            "slug": "morocco"
+          },
+          "id": 303,
+          "flag": "morocco",
+          "alpha2": "MA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "المغرب",
+              "ru": "Марокко"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Botola Pro",
+          "slug": "botola-pro",
+          "primaryColorHex": "#03774c",
+          "secondaryColorHex": "#df180e",
+          "category": {
+            "name": "Morocco",
+            "slug": "morocco",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "MA",
+              "alpha3": "MAR",
+              "name": "Morocco",
+              "slug": "morocco"
+            },
+            "id": 303,
+            "flag": "morocco",
+            "alpha2": "MA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "المغرب",
+                "ru": "Марокко"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 29047,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 937,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "البطولة الإحترافية 1",
+              "bn": "বোতোলা প্রো",
+              "hi": "बोटोला प्रो",
+              "ru": "Ботола Про"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3640,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري المغربي لكرة القدم D1",
+            "bn": "বোটোলা প্রো ডি1",
+            "hi": "बोटोला प्रो डी1",
+            "ru": "Ботола Про"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Botola Pro D1 25/26",
+        "year": "25/26",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 78750
+      },
+      "roundInfo": {
+        "round": 9
+      },
+      "customId": "UMjstAo",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "AS FAR Rabat",
+        "slug": "as-far-rabat",
+        "shortName": "AS FAR",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 91965,
+        "nameCode": "FAR",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 24394,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#000000",
+          "secondary": "#008040",
+          "text": "#008040"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الجيش الملكي",
+            "ru": "АС ФАР Рабат"
+          },
+          "shortNameTranslation": {
+            "ar": "الجيش الملكي",
+            "ru": "АС ФАР"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 1,
+        "period2": 0,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1772665635
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime",
+          "awayScore.normaltime"
+        ],
+        "changeTimestamp": 1772668867
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 15570247,
+      "slug": "wydad-casablanca-as-far-rabat",
+      "startTimestamp": 1772661600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "CAF Confederations Cup, Knockout stage",
+        "slug": "caf-confederations-cup-knockout-stage",
+        "category": {
+          "name": "Africa",
+          "slug": "africa",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 16,
+          "country": {},
+          "id": 1466,
+          "flag": "africa",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "أفريقيا",
+              "ru": "Африка"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "CAF Confederations Cup",
+          "slug": "caf-confederations-cup",
+          "primaryColorHex": "#036f3a",
+          "secondaryColorHex": "#c5cbd8",
+          "category": {
+            "name": "Africa",
+            "slug": "africa",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 16,
+            "country": {},
+            "id": 1466,
+            "flag": "africa",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "أفريقيا",
+                "ru": "Африка"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 40609,
+          "hasPerformanceGraphFeature": false,
+          "country": {},
+          "id": 1115,
+          "hasEventPlayerStatistics": true,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "كأس الكونفيدرالية الإفريقية",
+              "bn": "সিএএফ কনফেডারেশনস কাপ",
+              "hi": "सीएएफ कन्फेडरेशन कप",
+              "ru": "Кубок конфедераций КАФ"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3564,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "كأس الكونفدرالية الأفريقية - مرحلة الإقصاء",
+            "bn": "ক্যাফ কনফেডারেশনস কাপ, নকআউট স্টেজ",
+            "hi": "कैफ़ कॉन्फ़ेडरेशन्स कप, नॉकआउट स्टेज",
+            "ru": "Кубок Конфедерации КАФ, стадия плей-офф"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "CAF Confederations Cup 25/26",
+        "year": "25/26",
+        "editor": false,
+        "id": 80446
+      },
+      "roundInfo": {
+        "round": 27,
+        "name": "Quarterfinals",
+        "slug": "quarterfinals",
+        "cupRoundType": 4
+      },
+      "customId": "tAosMax",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "aggregatedWinnerCode": 2,
+      "homeTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Olympic Safi",
+        "slug": "olympic-safi",
+        "shortName": "OC Safi",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 18028,
+        "nameCode": "OSA",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 55037,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#000040",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أولمبيك آسفي",
+            "ru": "Олимпик де Сафи"
+          },
+          "shortNameTranslation": {
+            "ar": "أولمبيك آسفي"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2,
+        "aggregated": 3
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2,
+        "aggregated": 3
+      },
+      "time": {
+        "injuryTime1": 10,
+        "injuryTime2": 8,
+        "currentPeriodStartTimestamp": 1774210386
+      },
+      "changes": {
+        "changes": ["status.code", "status.description", "status.type"],
+        "changeTimestamp": 1774214002
+      },
+      "hasGlobalHighlights": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "detailId": 1,
+      "crowdsourcingDataDisplayEnabled": false,
+      "correctAiInsight": false,
+      "correctHalftimeAiInsight": false,
+      "id": 15573114,
+      "homeRedCards": 1,
+      "slug": "olympic-safi-wydad-casablanca",
+      "previousLegEventId": 15573110,
+      "startTimestamp": 1774206000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "cupMatchesInRound": 2,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["top-competitions", "pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Botola Pro",
+        "slug": "botola",
+        "category": {
+          "name": "Morocco",
+          "slug": "morocco",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "MA",
+            "alpha3": "MAR",
+            "name": "Morocco",
+            "slug": "morocco"
+          },
+          "id": 303,
+          "flag": "morocco",
+          "alpha2": "MA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "المغرب",
+              "ru": "Марокко"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Botola Pro",
+          "slug": "botola-pro",
+          "primaryColorHex": "#03774c",
+          "secondaryColorHex": "#df180e",
+          "category": {
+            "name": "Morocco",
+            "slug": "morocco",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "MA",
+              "alpha3": "MAR",
+              "name": "Morocco",
+              "slug": "morocco"
+            },
+            "id": 303,
+            "flag": "morocco",
+            "alpha2": "MA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "المغرب",
+                "ru": "Марокко"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 29047,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 937,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "البطولة الإحترافية 1",
+              "bn": "বোতোলা প্রো",
+              "hi": "बोटोला प्रो",
+              "ru": "Ботола Про"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3640,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري المغربي لكرة القدم D1",
+            "bn": "বোটোলা প্রো ডি1",
+            "hi": "बोटोला प्रो डी1",
+            "ru": "Ботола Про"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Botola Pro D1 25/26",
+        "year": "25/26",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 78750
+      },
+      "roundInfo": {
+        "round": 10
+      },
+      "customId": "tAosCax",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Fath Union Sport",
+        "slug": "fath-union-sport",
+        "shortName": "FUS Rabat",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 10367,
+        "nameCode": "FUS",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 55027,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#d90000",
+          "text": "#d90000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الفتح الرياضي",
+            "ru": "ФЮС Фат Юниан Спортив Рабат"
+          },
+          "shortNameTranslation": {
+            "ar": "نادي الفتح الرياضي"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1775243973
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime",
+          "awayScore.normaltime"
+        ],
+        "changeTimestamp": 1775249956
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 15907998,
+      "slug": "fath-union-sport-wydad-casablanca",
+      "startTimestamp": 1775242800,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Botola Pro",
+        "slug": "botola",
+        "category": {
+          "name": "Morocco",
+          "slug": "morocco",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "MA",
+            "alpha3": "MAR",
+            "name": "Morocco",
+            "slug": "morocco"
+          },
+          "id": 303,
+          "flag": "morocco",
+          "alpha2": "MA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "المغرب",
+              "ru": "Марокко"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Botola Pro",
+          "slug": "botola-pro",
+          "primaryColorHex": "#03774c",
+          "secondaryColorHex": "#df180e",
+          "category": {
+            "name": "Morocco",
+            "slug": "morocco",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "MA",
+              "alpha3": "MAR",
+              "name": "Morocco",
+              "slug": "morocco"
+            },
+            "id": 303,
+            "flag": "morocco",
+            "alpha2": "MA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "المغرب",
+                "ru": "Марокко"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 29047,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 937,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "البطولة الإحترافية 1",
+              "bn": "বোতোলা প্রো",
+              "hi": "बोटोला प्रो",
+              "ru": "Ботола Про"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3640,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري المغربي لكرة القدم D1",
+            "bn": "বোটোলা প্রো ডি1",
+            "hi": "बोटोला प्रो डी1",
+            "ru": "Ботола Про"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Botola Pro D1 25/26",
+        "year": "25/26",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 78750
+      },
+      "roundInfo": {
+        "round": 16
+      },
+      "customId": "tAosWdu",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 3,
+      "homeTeam": {
+        "name": "Kawkab Athletic Club Marrakech",
+        "slug": "kawkab-athletic-club-marrakech",
+        "shortName": "KACM",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 21107,
+        "nameCode": "KAM",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 47696,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الكوكب الرياضي المراكشي",
+            "ru": "Спортивный Клуб Кавкаб Марракеш"
+          },
+          "shortNameTranslation": {
+            "ar": "الكوكب المراكشي",
+            "ru": "Кавкаб"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1777145054
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime",
+          "awayScore.normaltime",
+          "time.currentPeriodStart"
+        ],
+        "changeTimestamp": 1777150660
+      },
+      "hasGlobalHighlights": false,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16037136,
+      "slug": "kawkab-athletic-club-marrakech-wydad-casablanca",
+      "startTimestamp": 1777143600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Botola Pro",
+        "slug": "botola",
+        "category": {
+          "name": "Morocco",
+          "slug": "morocco",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "MA",
+            "alpha3": "MAR",
+            "name": "Morocco",
+            "slug": "morocco"
+          },
+          "id": 303,
+          "flag": "morocco",
+          "alpha2": "MA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "المغرب",
+              "ru": "Марокко"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Botola Pro",
+          "slug": "botola-pro",
+          "primaryColorHex": "#03774c",
+          "secondaryColorHex": "#df180e",
+          "category": {
+            "name": "Morocco",
+            "slug": "morocco",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "MA",
+              "alpha3": "MAR",
+              "name": "Morocco",
+              "slug": "morocco"
+            },
+            "id": 303,
+            "flag": "morocco",
+            "alpha2": "MA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "المغرب",
+                "ru": "Марокко"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 29047,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 937,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "البطولة الإحترافية 1",
+              "bn": "বোতোলা প্রো",
+              "hi": "बोटोला प्रो",
+              "ru": "Ботола Про"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3640,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري المغربي لكرة القدم D1",
+            "bn": "বোটোলা প্রো ডি1",
+            "hi": "बोटोला प्रो डी1",
+            "ru": "Ботола Про"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Botola Pro D1 25/26",
+        "year": "25/26",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 78750
+      },
+      "roundInfo": {
+        "round": 17
+      },
+      "customId": "tAoseHQd",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Union Sportive Yacoub El Mansour",
+        "slug": "union-sportive-yacoub-el-mansour",
+        "shortName": "USYM",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 4436,
+        "nameCode": "USY",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 479104,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#374df5",
+          "secondary": "#374df5",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي اتحاد يعقوب المنصور",
+            "ru": "Унион Спортив Якуб Эль Мансур"
+          },
+          "shortNameTranslation": {
+            "ar": "اتحاد يعقوب المنصور",
+            "ru": "УСЫМ"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 1,
+        "period2": 0,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1777483407
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime",
+          "awayScore.normaltime"
+        ],
+        "changeTimestamp": 1777489381
+      },
+      "hasGlobalHighlights": false,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16037145,
+      "slug": "union-sportive-yacoub-el-mansour-wydad-casablanca",
+      "startTimestamp": 1777482000,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Botola Pro",
+        "slug": "botola",
+        "category": {
+          "name": "Morocco",
+          "slug": "morocco",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "MA",
+            "alpha3": "MAR",
+            "name": "Morocco",
+            "slug": "morocco"
+          },
+          "id": 303,
+          "flag": "morocco",
+          "alpha2": "MA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "المغرب",
+              "ru": "Марокко"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Botola Pro",
+          "slug": "botola-pro",
+          "primaryColorHex": "#03774c",
+          "secondaryColorHex": "#df180e",
+          "category": {
+            "name": "Morocco",
+            "slug": "morocco",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "MA",
+              "alpha3": "MAR",
+              "name": "Morocco",
+              "slug": "morocco"
+            },
+            "id": 303,
+            "flag": "morocco",
+            "alpha2": "MA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "المغرب",
+                "ru": "Марокко"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 29047,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 937,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "البطولة الإحترافية 1",
+              "bn": "বোতোলা প্রো",
+              "hi": "बोटोला प्रो",
+              "ru": "Ботола Про"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3640,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري المغربي لكرة القدم D1",
+            "bn": "বোটোলা প্রো ডি1",
+            "hi": "बोटोला प्रो डी1",
+            "ru": "Ботола Про"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Botola Pro D1 25/26",
+        "year": "25/26",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 78750
+      },
+      "roundInfo": {
+        "round": 19
+      },
+      "customId": "tAosAax",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "CODM Meknès",
+        "slug": "codm-meknes",
+        "shortName": "CODM",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 14736,
+        "nameCode": "COD",
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 55025,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#222226",
+          "text": "#222226"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "النادي المكناسي",
+            "ru": "КОДМ Мекнес"
+          },
+          "shortNameTranslation": {
+            "ar": "النادي المكناسي",
+            "ru": "КОДМ"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 2,
+        "period2": 0,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1778094818
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime",
+          "awayScore.normaltime"
+        ],
+        "changeTimestamp": 1778097899
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16086271,
+      "slug": "codm-meknes-wydad-casablanca",
+      "startTimestamp": 1778090400,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Botola Pro",
+        "slug": "botola",
+        "category": {
+          "name": "Morocco",
+          "slug": "morocco",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "MA",
+            "alpha3": "MAR",
+            "name": "Morocco",
+            "slug": "morocco"
+          },
+          "id": 303,
+          "flag": "morocco",
+          "alpha2": "MA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "المغرب",
+              "ru": "Марокко"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Botola Pro",
+          "slug": "botola-pro",
+          "primaryColorHex": "#03774c",
+          "secondaryColorHex": "#df180e",
+          "category": {
+            "name": "Morocco",
+            "slug": "morocco",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "MA",
+              "alpha3": "MAR",
+              "name": "Morocco",
+              "slug": "morocco"
+            },
+            "id": 303,
+            "flag": "morocco",
+            "alpha2": "MA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "المغرب",
+                "ru": "Марокко"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 29047,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 937,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "البطولة الإحترافية 1",
+              "bn": "বোতোলা প্রো",
+              "hi": "बोटोला प्रो",
+              "ru": "Ботола Про"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3640,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري المغربي لكرة القدم D1",
+            "bn": "বোটোলা প্রো ডি1",
+            "hi": "बोटोला प्रो डी1",
+            "ru": "Ботола Про"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Botola Pro D1 25/26",
+        "year": "25/26",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 78750
+      },
+      "roundInfo": {
+        "round": 20
+      },
+      "customId": "tAoshKq",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 2,
+      "homeTeam": {
+        "name": "Raja Club Athletic",
+        "slug": "raja-club-athletic",
+        "shortName": "Raja CA",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 197970,
+        "nameCode": "RCA",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 41757,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#009966",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الرجاء الرياضي",
+            "ru": "Раджа Касабланка"
+          },
+          "shortNameTranslation": {
+            "ar": "الرجاء الرياضي"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 1,
+        "period2": 0,
+        "normaltime": 1
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1778357238
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime",
+          "awayScore.normaltime"
+        ],
+        "changeTimestamp": 1778360443
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16086283,
+      "slug": "raja-club-athletic-wydad-casablanca",
+      "startTimestamp": 1778353200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Botola Pro",
+        "slug": "botola",
+        "category": {
+          "name": "Morocco",
+          "slug": "morocco",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "MA",
+            "alpha3": "MAR",
+            "name": "Morocco",
+            "slug": "morocco"
+          },
+          "id": 303,
+          "flag": "morocco",
+          "alpha2": "MA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "المغرب",
+              "ru": "Марокко"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Botola Pro",
+          "slug": "botola-pro",
+          "primaryColorHex": "#03774c",
+          "secondaryColorHex": "#df180e",
+          "category": {
+            "name": "Morocco",
+            "slug": "morocco",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "MA",
+              "alpha3": "MAR",
+              "name": "Morocco",
+              "slug": "morocco"
+            },
+            "id": 303,
+            "flag": "morocco",
+            "alpha2": "MA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "المغرب",
+                "ru": "Марокко"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 29047,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 937,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "البطولة الإحترافية 1",
+              "bn": "বোতোলা প্রো",
+              "hi": "बोटोला प्रो",
+              "ru": "Ботола Про"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3640,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري المغربي لكرة القدم D1",
+            "bn": "বোটোলা প্রো ডি1",
+            "hi": "बोटोला प्रो डी1",
+            "ru": "Ботола Про"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Botola Pro D1 25/26",
+        "year": "25/26",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 78750
+      },
+      "roundInfo": {
+        "round": 21
+      },
+      "customId": "tAosOax",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Hassania d'Agadir",
+        "slug": "hassania-dagadir",
+        "shortName": "HUSA",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 12263,
+        "nameCode": "HAS",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 55039,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#e22028",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "حسنية أكادير",
+            "ru": "Хасания д'Агадир"
+          },
+          "shortNameTranslation": {
+            "ar": "حسنية أكادير",
+            "ru": "ХУСА"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 3,
+        "display": 3,
+        "period1": 1,
+        "period2": 2,
+        "normaltime": 3
+      },
+      "awayScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1779563075
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime",
+          "awayScore.normaltime",
+          "providerLock.status"
+        ],
+        "changeTimestamp": 1779566521
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16201513,
+      "slug": "hassania-dagadir-wydad-casablanca",
+      "startTimestamp": 1779559200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["top-competitions", "pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Botola Pro",
+        "slug": "botola",
+        "category": {
+          "name": "Morocco",
+          "slug": "morocco",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "MA",
+            "alpha3": "MAR",
+            "name": "Morocco",
+            "slug": "morocco"
+          },
+          "id": 303,
+          "flag": "morocco",
+          "alpha2": "MA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "المغرب",
+              "ru": "Марокко"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Botola Pro",
+          "slug": "botola-pro",
+          "primaryColorHex": "#03774c",
+          "secondaryColorHex": "#df180e",
+          "category": {
+            "name": "Morocco",
+            "slug": "morocco",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "MA",
+              "alpha3": "MAR",
+              "name": "Morocco",
+              "slug": "morocco"
+            },
+            "id": 303,
+            "flag": "morocco",
+            "alpha2": "MA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "المغرب",
+                "ru": "Марокко"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 29047,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 937,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "البطولة الإحترافية 1",
+              "bn": "বোতোলা প্রো",
+              "hi": "बोटोला प्रो",
+              "ru": "Ботола Про"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3640,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري المغربي لكرة القدم D1",
+            "bn": "বোটোলা প্রো ডি1",
+            "hi": "बोटोला प्रो डी1",
+            "ru": "Ботола Про"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Botola Pro D1 25/26",
+        "year": "25/26",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 78750
+      },
+      "roundInfo": {
+        "round": 22
+      },
+      "customId": "tAosFTJ",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Ittihad Tanger",
+        "slug": "ittihad-tanger",
+        "shortName": "Ittihad Tanger",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 13699,
+        "nameCode": "ITT",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 87180,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#0000ff",
+          "secondary": "#ffffff",
+          "text": "#ffffff"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "إتحاد طنجة",
+            "hi": "इत्तिहाद टैनजर",
+            "ru": "Иттихад Танжер"
+          },
+          "shortNameTranslation": {
+            "ar": "إتحاد طنجة"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 0,
+        "period2": 2,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1780514057
+      },
+      "changes": {
+        "changes": ["homeScore.current", "homeScore.display", "homeScore.period2"],
+        "changeTimestamp": 1780516526
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16213162,
+      "slug": "ittihad-tanger-wydad-casablanca",
+      "startTimestamp": 1780509600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["top-competitions", "pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Botola Pro",
+        "slug": "botola",
+        "category": {
+          "name": "Morocco",
+          "slug": "morocco",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "MA",
+            "alpha3": "MAR",
+            "name": "Morocco",
+            "slug": "morocco"
+          },
+          "id": 303,
+          "flag": "morocco",
+          "alpha2": "MA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "المغرب",
+              "ru": "Марокко"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Botola Pro",
+          "slug": "botola-pro",
+          "primaryColorHex": "#03774c",
+          "secondaryColorHex": "#df180e",
+          "category": {
+            "name": "Morocco",
+            "slug": "morocco",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "MA",
+              "alpha3": "MAR",
+              "name": "Morocco",
+              "slug": "morocco"
+            },
+            "id": 303,
+            "flag": "morocco",
+            "alpha2": "MA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "المغرب",
+                "ru": "Марокко"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 29047,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 937,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "البطولة الإحترافية 1",
+              "bn": "বোতোলা প্রো",
+              "hi": "बोटोला प्रो",
+              "ru": "Ботола Про"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3640,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري المغربي لكرة القدم D1",
+            "bn": "বোটোলা প্রো ডি1",
+            "hi": "बोटोला प्रो डी1",
+            "ru": "Ботола Про"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Botola Pro D1 25/26",
+        "year": "25/26",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 78750
+      },
+      "roundInfo": {
+        "round": 23
+      },
+      "customId": "tAosMax",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Olympic Safi",
+        "slug": "olympic-safi",
+        "shortName": "OC Safi",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 18028,
+        "nameCode": "OSA",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 55037,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#000040",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "أولمبيك آسفي",
+            "ru": "Олимпик де Сафи"
+          },
+          "shortNameTranslation": {
+            "ar": "أولمبيك آسفي"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "awayScore": {
+        "current": 0,
+        "display": 0,
+        "period1": 0,
+        "period2": 0,
+        "normaltime": 0
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1780945890
+      },
+      "changes": {
+        "changes": [
+          "status.code",
+          "status.description",
+          "status.type",
+          "homeScore.normaltime",
+          "time.currentPeriodStart",
+          "providerLock.status"
+        ],
+        "changeTimestamp": 1780948590
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16277709,
+      "slug": "olympic-safi-wydad-casablanca",
+      "startTimestamp": 1780941600,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["top-competitions", "pro"],
+        "gender": ["M"]
+      }
+    },
+    {
+      "eventState": {},
+      "tournament": {
+        "name": "Botola Pro",
+        "slug": "botola",
+        "category": {
+          "name": "Morocco",
+          "slug": "morocco",
+          "sport": {
+            "name": "Football",
+            "slug": "football",
+            "id": 1
+          },
+          "priority": 0,
+          "country": {
+            "alpha2": "MA",
+            "alpha3": "MAR",
+            "name": "Morocco",
+            "slug": "morocco"
+          },
+          "id": 303,
+          "flag": "morocco",
+          "alpha2": "MA",
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "المغرب",
+              "ru": "Марокко"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "uniqueTournament": {
+          "name": "Botola Pro",
+          "slug": "botola-pro",
+          "primaryColorHex": "#03774c",
+          "secondaryColorHex": "#df180e",
+          "category": {
+            "name": "Morocco",
+            "slug": "morocco",
+            "sport": {
+              "name": "Football",
+              "slug": "football",
+              "id": 1
+            },
+            "priority": 0,
+            "country": {
+              "alpha2": "MA",
+              "alpha3": "MAR",
+              "name": "Morocco",
+              "slug": "morocco"
+            },
+            "id": 303,
+            "flag": "morocco",
+            "alpha2": "MA",
+            "fieldTranslations": {
+              "nameTranslation": {
+                "ar": "المغرب",
+                "ru": "Марокко"
+              },
+              "shortNameTranslation": {}
+            }
+          },
+          "userCount": 29047,
+          "hasPerformanceGraphFeature": true,
+          "country": {},
+          "id": 937,
+          "hasEventPlayerStatistics": false,
+          "displayInverseHomeAwayTeams": false,
+          "fieldTranslations": {
+            "nameTranslation": {
+              "ar": "البطولة الإحترافية 1",
+              "bn": "বোতোলা প্রো",
+              "hi": "बोटोला प्रो",
+              "ru": "Ботола Про"
+            },
+            "shortNameTranslation": {}
+          }
+        },
+        "priority": 0,
+        "isGroup": false,
+        "isLive": false,
+        "id": 3640,
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "الدوري المغربي لكرة القدم D1",
+            "bn": "বোটোলা প্রো ডি1",
+            "hi": "बोटोला प्रो डी1",
+            "ru": "Ботола Про"
+          },
+          "shortNameTranslation": {}
+        }
+      },
+      "season": {
+        "name": "Botola Pro D1 25/26",
+        "year": "25/26",
+        "editor": false,
+        "seasonCoverageInfo": {
+          "editorCoverageLevel": 1
+        },
+        "id": 78750
+      },
+      "roundInfo": {
+        "round": 24
+      },
+      "customId": "UMjstAo",
+      "status": {
+        "code": 100,
+        "description": "Ended",
+        "type": "finished"
+      },
+      "winnerCode": 1,
+      "homeTeam": {
+        "name": "AS FAR Rabat",
+        "slug": "as-far-rabat",
+        "shortName": "AS FAR",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 91965,
+        "nameCode": "FAR",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 24394,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#000000",
+          "secondary": "#008040",
+          "text": "#008040"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الجيش الملكي",
+            "ru": "АС ФАР Рабат"
+          },
+          "shortNameTranslation": {
+            "ar": "الجيش الملكي",
+            "ru": "АС ФАР"
+          }
+        }
+      },
+      "awayTeam": {
+        "name": "Wydad Casablanca",
+        "slug": "wydad-casablanca",
+        "shortName": "WAC",
+        "gender": "M",
+        "sport": {
+          "name": "Football",
+          "slug": "football",
+          "id": 1
+        },
+        "userCount": 187207,
+        "nameCode": "WAC",
+        "disabled": false,
+        "national": false,
+        "type": 0,
+        "country": {
+          "alpha2": "MA",
+          "alpha3": "MAR",
+          "name": "Morocco",
+          "slug": "morocco"
+        },
+        "id": 36268,
+        "subTeams": [],
+        "teamColors": {
+          "primary": "#ff0000",
+          "secondary": "#ff0000",
+          "text": "#ff0000"
+        },
+        "fieldTranslations": {
+          "nameTranslation": {
+            "ar": "نادي الوداد الرياضي",
+            "ru": "Видад АК"
+          },
+          "shortNameTranslation": {
+            "ar": "الوداد الرياضي"
+          }
+        }
+      },
+      "homeScore": {
+        "current": 2,
+        "display": 2,
+        "period1": 1,
+        "period2": 1,
+        "normaltime": 2
+      },
+      "awayScore": {
+        "current": 1,
+        "display": 1,
+        "period1": 0,
+        "period2": 1,
+        "normaltime": 1
+      },
+      "time": {
+        "periodLength": 2700,
+        "overtimeLength": 900,
+        "totalPeriodCount": 2,
+        "currentPeriodStartTimestamp": 1781453360
+      },
+      "changes": {
+        "changes": ["providerLock.status"],
+        "changeTimestamp": 1781456765
+      },
+      "hasGlobalHighlights": true,
+      "hasXg": true,
+      "hasEventPlayerStatistics": true,
+      "hasEventPlayerHeatMap": true,
+      "crowdsourcingDataDisplayEnabled": false,
+      "id": 16297542,
+      "slug": "wydad-casablanca-as-far-rabat",
+      "startTimestamp": 1781449200,
+      "finalResultOnly": false,
+      "feedLocked": true,
+      "isEditor": false,
+      "eventFilters": {
+        "category": ["club"],
+        "level": ["top-competitions", "pro"],
+        "gender": ["M"]
+      }
+    }
+  ],
+  "hasNextPage": true,
+  "playedForTeamMap": {
+    "12530836": 3061,
+    "12764250": 3061,
+    "13267690": 44441,
+    "13267691": 44441,
+    "13267707": 44441,
+    "13267711": 44441,
+    "13267713": 44441,
+    "13267720": 44441,
+    "13267723": 44441,
+    "13267728": 44441,
+    "13267738": 44441,
+    "13800331": 44441,
+    "13809091": 44441,
+    "13830200": 44441,
+    "13867667": 44441,
+    "15013797": 36268,
+    "15013846": 36268,
+    "15013860": 36268,
+    "15536818": 36268,
+    "15536819": 36268,
+    "15570247": 36268,
+    "15573114": 36268,
+    "15907998": 36268,
+    "16037136": 36268,
+    "16037145": 36268,
+    "16086271": 36268,
+    "16086283": 36268,
+    "16201513": 36268,
+    "16213162": 36268,
+    "16277709": 36268,
+    "16297542": 36268
+  },
+  "statisticsMap": {
+    "12530836": {},
+    "12764250": {
+      "rating": 6,
+      "minutesPlayed": 9
+    },
+    "13267690": {
+      "rating": 6.3,
+      "minutesPlayed": 73
+    },
+    "13267691": {
+      "rating": 7.7,
+      "minutesPlayed": 90
+    },
+    "13267707": {
+      "rating": 7,
+      "minutesPlayed": 71
+    },
+    "13267711": {
+      "rating": 6.8,
+      "minutesPlayed": 10
+    },
+    "13267713": {
+      "rating": 6.8,
+      "minutesPlayed": 26
+    },
+    "13267720": {
+      "rating": 7.7,
+      "minutesPlayed": 70
+    },
+    "13267723": {
+      "rating": 6.6,
+      "minutesPlayed": 23
+    },
+    "13267728": {
+      "rating": 7.3,
+      "minutesPlayed": 89
+    },
+    "13267738": {
+      "rating": 7.5,
+      "minutesPlayed": 90
+    },
+    "13800331": {
+      "rating": 6.7,
+      "minutesPlayed": 71
+    },
+    "13809091": {
+      "rating": 6.6,
+      "minutesPlayed": 56
+    },
+    "13830200": {},
+    "13867667": {},
+    "15013797": {
+      "rating": 7,
+      "minutesPlayed": 65
+    },
+    "15013846": {
+      "rating": 7.8,
+      "minutesPlayed": 90
+    },
+    "15013860": {
+      "rating": 7.5,
+      "minutesPlayed": 77
+    },
+    "15536818": {
+      "rating": 7.9,
+      "minutesPlayed": 90
+    },
+    "15536819": {
+      "rating": 7.5,
+      "minutesPlayed": 85
+    },
+    "15570247": {
+      "rating": 7.4,
+      "minutesPlayed": 59
+    },
+    "15573114": {
+      "rating": 7.2,
+      "minutesPlayed": 45
+    },
+    "15907998": {
+      "rating": 6.6,
+      "minutesPlayed": 42
+    },
+    "16037136": {
+      "minutesPlayed": 1
+    },
+    "16037145": {
+      "rating": 8.3,
+      "minutesPlayed": 90
+    },
+    "16086271": {
+      "rating": 8.2,
+      "minutesPlayed": 60
+    },
+    "16086283": {
+      "rating": 6.6,
+      "minutesPlayed": 57
+    },
+    "16201513": {
+      "rating": 9.9,
+      "minutesPlayed": 83
+    },
+    "16213162": {
+      "rating": 7.9,
+      "minutesPlayed": 90
+    },
+    "16277709": {
+      "rating": 7.9,
+      "minutesPlayed": 84
+    },
+    "16297542": {
+      "rating": 8.5,
+      "minutesPlayed": 90
+    }
+  },
+  "incidentsMap": {
+    "13267690": {
+      "assists": 1
+    },
+    "13267707": {
+      "yellowCards": 1
+    },
+    "13267720": {
+      "yellowCards": 1
+    },
+    "13267738": {
+      "goals": 1
+    },
+    "15536818": {
+      "goals": 1,
+      "penaltyGoals": 1
+    },
+    "15536819": {
+      "assists": 1,
+      "yellowCards": 1
+    },
+    "15570247": {
+      "goals": 1
+    },
+    "15573114": {
+      "goals": 1
+    },
+    "16037145": {
+      "assists": 1
+    },
+    "16086271": {
+      "goals": 2,
+      "penaltyGoals": 1
+    },
+    "16201513": {
+      "goals": 3,
+      "penaltyGoals": 2
+    },
+    "16297542": {
+      "goals": 1,
+      "penaltyGoals": 1,
+      "yellowCards": 1
+    }
+  },
+  "onBenchMap": {
+    "12530836": true
+  }
+}

@@ -208,8 +208,14 @@ DB / API at build time (fast static pages) with islands for the interactive filt
       `discover.js` (paginate the Morocco most-valuable list, land_id=107, ~500 players incl. dual-nationals),
       `ingest.js` (upsert players + find-or-create clubs), `run.js` (`npm run tm:discover`, honors overrides).
       Verified live end-to-end into SQLite. 33 new tests (48 total).
-- [ ] **Phase 3 — SofaScore stats (Playwright).** Map eligible players to SofaScore IDs; pull per-match rating & minutes.
-- [ ] **Phase 4 — Rating engine.** Implement the fair score + Best XI selection; compute `player_scores`.
+- [x] **Phase 3 — SofaScore stats (Playwright). ✅ DONE.** `client.js` (Playwright `SofascoreClient`, reused context,
+      throttled), `parse.js` (search/events/match-stats parsers), `match.js` (accent-aware name+club matcher),
+      `ingest.js` (upsert matches + player_match_stats), `run.js` (`npm run sofa:stats`). Verified live: Bilal Nadir →
+      24 stat rows (rating+minutes) into SQLite. 23 new tests (61 total). Matches store `sofascore_unique_tournament_id`;
+      `league_id` mapping deferred (see Phase 4).
+- [ ] **Phase 4 — Rating engine.** First map `matches.sofascore_unique_tournament_id` → `league_id` (populate
+      `leagues.sofascore_tournament_id`; decide how cups are weighted). Then implement the fair score
+      (minutes-weight + shrinkage + per-match coefficient, skipping null ratings) + Best XI; compute `player_scores`.
 - [ ] **Phase 5 — ETL orchestration.** One re-runnable refresh command; idempotent upserts; rate-limiting; logging.
 - [ ] **Phase 6 — API + Astro frontend.** Endpoints + the two UI views (Best XI, Browse & rank).
 
