@@ -1,7 +1,7 @@
 import { getDb, initSchema } from "../../../db/index.js";
 import { seed } from "../../../db/seed.js";
 import { upsertMatch, upsertPlayerMatchStat } from "../../../scrapers/sofascore/ingest.js";
-import { resolveMatchLeagues, computeAllScores } from "../../../rating/run.js";
+import { resolveMatchLeagues, computeAllScores, persistBestXI } from "../../../rating/run.js";
 import { getLeagues, getSummary, getBrowsePlayers, getBestXI } from "./queries.js";
 
 // Build a small realistic DB: two eligible players with Premier League stats.
@@ -30,6 +30,7 @@ function seededDb() {
   upsertPlayerMatchStat(db, { playerId: 1, matchId: m1, rating: 8, minutes: 900 });
   upsertPlayerMatchStat(db, { playerId: 2, matchId: m2, rating: 7, minutes: 900 });
   computeAllScores(db);
+  persistBestXI(db, { minMinutes: 450 });
   return db;
 }
 
@@ -60,9 +61,9 @@ describe("query layer", () => {
     db.close();
   });
 
-  it("getBestXI places players in their slots", () => {
+  it("getBestXI reads the persisted XI and places players in their slots", () => {
     const db = seededDb();
-    const { xi, filled } = getBestXI(db, { minMinutes: 450 });
+    const { xi, filled } = getBestXI(db);
     expect(filled).toBe(2);
     expect(xi.find((s) => s.slot === "GK").player.name).toBe("Keeper Two");
     expect(xi.find((s) => s.slot === "ST").player.name).toBe("Striker One");

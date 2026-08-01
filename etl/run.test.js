@@ -20,6 +20,10 @@ function makeDeps(calls) {
         calls.push("compute");
         return 0;
       },
+      persistBestXI: () => {
+        calls.push("persist");
+        return 0;
+      },
       buildBestXI: () => ({ filled: 0, xi: [] }),
     },
   };
@@ -30,7 +34,7 @@ describe("runEtl", () => {
     const calls = [];
     const db = initSchema(getDb(":memory:"));
     const summary = await runEtl({ db, deps: makeDeps(calls) });
-    expect(calls).toEqual(["discover", "stats", "resolve", "compute"]);
+    expect(calls).toEqual(["discover", "stats", "resolve", "compute", "persist"]);
     expect(summary.stages.discover).toBeTruthy();
     expect(summary.bestXiFilled).toBe(0);
     db.close();
@@ -40,7 +44,7 @@ describe("runEtl", () => {
     const calls = [];
     const db = initSchema(getDb(":memory:"));
     await runEtl({ db, stages: ["rate"], deps: makeDeps(calls) });
-    expect(calls).toEqual(["resolve", "compute"]);
+    expect(calls).toEqual(["resolve", "compute", "persist"]);
     db.close();
   });
 

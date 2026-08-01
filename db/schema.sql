@@ -110,6 +110,16 @@ CREATE TABLE IF NOT EXISTS player_scores (
   PRIMARY KEY (player_id, season_id)
 );
 
+-- The computed Best XI (one row per formation slot), written by the rating step so
+-- the frontend can read it directly without importing the selection logic.
+CREATE TABLE IF NOT EXISTS best_xi (
+  season_id  TEXT NOT NULL REFERENCES seasons(id) ON DELETE CASCADE,
+  slot_index INTEGER NOT NULL,
+  slot       TEXT NOT NULL,
+  player_id  INTEGER REFERENCES players(id) ON DELETE SET NULL,
+  PRIMARY KEY (season_id, slot_index)
+);
+
 CREATE INDEX IF NOT EXISTS idx_players_eligibility ON players(eligibility_status);
 CREATE INDEX IF NOT EXISTS idx_players_club ON players(club_id);
 CREATE INDEX IF NOT EXISTS idx_clubs_league ON clubs(league_id);

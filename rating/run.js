@@ -83,6 +83,22 @@ function buildBestXI(
   return selectBestXI(players);
 }
 
+// Compute the Best XI and persist it (one row per slot) so the frontend can read
+// it via SQL without importing the selection logic.
+function persistBestXI(db, opts = {}) {
+  const seasonId = opts.seasonId || SEASON_ID;
+  const { xi } = buildBestXI(db, { seasonId, ...opts });
+  const del = db.prepare("DELETE FROM best_xi WHERE season_id = ?");
+  const ins = db.prepare(
+    "INSERT INTO best_xi (season_id, slot_index, slot, player_id) VALUES (?, ?, ?, ?)",
+  );
+  db.transaction(() => {
+    del.run(seasonId);
+    xi.forEach((s, i) => ins.run(seasonId, i, s.slot, s.player ? s.player.id : null));
+  })();
+  return xi.filter((s) => s.player).length;
+}
+
 function run() {
   const db = initSchema(getDb());
   seed(db);
@@ -90,6 +106,7 @@ function run() {
   const inLeague = db.prepare("SELECT COUNT(*) n FROM matches WHERE league_id IS NOT NULL").get().n;
   const cups = db.prepare("SELECT COUNT(*) n FROM matches WHERE league_id IS NULL").get().n;
   const scored = computeAllScores(db);
+  persistBestXI(db);
   console.log(
     `[rate] ${inLeague} in-league matches (+${cups} cups excluded); players scored: ${scored}`,
   );
@@ -119,6 +136,6 @@ function run() {
   db.close();
 }
 
-module.exports = { resolveMatchLeagues, computeAllScores, buildBestXI };
+module.exports = { resolveMatchLeagues, computeAllScores, buildBestXI, persistBestXI };
 
 if (require.main === module) run();

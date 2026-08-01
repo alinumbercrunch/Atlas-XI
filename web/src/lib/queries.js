@@ -1,8 +1,7 @@
 // Read-only query layer for the Astro frontend. Functions take an injected `db`
 // (better-sqlite3) so they are unit-testable, and guard against a missing DB so
-// pages still render before the ETL has been run.
-import { selectBestXI } from "../../../rating/score.js";
-
+// pages still render before the ETL has been run. Pure SQL — no backend imports,
+// so it works identically in Astro's dev server and static build.
 const SEASON = "2025-2026";
 export const POSITIONS = ["GK", "CB", "FB", "DM", "CM", "AM", "W", "ST"];
 
@@ -49,19 +48,26 @@ export function getBrowsePlayers(db, { season = SEASON } = {}) {
     .map((r) => ({ ...r, citizenships: safeParse(r.citizenships) }));
 }
 
-export function getBestXI(db, { minMinutes = 450, status = "eligible", season = SEASON } = {}) {
-  if (!db) return { xi: [], filled: 0, totalScore: 0 };
+// Read the persisted Best XI (written by the rating step) as slot -> player.
+export function getBestXI(db, { season = SEASON } = {}) {
+  if (!db) return { xi: [], filled: 0 };
   const rows = db
     .prepare(
-      `SELECT p.id, p.name, p.primary_position AS position, ps.score, ps.minutes,
-              c.name AS club
-       FROM players p
-       JOIN player_scores ps ON ps.player_id = p.id AND ps.season_id = ?
+      `SELECT b.slot, b.slot_index,
+              p.id, p.name, p.primary_position AS position, ps.score, c.name AS club
+       FROM best_xi b
+       LEFT JOIN players p ON p.id = b.player_id
+       LEFT JOIN player_scores ps ON ps.player_id = b.player_id AND ps.season_id = b.season_id
        LEFT JOIN clubs c ON c.id = p.club_id
-       WHERE p.eligibility_status = ? AND ps.minutes >= ? AND ps.score > 0`,
+       WHERE b.season_id = ?
+       ORDER BY b.slot_index`,
     )
-    .all(season, status, minMinutes);
-  return selectBestXI(rows.map((r) => ({ ...r, positions: r.position ? [r.position] : [] })));
+    .all(season);
+  const xi = rows.map((r) => ({
+    slot: r.slot,
+    player: r.id ? { id: r.id, name: r.name, score: r.score, club: r.club } : null,
+  }));
+  return { xi, filled: xi.filter((s) => s.player).length };
 }
 
 function safeParse(json) {
