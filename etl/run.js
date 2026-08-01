@@ -10,7 +10,7 @@
 const { getDb, initSchema } = require("../db");
 const { seed } = require("../db/seed");
 
-const ALL_STAGES = ["discover", "stats", "rate"];
+const ALL_STAGES = ["discover", "stats", "rate", "images"];
 
 async function runEtl(opts = {}) {
   const {
@@ -25,6 +25,7 @@ async function runEtl(opts = {}) {
   const discover = deps.discover || require("../scrapers/transfermarkt/run").run;
   const fetchStats = deps.fetchStats || require("../scrapers/sofascore/run").run;
   const rating = deps.rating || require("../rating/run");
+  const images = deps.images || require("../scrapers/sofascore/images");
 
   const ownsDb = !opts.db;
   const db = opts.db || initSchema(getDb());
@@ -54,6 +55,9 @@ async function runEtl(opts = {}) {
       const bestXi = rating.persistBestXI(db);
       return { scored, bestXi };
     });
+  }
+  if (stages.includes("images")) {
+    await time("images", () => images.downloadImages(images.playersNeedingImages(db), {}));
   }
 
   const eligible = db

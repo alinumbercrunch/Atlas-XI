@@ -30,7 +30,7 @@ export function getBrowsePlayers(db, { season = SEASON } = {}) {
   return db
     .prepare(
       `SELECT p.id, p.name, p.primary_position AS position, p.eligibility_status AS status,
-              p.market_value AS marketValue, p.citizenships,
+              p.market_value AS marketValue, p.citizenships, p.sofascore_id AS sofascoreId,
               ps.score, ps.minutes, ps.matches_count AS matches, ps.wavg_rating AS wavg,
               c.name AS club,
               (SELECT l.id FROM player_match_stats s
@@ -54,7 +54,8 @@ export function getBestXI(db, { season = SEASON } = {}) {
   const rows = db
     .prepare(
       `SELECT b.slot, b.slot_index,
-              p.id, p.name, p.primary_position AS position, ps.score, c.name AS club
+              p.id, p.name, p.primary_position AS position, p.sofascore_id AS sofascoreId,
+              ps.score, c.name AS club
        FROM best_xi b
        LEFT JOIN players p ON p.id = b.player_id
        LEFT JOIN player_scores ps ON ps.player_id = b.player_id AND ps.season_id = b.season_id
@@ -65,7 +66,9 @@ export function getBestXI(db, { season = SEASON } = {}) {
     .all(season);
   const xi = rows.map((r) => ({
     slot: r.slot,
-    player: r.id ? { id: r.id, name: r.name, score: r.score, club: r.club } : null,
+    player: r.id
+      ? { id: r.id, name: r.name, score: r.score, club: r.club, sofascoreId: r.sofascoreId }
+      : null,
   }));
   return { xi, filled: xi.filter((s) => s.player).length };
 }

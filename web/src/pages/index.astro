@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import { db } from "../lib/db.js";
 import { getBestXI, getSummary } from "../lib/queries.js";
+import { playerImage, initials } from "../lib/avatar.js";
 
 const MIN_MINUTES = 450;
 const summary = getSummary(db);
@@ -39,6 +40,15 @@ const lines = [
                 <div class={`slot ${s && s.player ? "" : "empty-slot"}`}>
                   {s && s.player ? (
                     <>
+                      {playerImage(s.player.sofascoreId) ? (
+                        <img
+                          class="photo"
+                          src={playerImage(s.player.sofascoreId)}
+                          alt={s.player.name}
+                        />
+                      ) : (
+                        <span class="photo photo--initials">{initials(s.player.name)}</span>
+                      )}
                       <span class="pos">{s.slot}</span>
                       <span class="name">{s.player.name}</span>
                       <span class="score">{s.player.score.toFixed(2)}</span>
@@ -94,6 +104,23 @@ const lines = [
       border: 1px dashed rgba(255, 255, 255, 0.5);
       min-height: 84px;
       justify-content: center;
+    }
+    .photo {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #eef0f2;
+      margin-bottom: 0.35rem;
+      box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+    }
+    .photo--initials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.05rem;
+      color: var(--green);
     }
     .pos {
       font-size: 0.7rem;

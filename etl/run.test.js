@@ -26,6 +26,13 @@ function makeDeps(calls) {
       },
       buildBestXI: () => ({ filled: 0, xi: [] }),
     },
+    images: {
+      playersNeedingImages: () => [],
+      downloadImages: async () => {
+        calls.push("images");
+        return { saved: 0, skipped: 0, missing: 0 };
+      },
+    },
   };
 }
 
@@ -34,7 +41,7 @@ describe("runEtl", () => {
     const calls = [];
     const db = initSchema(getDb(":memory:"));
     const summary = await runEtl({ db, deps: makeDeps(calls) });
-    expect(calls).toEqual(["discover", "stats", "resolve", "compute", "persist"]);
+    expect(calls).toEqual(["discover", "stats", "resolve", "compute", "persist", "images"]);
     expect(summary.stages.discover).toBeTruthy();
     expect(summary.bestXiFilled).toBe(0);
     db.close();

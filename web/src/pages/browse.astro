@@ -2,6 +2,7 @@
 import Base from "../layouts/Base.astro";
 import { db } from "../lib/db.js";
 import { getBrowsePlayers, getLeagues, getSummary, POSITIONS } from "../lib/queries.js";
+import { playerImage, initials } from "../lib/avatar.js";
 
 const players = getBrowsePlayers(db);
 const leagues = getLeagues(db);
@@ -70,8 +71,17 @@ const fmtMv = (v) => (v ? "€" + (v / 1_000_000).toFixed(1).replace(/\.0$/, "")
                 <tr data-league={p.leagueId ?? ""} data-pos={p.position ?? ""}>
                   <td class="rank">{i + 1}</td>
                   <td class="pname">
-                    {p.name}
-                    <span class="cz">{(p.citizenships || []).join(" · ")}</span>
+                    <div class="pcell">
+                      {playerImage(p.sofascoreId) ? (
+                        <img class="mini" src={playerImage(p.sofascoreId)} alt={p.name} />
+                      ) : (
+                        <span class="mini mini--initials">{initials(p.name)}</span>
+                      )}
+                      <div>
+                        {p.name}
+                        <span class="cz">{(p.citizenships || []).join(" · ")}</span>
+                      </div>
+                    </div>
                   </td>
                   <td>{p.position ?? "—"}</td>
                   <td>{leagueName[p.leagueId] ?? "—"}</td>
@@ -185,6 +195,27 @@ const fmtMv = (v) => (v ? "€" + (v / 1_000_000).toFixed(1).replace(/\.0$/, "")
     }
     .pname {
       font-weight: 700;
+    }
+    .pcell {
+      display: flex;
+      align-items: center;
+      gap: 0.6rem;
+    }
+    .mini {
+      width: 34px;
+      height: 34px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: #eef0f2;
+      flex-shrink: 0;
+    }
+    .mini--initials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 0.72rem;
+      font-weight: 800;
+      color: var(--green);
     }
     .pname .cz {
       display: block;

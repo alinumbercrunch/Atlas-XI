@@ -76,6 +76,25 @@ class SofascoreClient {
   matchStats(eventId, playerId) {
     return this.getJson(`/event/${eventId}/player/${playerId}/statistics`);
   }
+
+  // Fetch a binary asset (e.g. a player photo) as a Buffer; null on 404.
+  async getImageBytes(path) {
+    await this.open();
+    await this._throttle();
+    const url = path.startsWith("http") ? path : `${this.base}${path}`;
+    const resp = await this._page.goto(url, {
+      waitUntil: "domcontentloaded",
+      timeout: this.timeout,
+    });
+    const status = resp?.status();
+    if (status === 403 || status >= 500) throw new Error(`SofaScore ${status} for ${url}`);
+    if (status === 404) return null;
+    return resp.body();
+  }
+
+  playerImage(id) {
+    return this.getImageBytes(`/player/${id}/image`);
+  }
 }
 
 module.exports = { SofascoreClient, API };

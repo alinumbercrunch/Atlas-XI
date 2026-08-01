@@ -8,6 +8,9 @@ coverage/
 web/dist/
 web/.astro/
 
+# Downloaded player images (regenerable via npm run sofa:images)
+web/public/players/
+
 # Local data (regenerable by the scrapers)
 data/
 *.sqlite
