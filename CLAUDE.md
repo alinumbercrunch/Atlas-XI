@@ -13,8 +13,9 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
 
 - **Node.js, CommonJS** (`require` / `module.exports`) — not ESM yet. Config files are `.mjs`.
 - `lib/` — shared HTTP + HTML helpers (`fetchWithHeaders.js`, `parseHtml.js`)
-- `scrapers/transfermarkt/` — fetch + cheerio. `parse.js` (profile/search parsers + market-value/position helpers),
-  `eligibility.js` (pure 3-state classifier), `__fixtures__/` (real saved TM pages). _Discovery + DB persist: in progress._
+- `scrapers/transfermarkt/` — fetch + cheerio. `parse.js` (profile/search parsers + helpers), `eligibility.js`
+  (pure 3-state classifier), `client.js` (throttled+retrying `TransfermarktClient`, injectable `fetchImpl` for tests),
+  `__fixtures__/` (real saved TM pages). _Remaining: discovery of candidate list → enrich → DB upsert._
 - `scrapers/sofascore/` — **Playwright** (per-match ratings & minutes); `verify.js` is the working proof
 - `db/` — SQLite via `better-sqlite3`: `schema.sql`, `index.js` (`getDb`/`initSchema`, in-memory via `:memory:`),
   `leagues.js` (16-division data), `seed.js` (idempotent). `rating/` _(Phase 4)_ · `etl/` _(Phase 5)_ · `web/` Astro _(Phase 6)_
@@ -69,6 +70,6 @@ Status line below. Keep it current so it stays trustworthy; don't let it drift f
 
 Phase 0 (SofaScore access) ✅ · Phase 1 (schema + 16-league seed) ✅ · Phase 2 (TM profile parser + eligibility
 classifier, real fixtures) 🚧 in progress. 33 tests. Tooling: ESLint, Prettier, Husky, Vitest.
-**Next in Phase 2:** a throttled TM client (search + profile fetch), discovery of the Moroccan-eligible candidate
-list, then enrich → upsert into `players`/`clubs`. Key TM parsing facts: youth level is inside the nat-team
-content ("France U21"); caps from "Caps/Goals:"; citizenships from flag `title` attrs.
+**Next in Phase 2:** discovery of the Moroccan-eligible candidate list (probe TM nationality-list source), then
+enrich via `TransfermarktClient` → upsert into `players`/`clubs`. Key TM parsing facts: youth level is inside the
+nat-team content ("France U21"); caps from "Caps/Goals:"; citizenships from flag `title` attrs.
