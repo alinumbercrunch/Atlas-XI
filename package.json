@@ -10,6 +10,7 @@
     "tm:discover": "node scrapers/transfermarkt/run.js",
     "sofa:stats": "node scrapers/sofascore/run.js",
     "rate": "node rating/run.js",
+    "etl": "node etl/run.js",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",

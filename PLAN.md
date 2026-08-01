@@ -218,7 +218,9 @@ DB / API at build time (fast static pages) with islands for the interactive filt
       minutes-weighted league coefficient; Best XI via optimal max-weight assignment). `rating/run.js`
       (`npm run rate`): maps matches→leagues, computes `player_scores`, builds Best XI. **Cups excluded (league only).**
       Min-minutes gate 450. Verified live (Bilal Nadir 5.683). 19 new tests (72 total).
-- [ ] **Phase 5 — ETL orchestration.** One re-runnable refresh command; idempotent upserts; rate-limiting; logging.
+- [x] **Phase 5 — ETL orchestration. ✅ DONE.** `etl/run.js` (`npm run etl`): chains discover → stats → rate on one
+      DB connection, idempotent, per-stage timing + summary, `STAGES`/`MAXPAGES`/`*_LIMIT` env bounds, injectable
+      stages for tests. Verified live full-chain. 3 new tests (75 total).
 - [ ] **Phase 6 — API + Astro frontend.** Endpoints + the two UI views (Best XI, Browse & rank).
 
 ## 7. Immediate next step

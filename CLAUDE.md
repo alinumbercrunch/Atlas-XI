@@ -24,7 +24,8 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
   `leagues.js` (16-division data + SofaScore tournament ids), `seed.js` (idempotent).
 - `rating/` — `score.js` (pure fair-score math + Best XI assignment), `run.js` (`npm run rate`: map matches→leagues,
   compute `player_scores`, Best XI). Cups excluded (league matches only); min-minutes gate 450.
-- `etl/` _(Phase 5)_ · `web/` Astro _(Phase 6)_
+- `etl/` — `run.js` (`npm run etl`): chains discover → stats → rate on one DB, idempotent, injectable stages.
+- `web/` Astro _(Phase 6)_
 - SQLite data is regenerable by the scrapers → **git-ignored** (`*.sqlite`, `data/`).
 
 ## Commands
@@ -74,9 +75,10 @@ Status line below. Keep it current so it stays trustworthy; don't let it drift f
 
 ## Status
 
-Phases 0–4 ✅: SofaScore access · schema + seed · TM discovery+eligibility · SofaScore stats · rating engine + Best XI
-(all live end-to-end into SQLite). 72 tests. Tooling: ESLint, Prettier, Husky, Vitest.
-**Populate order:** `npm run tm:discover` → `npm run sofa:stats` → `npm run rate`.
-**Next: Phase 5 (ETL)** — one re-runnable refresh chaining the three, with logging/rate-limits; then Phase 6 (API + Astro).
+Phases 0–5 ✅: SofaScore access · schema+seed · TM discovery+eligibility · SofaScore stats · rating engine+Best XI ·
+ETL orchestration (all live end-to-end into SQLite). 75 tests. Tooling: ESLint, Prettier, Husky, Vitest.
+**Populate everything:** `npm run etl` (or stages individually: `tm:discover` → `sofa:stats` → `rate`).
+**Next: Phase 6 — API + Astro frontend** (the two views: Best XI, Browse & rank). Add eslint-plugin-astro +
+prettier-plugin-astro when web/ is scaffolded.
 Facts: TM Morocco list = land_id=107; SofaScore stats = rating/minutesPlayed/goals/goalAssist; season "25/26";
 SofaScore tournament ids seeded in leagues; cups excluded from ratings; Best XI min-minutes gate 450.
