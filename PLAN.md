@@ -221,7 +221,11 @@ DB / API at build time (fast static pages) with islands for the interactive filt
 - [x] **Phase 5 — ETL orchestration. ✅ DONE.** `etl/run.js` (`npm run etl`): chains discover → stats → rate on one
       DB connection, idempotent, per-stage timing + summary, `STAGES`/`MAXPAGES`/`*_LIMIT` env bounds, injectable
       stages for tests. Verified live full-chain. 3 new tests (75 total).
-- [ ] **Phase 6 — API + Astro frontend.** Endpoints + the two UI views (Best XI, Browse & rank).
+- [x] **Phase 6 — Astro frontend. ✅ DONE.** `web/` Astro static site reading the SQLite DB at build time:
+      `src/lib/queries.js` (injectable-db query layer, reuses `selectBestXI`), Best XI pitch (`index.astro`) +
+      Browse & rank with client-side league/position filters (`browse.astro`), Morocco-themed light/dark layout.
+      `npm run web:build` / `web:dev`. eslint-plugin-astro + prettier-plugin-astro wired in. 5 query tests (80 total).
+      Verified: builds + renders real data. (SSR API endpoints can be added later if live data is needed.)
 
 ## 7. Immediate next step
 

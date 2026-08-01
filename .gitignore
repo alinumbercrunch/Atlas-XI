@@ -4,6 +4,10 @@ node_modules/
 # Test coverage
 coverage/
 
+# Astro build output & cache
+web/dist/
+web/.astro/
+
 # Local data (regenerable by the scrapers)
 data/
 *.sqlite

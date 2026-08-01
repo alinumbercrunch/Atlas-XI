@@ -1,0 +1,154 @@
+---
+const { title = "Atlas XI" } = Astro.props;
+const path = Astro.url.pathname;
+const nav = [
+  { href: "/", label: "Best XI" },
+  { href: "/browse", label: "Browse & rank" },
+];
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>{title} · Atlas XI</title>
+    <meta
+      name="description"
+      content="Scouting the Morocco national team: eligible, not-yet-cap-tied players ranked by a fair, league-adjusted rating."
+    />
+  </head>
+  <body>
+    <header class="site">
+      <a class="brand" href="/">
+        <span class="star">★</span> Atlas XI
+      </a>
+      <nav>
+        {
+          nav.map((n) => (
+            <a href={n.href} class={path === n.href ? "active" : ""}>
+              {n.label}
+            </a>
+          ))
+        }
+      </nav>
+    </header>
+    <main>
+      <slot />
+    </main>
+    <footer>
+      Atlas XI — Moroccan-eligible, uncapped players, ranked by a minutes-weighted, league-adjusted
+      fair rating. Data: Transfermarkt (eligibility) · SofaScore (stats).
+    </footer>
+
+    <style is:global>
+      :root {
+        --red: #c1272d;
+        --green: #006233;
+        --bg: #f7f7f5;
+        --card: #ffffff;
+        --text: #16181d;
+        --muted: #6b7280;
+        --border: #e6e6e3;
+        --shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+      }
+      @media (prefers-color-scheme: dark) {
+        :root {
+          --bg: #0f1115;
+          --card: #171a21;
+          --text: #e8eaed;
+          --muted: #9aa0aa;
+          --border: #262a33;
+          --shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+        }
+      }
+      * {
+        box-sizing: border-box;
+      }
+      body {
+        margin: 0;
+        font-family:
+          system-ui,
+          -apple-system,
+          Segoe UI,
+          Roboto,
+          sans-serif;
+        background: var(--bg);
+        color: var(--text);
+        line-height: 1.5;
+      }
+      .site {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 1rem;
+        padding: 0.9rem 1.25rem;
+        background: var(--card);
+        border-bottom: 3px solid var(--red);
+        position: sticky;
+        top: 0;
+        z-index: 10;
+      }
+      .brand {
+        font-weight: 800;
+        font-size: 1.2rem;
+        color: var(--text);
+        text-decoration: none;
+        letter-spacing: -0.02em;
+      }
+      .brand .star {
+        color: var(--green);
+      }
+      nav {
+        display: flex;
+        gap: 0.35rem;
+      }
+      nav a {
+        padding: 0.4rem 0.8rem;
+        border-radius: 999px;
+        color: var(--muted);
+        text-decoration: none;
+        font-weight: 600;
+        font-size: 0.92rem;
+      }
+      nav a.active {
+        background: var(--red);
+        color: #fff;
+      }
+      main {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem 3rem;
+      }
+      footer {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding: 1.5rem 1.25rem 3rem;
+        color: var(--muted);
+        font-size: 0.85rem;
+      }
+      h1 {
+        font-size: 1.7rem;
+        letter-spacing: -0.02em;
+        margin: 0 0 0.25rem;
+      }
+      .lede {
+        color: var(--muted);
+        margin: 0 0 1.5rem;
+      }
+      .empty {
+        background: var(--card);
+        border: 1px dashed var(--border);
+        border-radius: 12px;
+        padding: 1.5rem;
+        color: var(--muted);
+      }
+      code {
+        background: var(--border);
+        padding: 0.1rem 0.35rem;
+        border-radius: 5px;
+        font-size: 0.85em;
+      }
+    </style>
+  </body>
+</html>

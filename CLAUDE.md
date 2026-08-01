@@ -25,7 +25,9 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
 - `rating/` — `score.js` (pure fair-score math + Best XI assignment), `run.js` (`npm run rate`: map matches→leagues,
   compute `player_scores`, Best XI). Cups excluded (league matches only); min-minutes gate 450.
 - `etl/` — `run.js` (`npm run etl`): chains discover → stats → rate on one DB, idempotent, injectable stages.
-- `web/` Astro _(Phase 6)_
+- `web/` — Astro static site reading SQLite at build time. `src/lib/db.js` (opens DB read-only), `queries.js`
+  (injectable-db query layer, reuses `rating/score.js`), `pages/index.astro` (Best XI pitch), `pages/browse.astro`
+  (rank + client-side filters). `npm run web:dev` / `web:build` (`astro … --root web`).
 - SQLite data is regenerable by the scrapers → **git-ignored** (`*.sqlite`, `data/`).
 
 ## Commands
@@ -65,8 +67,8 @@ npm run format      # Prettier    (npm run format:check to verify)
   pre-commit** runs lint-staged, so keep committed code clean or the hook will reformat/block it.
 - **Never commit** `node_modules/` or `*.sqlite` (already git-ignored — keep it that way).
 - Commit trailer: `Co-Authored-By: Claude Opus 4.8 (1M context) <noreply@anthropic.com>`.
-- **Astro tooling** (`eslint-plugin-astro`, `prettier-plugin-astro`) is intentionally deferred to Phase 6 —
-  don't add it before the frontend exists (marker in `eslint.config.mjs`).
+- **Astro** lives in `web/` (ESM); eslint-plugin-astro + prettier-plugin-astro are wired in. `web/**/*.js` is ESM
+  (own eslint block); repo root stays CommonJS. `web/dist` + `web/.astro` are git-ignored.
 
 ## Maintenance
 
@@ -75,10 +77,10 @@ Status line below. Keep it current so it stays trustworthy; don't let it drift f
 
 ## Status
 
-Phases 0–5 ✅: SofaScore access · schema+seed · TM discovery+eligibility · SofaScore stats · rating engine+Best XI ·
-ETL orchestration (all live end-to-end into SQLite). 75 tests. Tooling: ESLint, Prettier, Husky, Vitest.
-**Populate everything:** `npm run etl` (or stages individually: `tm:discover` → `sofa:stats` → `rate`).
-**Next: Phase 6 — API + Astro frontend** (the two views: Best XI, Browse & rank). Add eslint-plugin-astro +
-prettier-plugin-astro when web/ is scaffolded.
+**All 6 phases ✅** — SofaScore access · schema+seed · TM discovery+eligibility · SofaScore stats · rating engine+Best XI ·
+ETL orchestration · Astro frontend (Best XI + Browse). 80 tests. Tooling: ESLint, Prettier, Husky, Vitest.
+**Run it:** `npm run etl` (populate) → `npm run web:build` (or `web:dev`) to see the site.
+**v1 is feature-complete.** Likely next work: a full data populate (long scrape), tuning coefficients/baseline/K,
+club→league mapping, SSR API endpoints if live data is wanted, deploy.
 Facts: TM Morocco list = land_id=107; SofaScore stats = rating/minutesPlayed/goals/goalAssist; season "25/26";
 SofaScore tournament ids seeded in leagues; cups excluded from ratings; Best XI min-minutes gate 450.

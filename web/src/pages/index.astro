@@ -1,0 +1,129 @@
+---
+import Base from "../layouts/Base.astro";
+import { db } from "../lib/db.js";
+import { getBestXI, getSummary } from "../lib/queries.js";
+
+const MIN_MINUTES = 450;
+const summary = getSummary(db);
+const { xi, filled } = getBestXI(db, { minMinutes: MIN_MINUTES });
+
+// Group the flat slot list into pitch lines (back to front).
+const bySlot = (slot) => xi.filter((s) => s.slot === slot);
+const lines = [
+  [...bySlot("ST"), ...bySlot("W")].length ? [bySlot("W")[0], bySlot("ST")[0], bySlot("W")[1]] : [],
+  bySlot("MID"),
+  [...bySlot("CB"), ...bySlot("FB")],
+  bySlot("GK"),
+].filter((l) => l.length);
+---
+
+<Base title="Best XI">
+  <h1>The Atlas XI</h1>
+  <p class="lede">
+    The strongest eleven of Moroccan-eligible, <strong>uncapped</strong> players — auto-picked by fair
+    rating into a 4-3-3. Minimum {MIN_MINUTES} league minutes to qualify.
+  </p>
+
+  {
+    filled === 0 ? (
+      <div class="empty">
+        No rated eligible players yet. Populate the database with <code>npm run etl</code>, then
+        rebuild. ({summary.eligible} eligible · {summary.scored} scored)
+      </div>
+    ) : (
+      <>
+        <div class="pitch">
+          {lines.map((line) => (
+            <div class="line">
+              {line.map((s) => (
+                <div class={`slot ${s && s.player ? "" : "empty-slot"}`}>
+                  {s && s.player ? (
+                    <>
+                      <span class="pos">{s.slot}</span>
+                      <span class="name">{s.player.name}</span>
+                      <span class="score">{s.player.score.toFixed(2)}</span>
+                      <span class="club">{s.player.club ?? ""}</span>
+                    </>
+                  ) : (
+                    <span class="pos">{s ? s.slot : ""}</span>
+                  )}
+                </div>
+              ))}
+            </div>
+          ))}
+        </div>
+        <p class="note">
+          {filled}/11 slots filled · {summary.eligible} eligible players in pool. Score =
+          minutes-weighted rating, shrunk toward baseline, times league strength.
+        </p>
+      </>
+    )
+  }
+
+  <style>
+    .pitch {
+      background: linear-gradient(180deg, #0a7a42, #006233);
+      border: 1px solid rgba(0, 0, 0, 0.2);
+      border-radius: 16px;
+      padding: 2rem 1rem;
+      display: flex;
+      flex-direction: column;
+      gap: 1.75rem;
+      box-shadow: var(--shadow);
+    }
+    .line {
+      display: flex;
+      justify-content: space-around;
+      gap: 0.75rem;
+    }
+    .slot {
+      background: rgba(255, 255, 255, 0.96);
+      color: #16181d;
+      border-radius: 12px;
+      padding: 0.6rem 0.5rem;
+      width: 130px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+    }
+    .slot.empty-slot {
+      background: rgba(255, 255, 255, 0.18);
+      color: rgba(255, 255, 255, 0.8);
+      border: 1px dashed rgba(255, 255, 255, 0.5);
+      min-height: 84px;
+      justify-content: center;
+    }
+    .pos {
+      font-size: 0.7rem;
+      font-weight: 800;
+      color: var(--red);
+      letter-spacing: 0.03em;
+    }
+    .slot .name {
+      font-weight: 700;
+      font-size: 0.9rem;
+      margin-top: 0.15rem;
+    }
+    .slot .score {
+      font-weight: 800;
+      color: var(--green);
+      font-size: 1.05rem;
+    }
+    .slot .club {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .note {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin-top: 1rem;
+    }
+    @media (max-width: 640px) {
+      .slot {
+        width: 92px;
+      }
+    }
+  </style>
+</Base>

@@ -1,14 +1,22 @@
 import js from "@eslint/js";
 import prettier from "eslint-config-prettier";
+import eslintPluginAstro from "eslint-plugin-astro";
 import globals from "globals";
 
-// Flat config. Scrapers/ETL are CommonJS Node scripts today; some run code inside
-// Playwright's browser context (page.evaluate), so we allow browser globals too.
-// NOTE (Phase 6): when the Astro frontend lands under web/, add eslint-plugin-astro
-// and a dedicated config block for *.astro / ESM files.
+// Flat config. Scrapers/ETL are CommonJS Node scripts; the Astro frontend under
+// web/ is ESM (+ .astro). Some code runs inside a browser context (Playwright
+// page.evaluate, Astro client scripts), so browser globals are allowed there.
 export default [
   {
-    ignores: ["node_modules/", "data/", "coverage/", ".husky/", "**/*.min.js"],
+    ignores: [
+      "node_modules/",
+      "data/",
+      "coverage/",
+      ".husky/",
+      "web/dist/",
+      "web/.astro/",
+      "**/*.min.js",
+    ],
   },
   js.configs.recommended,
   {
@@ -35,6 +43,15 @@ export default [
     },
   },
   {
+    // Astro frontend source (web/) is ESM. queries.js/db.js use import/export.
+    files: ["web/**/*.js"],
+    languageOptions: {
+      ecmaVersion: "latest",
+      sourceType: "module",
+      globals: { ...globals.node },
+    },
+  },
+  {
     // Vitest tests: ESM, run through Vite; globals enabled in vitest.config.mjs.
     files: ["**/*.{test,spec}.{js,mjs}"],
     languageOptions: {
@@ -53,5 +70,6 @@ export default [
       },
     },
   },
+  ...eslintPluginAstro.configs.recommended,
   prettier,
 ];
