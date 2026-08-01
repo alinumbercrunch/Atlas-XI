@@ -203,6 +203,11 @@ DB / API at build time (fast static pages) with islands for the interactive filt
 - [ ] **Phase 2 — Transfermarkt discovery + eligibility.** Targeted Morocco-nationality lists → enrich profiles
       (caps split A vs youth, citizenship, position, market value); set `eligibility_status`
       (eligible / review / excluded); apply `overrides`.
+- [x] **Phase 2 — Transfermarkt discovery + eligibility. ✅ DONE.** `parse.js` (profile/search parsers),
+      `eligibility.js` (pure 3-state classifier), `client.js` (throttled `TransfermarktClient`),
+      `discover.js` (paginate the Morocco most-valuable list, land_id=107, ~500 players incl. dual-nationals),
+      `ingest.js` (upsert players + find-or-create clubs), `run.js` (`npm run tm:discover`, honors overrides).
+      Verified live end-to-end into SQLite. 33 new tests (48 total).
 - [ ] **Phase 3 — SofaScore stats (Playwright).** Map eligible players to SofaScore IDs; pull per-match rating & minutes.
 - [ ] **Phase 4 — Rating engine.** Implement the fair score + Best XI selection; compute `player_scores`.
 - [ ] **Phase 5 — ETL orchestration.** One re-runnable refresh command; idempotent upserts; rate-limiting; logging.

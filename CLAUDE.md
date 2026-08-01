@@ -13,9 +13,10 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
 
 - **Node.js, CommonJS** (`require` / `module.exports`) — not ESM yet. Config files are `.mjs`.
 - `lib/` — shared HTTP + HTML helpers (`fetchWithHeaders.js`, `parseHtml.js`)
-- `scrapers/transfermarkt/` — fetch + cheerio. `parse.js` (profile/search parsers + helpers), `eligibility.js`
-  (pure 3-state classifier), `client.js` (throttled+retrying `TransfermarktClient`, injectable `fetchImpl` for tests),
-  `__fixtures__/` (real saved TM pages). _Remaining: discovery of candidate list → enrich → DB upsert._
+- `scrapers/transfermarkt/` — fetch + cheerio. `parse.js` (profile/search parsers), `eligibility.js` (pure 3-state
+  classifier), `client.js` (throttled `TransfermarktClient`, injectable `fetchImpl`), `discover.js` (paginate Morocco
+  most-valuable list, land_id=107), `ingest.js` (upsert players + clubs), `run.js` (orchestrator, `npm run tm:discover`),
+  `__fixtures__/` (real saved TM pages).
 - `scrapers/sofascore/` — **Playwright** (per-match ratings & minutes); `verify.js` is the working proof
 - `db/` — SQLite via `better-sqlite3`: `schema.sql`, `index.js` (`getDb`/`initSchema`, in-memory via `:memory:`),
   `leagues.js` (16-division data), `seed.js` (idempotent). `rating/` _(Phase 4)_ · `etl/` _(Phase 5)_ · `web/` Astro _(Phase 6)_
@@ -68,8 +69,9 @@ Status line below. Keep it current so it stays trustworthy; don't let it drift f
 
 ## Status
 
-Phase 0 (SofaScore access) ✅ · Phase 1 (schema + 16-league seed) ✅ · Phase 2 (TM profile parser + eligibility
-classifier, real fixtures) 🚧 in progress. 33 tests. Tooling: ESLint, Prettier, Husky, Vitest.
-**Next in Phase 2:** discovery of the Moroccan-eligible candidate list (probe TM nationality-list source), then
-enrich via `TransfermarktClient` → upsert into `players`/`clubs`. Key TM parsing facts: youth level is inside the
-nat-team content ("France U21"); caps from "Caps/Goals:"; citizenships from flag `title` attrs.
+Phase 0 (SofaScore access) ✅ · Phase 1 (schema + 16-league seed) ✅ · Phase 2 (TM discovery + eligibility, live
+end-to-end into SQLite) ✅. 48 tests. Tooling: ESLint, Prettier, Husky, Vitest.
+**Next: Phase 3** — SofaScore stats via Playwright: map eligible players to SofaScore ids (`/search/all?q=`), pull
+per-match rating + minutes into `player_match_stats`. Run `npm run tm:discover` first to populate the player pool.
+TM parsing facts: youth level is inside the nat-team content ("France U21"); caps from "Caps/Goals:"; citizenships
+from flag `title` attrs; Morocco discovery list is land_id=107.

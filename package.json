@@ -7,6 +7,7 @@
   "scripts": {
     "verify:sofascore": "node scrapers/sofascore/verify.js",
     "db:seed": "node db/seed.js",
+    "tm:discover": "node scrapers/transfermarkt/run.js",
     "test": "vitest run",
     "test:watch": "vitest",
     "test:coverage": "vitest run --coverage",

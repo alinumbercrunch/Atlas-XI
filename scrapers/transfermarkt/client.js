@@ -60,6 +60,13 @@ class TransfermarktClient {
     return { ...profile, tmId: String(tmId), slug: slug || null };
   }
 
+  // Fetch one page of the "most valuable players" list for a nationality (raw HTML).
+  async listMostValuable(landId, page = 1) {
+    if (!landId) throw new Error("listMostValuable requires a landId");
+    const url = `${this.base}/spieler-statistik/wertvollstespieler/marktwertetop?land_id=${landId}&page=${page}`;
+    return this._get(url);
+  }
+
   // Convenience: search by name and enrich the top result. Returns null if none.
   async findPlayer(name) {
     const results = await this.search(name);
