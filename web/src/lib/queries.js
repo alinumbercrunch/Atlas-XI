@@ -33,11 +33,15 @@ export function getBrowsePlayers(db, { season = SEASON } = {}) {
               p.market_value AS marketValue, p.citizenships, p.sofascore_id AS sofascoreId,
               ps.score, ps.minutes, ps.matches_count AS matches, ps.wavg_rating AS wavg,
               c.name AS club,
-              (SELECT l.id FROM player_match_stats s
-                 JOIN matches m ON m.id = s.match_id
-                 JOIN leagues l ON l.id = m.league_id
-                WHERE s.player_id = p.id
-                GROUP BY l.id ORDER BY SUM(s.minutes) DESC LIMIT 1) AS leagueId
+              -- Prefer the current club's league; fall back to where he played most.
+              COALESCE(
+                c.league_id,
+                (SELECT l.id FROM player_match_stats s
+                   JOIN matches m ON m.id = s.match_id
+                   JOIN leagues l ON l.id = m.league_id
+                  WHERE s.player_id = p.id
+                  GROUP BY l.id ORDER BY SUM(s.minutes) DESC LIMIT 1)
+              ) AS leagueId
        FROM players p
        JOIN player_scores ps ON ps.player_id = p.id AND ps.season_id = ?
        LEFT JOIN clubs c ON c.id = p.club_id

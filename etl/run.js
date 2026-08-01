@@ -51,6 +51,7 @@ async function runEtl(opts = {}) {
   if (stages.includes("rate")) {
     await time("rate", () => {
       rating.resolveMatchLeagues(db);
+      rating.resolveClubLeagues(db);
       const scored = rating.computeAllScores(db);
       const bestXi = rating.persistBestXI(db);
       return { scored, bestXi };

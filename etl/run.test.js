@@ -16,6 +16,7 @@ function makeDeps(calls) {
     },
     rating: {
       resolveMatchLeagues: () => calls.push("resolve"),
+      resolveClubLeagues: () => calls.push("clubleagues"),
       computeAllScores: () => {
         calls.push("compute");
         return 0;
@@ -41,7 +42,15 @@ describe("runEtl", () => {
     const calls = [];
     const db = initSchema(getDb(":memory:"));
     const summary = await runEtl({ db, deps: makeDeps(calls) });
-    expect(calls).toEqual(["discover", "stats", "resolve", "compute", "persist", "images"]);
+    expect(calls).toEqual([
+      "discover",
+      "stats",
+      "resolve",
+      "clubleagues",
+      "compute",
+      "persist",
+      "images",
+    ]);
     expect(summary.stages.discover).toBeTruthy();
     expect(summary.bestXiFilled).toBe(0);
     db.close();
@@ -51,7 +60,7 @@ describe("runEtl", () => {
     const calls = [];
     const db = initSchema(getDb(":memory:"));
     await runEtl({ db, stages: ["rate"], deps: makeDeps(calls) });
-    expect(calls).toEqual(["resolve", "compute", "persist"]);
+    expect(calls).toEqual(["resolve", "clubleagues", "compute", "persist"]);
     db.close();
   });
 

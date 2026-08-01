@@ -23,6 +23,21 @@ function resolveMatchLeagues(db) {
   return info.changes;
 }
 
+// Assign each club its league, inferred from the matches it appears in (a club plays
+// in exactly one league, so the most common league among its matches is that league).
+// Lets the frontend label a player by his current club's league.
+function resolveClubLeagues(db) {
+  return db
+    .prepare(
+      `UPDATE clubs SET league_id = (
+         SELECT m.league_id FROM matches m
+         WHERE (m.home_club_id = clubs.id OR m.away_club_id = clubs.id) AND m.league_id IS NOT NULL
+         GROUP BY m.league_id ORDER BY COUNT(*) DESC LIMIT 1
+       )`,
+    )
+    .run().changes;
+}
+
 // Compute + upsert player_scores for every player that has league match stats.
 function computeAllScores(db, seasonId = SEASON_ID) {
   const matchesFor = db.prepare(
@@ -103,6 +118,7 @@ function run() {
   const db = initSchema(getDb());
   seed(db);
   resolveMatchLeagues(db);
+  resolveClubLeagues(db);
   const inLeague = db.prepare("SELECT COUNT(*) n FROM matches WHERE league_id IS NOT NULL").get().n;
   const cups = db.prepare("SELECT COUNT(*) n FROM matches WHERE league_id IS NULL").get().n;
   const scored = computeAllScores(db);
@@ -136,6 +152,12 @@ function run() {
   db.close();
 }
 
-module.exports = { resolveMatchLeagues, computeAllScores, buildBestXI, persistBestXI };
+module.exports = {
+  resolveMatchLeagues,
+  resolveClubLeagues,
+  computeAllScores,
+  buildBestXI,
+  persistBestXI,
+};
 
 if (require.main === module) run();
