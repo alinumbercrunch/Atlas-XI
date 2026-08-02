@@ -4,6 +4,7 @@ const path = Astro.url.pathname;
 const nav = [
   { href: "/", label: "Best XI" },
   { href: "/browse", label: "Browse & rank" },
+  { href: "/about", label: "How it works" },
 ];
 ---
 
@@ -136,6 +137,14 @@ const nav = [
         color: var(--muted);
         margin: 0 0 1.5rem;
       }
+      main p a {
+        color: var(--red);
+        text-decoration: none;
+        font-weight: 700;
+      }
+      main p a:hover {
+        text-decoration: underline;
+      }
       .empty {
         background: var(--card);
         border: 1px dashed var(--border);
@@ -148,6 +157,78 @@ const nav = [
         padding: 0.1rem 0.35rem;
         border-radius: 5px;
         font-size: 0.85em;
+      }
+
+      /* Reusable info tooltip: <span class="info" tabindex="0" data-tip="…">i</span> */
+      .info {
+        position: relative;
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        width: 15px;
+        height: 15px;
+        border-radius: 50%;
+        border: 1px solid var(--muted);
+        color: var(--muted);
+        font-size: 10px;
+        font-weight: 700;
+        font-style: italic;
+        cursor: help;
+        margin-left: 4px;
+        vertical-align: middle;
+        user-select: none;
+      }
+      .info::after {
+        content: attr(data-tip);
+        position: absolute;
+        bottom: 150%;
+        left: 50%;
+        transform: translateX(-50%);
+        background: var(--text);
+        color: var(--bg);
+        padding: 0.5rem 0.65rem;
+        border-radius: 8px;
+        font-size: 0.75rem;
+        font-weight: 500;
+        font-style: normal;
+        line-height: 1.4;
+        letter-spacing: 0;
+        width: max-content;
+        max-width: 240px;
+        text-align: left;
+        white-space: normal;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.12s ease;
+        z-index: 30;
+        box-shadow: 0 6px 18px rgba(0, 0, 0, 0.28);
+        text-transform: none;
+      }
+      .info:hover::after,
+      .info:focus::after {
+        opacity: 1;
+      }
+
+      /* Stat row used on the landing hero */
+      .stats {
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        margin: 1.1rem 0 0.5rem;
+      }
+      .stat {
+        background: var(--card);
+        border: 1px solid var(--border);
+        border-radius: 10px;
+        padding: 0.5rem 0.85rem;
+      }
+      .stat b {
+        font-size: 1.15rem;
+      }
+      .stat span {
+        color: var(--muted);
+        font-size: 0.8rem;
+        margin-left: 0.35rem;
       }
     </style>
   </body>

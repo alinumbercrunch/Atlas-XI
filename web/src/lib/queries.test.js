@@ -2,7 +2,14 @@ import { getDb, initSchema } from "../../../db/index.js";
 import { seed } from "../../../db/seed.js";
 import { upsertMatch, upsertPlayerMatchStat } from "../../../scrapers/sofascore/ingest.js";
 import { resolveMatchLeagues, computeAllScores, persistBestXI } from "../../../rating/run.js";
-import { getLeagues, getSummary, getBrowsePlayers, getBestXI } from "./queries.js";
+import {
+  getLeagues,
+  getSummary,
+  getBrowsePlayers,
+  getBestXI,
+  getPlayer,
+  getScoredPlayerIds,
+} from "./queries.js";
 
 // Build a small realistic DB: two eligible players with Premier League stats.
 function seededDb() {
@@ -70,9 +77,29 @@ describe("query layer", () => {
     db.close();
   });
 
+  it("getScoredPlayerIds lists rated players for static pages", () => {
+    const db = seededDb();
+    expect(getScoredPlayerIds(db).sort()).toEqual([1, 2]);
+    db.close();
+  });
+
+  it("getPlayer returns score components + a match log", () => {
+    const db = seededDb();
+    const p = getPlayer(db, 1);
+    expect(p.name).toBe("Striker One");
+    expect(p.leagueId).toBe("eng-1");
+    expect(p.wavg).toBeCloseTo(8, 5);
+    expect(p.coefficient).toBeCloseTo(1, 5); // Premier League
+    expect(p.matchLog.length).toBe(1);
+    expect(p.matchLog[0].league).toBe("Premier League");
+    db.close();
+  });
+
   it("guards a missing db", () => {
     expect(getLeagues(null)).toEqual([]);
     expect(getBestXI(null).filled).toBe(0);
     expect(getSummary(null).eligible).toBe(0);
+    expect(getPlayer(null, 1)).toBeNull();
+    expect(getScoredPlayerIds(null)).toEqual([]);
   });
 });

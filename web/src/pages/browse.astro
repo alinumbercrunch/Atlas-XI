@@ -58,12 +58,39 @@ const fmtMv = (v) => (v ? "€" + (v / 1_000_000).toFixed(1).replace(/\.0$/, "")
                 <th>Pos</th>
                 <th>League</th>
                 <th>Club</th>
-                <th class="num">Score</th>
-                <th class="num">Rating</th>
+                <th class="num">
+                  Score
+                  <span
+                    class="info"
+                    tabindex="0"
+                    data-tip="Our fair rating: match ratings weighted by minutes, pulled toward a baseline for small samples, then multiplied by league strength. This is what we rank by."
+                  >
+                    i
+                  </span>
+                </th>
+                <th class="num">
+                  Rating
+                  <span
+                    class="info"
+                    tabindex="0"
+                    data-tip="Raw average match rating, for reference. Score is this made comparable across leagues."
+                  >
+                    i
+                  </span>
+                </th>
                 <th class="num">Mins</th>
                 <th class="num">Apps</th>
                 <th class="num">Value</th>
-                <th>Status</th>
+                <th>
+                  Status
+                  <span
+                    class="info"
+                    tabindex="0"
+                    data-tip="eligible = 0 senior caps, free to recruit. review = has senior caps for another country but may still be switchable."
+                  >
+                    i
+                  </span>
+                </th>
               </tr>
             </thead>
             <tbody>
@@ -78,7 +105,9 @@ const fmtMv = (v) => (v ? "€" + (v / 1_000_000).toFixed(1).replace(/\.0$/, "")
                         <span class="mini mini--initials">{initials(p.name)}</span>
                       )}
                       <div>
-                        {p.name}
+                        <a class="plink" href={`/player/${p.id}`}>
+                          {p.name}
+                        </a>
                         <span class="cz">{(p.citizenships || []).join(" · ")}</span>
                       </div>
                     </div>
@@ -195,6 +224,14 @@ const fmtMv = (v) => (v ? "€" + (v / 1_000_000).toFixed(1).replace(/\.0$/, "")
     }
     .pname {
       font-weight: 700;
+    }
+    .plink {
+      color: var(--text);
+      text-decoration: none;
+    }
+    .plink:hover {
+      color: var(--red);
+      text-decoration: underline;
     }
     .pcell {
       display: flex;

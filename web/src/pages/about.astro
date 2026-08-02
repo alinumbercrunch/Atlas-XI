@@ -1,0 +1,219 @@
+---
+import Base from "../layouts/Base.astro";
+import { db } from "../lib/db.js";
+import { getLeagues, getSummary } from "../lib/queries.js";
+
+const leagues = getLeagues(db);
+const s = getSummary(db);
+---
+
+<Base title="How it works">
+  <h1>How Atlas XI works</h1>
+  <p class="lede">
+    Atlas XI scouts footballers who could still choose to play for <strong>Morocco</strong> — and ranks
+    them with a rating built to be fair across leagues. Here's what that means.
+  </p>
+
+  <section class="card">
+    <h2>Who's on this list</h2>
+    <p>
+      Every player here is <strong>eligible for Morocco but not yet tied to its senior team</strong
+      >. A player with two nationalities can freely choose a country — until he plays one
+      competitive match for a senior national team, which locks him to it for good (that appearance
+      is called a <em>cap</em>).
+    </p>
+    <ul class="statuses">
+      <li>
+        <span class="badge eligible">eligible</span> Moroccan by nationality or descent, with{" "}
+        <strong>0 senior caps</strong> — free to be recruited. Youth caps (U-17 → U-23) don't count, so
+        a player who's featured for a Morocco or another country's youth team is still here.
+      </li>
+      <li>
+        <span class="badge review">review</span> Moroccan-eligible but has already played a senior match
+        for{" "}
+        <strong>another country</strong>. Often still switchable (friendlies don't tie a player), so
+        we flag rather than hide them — worth a manual check.
+      </li>
+      <li>
+        <span class="badge excluded">excluded</span> Not shown: already a Morocco senior international
+        (job done), or committed elsewhere.
+      </li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>The fair score</h2>
+    <p>
+      A raw match rating (like SofaScore's) has two blind spots: it ignores <strong>how long</strong
+      > a player was on the pitch and <strong>how strong</strong> his league is. A striker who scores
+      in a 10-minute cameo can post an 8.0; a defender who's solid for 90 minutes gets a 7.0. The cameo
+      isn't better. Our score fixes that in three steps:
+    </p>
+    <ol class="steps">
+      <li><b>Weight by minutes.</b> A rating over 90 minutes counts far more than one over 10.</li>
+      <li>
+        <b>Trust the sample.</b> With few minutes played, the score is pulled toward an average baseline
+        — you have to earn the minutes before a big number sticks. This is what stops the cameo from topping
+        the list.
+      </li>
+      <li>
+        <b>Adjust for league strength.</b> The result is multiplied by a league coefficient, so a 7.0
+        in the Premier League outranks a 7.0 in a weaker division.
+      </li>
+    </ol>
+    <p class="egbox">
+      <b>Worked example.</b> An 8.0 across 50 minutes all season scores <b>6.82</b>; a 7.0 across
+      2700 minutes scores <b>6.95</b>. The steady starter correctly comes out on top.
+    </p>
+    <p class="fine">
+      Only <strong>league matches</strong> count (cups and internationals are excluded). A player needs{
+        " "
+      }
+      <strong>450+ league minutes</strong> to make the Best XI. Scores sit lower than raw ratings because
+      of the league multiplier and the pull toward baseline — that's expected, and it's what makes them
+      comparable.
+    </p>
+  </section>
+
+  <section class="card">
+    <h2>League strength</h2>
+    <p>Hand-set starting coefficients (1.00 = strongest). Every match is weighted by its league:</p>
+    <div class="coeffs">
+      {
+        leagues.map((l) => (
+          <div class="coeff">
+            <span>{l.name}</span>
+            <b>{l.coefficient.toFixed(2)}</b>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>Glossary</h2>
+    <dl>
+      <dt>Score</dt>
+      <dd>
+        Our fair rating: minutes-weighted, sample-adjusted, league-weighted. The number we rank by.
+      </dd>
+      <dt>Rating</dt>
+      <dd>
+        The raw average match rating, for reference. Score is Rating made comparable across leagues.
+      </dd>
+      <dt>Mins / Apps</dt>
+      <dd>
+        League minutes played and appearances this season — how large the sample behind the score
+        is.
+      </dd>
+      <dt>Positions</dt>
+      <dd>
+        GK goalkeeper · CB centre-back · FB full-back · DM/CM/AM midfield · W winger · ST striker.
+      </dd>
+    </dl>
+  </section>
+
+  <p class="src">
+    Covering {s.eligible} eligible players across {leagues.length} divisions. Data: Transfermarkt (eligibility)
+    · SofaScore (match ratings & minutes). Season 2025/26.
+  </p>
+
+  <style>
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    .card h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.15rem;
+    }
+    .card p {
+      margin: 0 0 0.7rem;
+    }
+    .statuses {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .statuses li {
+      font-size: 0.92rem;
+    }
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      text-transform: capitalize;
+      margin-right: 0.35rem;
+    }
+    .badge.eligible {
+      background: rgba(0, 98, 51, 0.15);
+      color: var(--green);
+    }
+    .badge.review {
+      background: rgba(193, 39, 45, 0.13);
+      color: var(--red);
+    }
+    .badge.excluded {
+      background: var(--border);
+      color: var(--muted);
+    }
+    .steps {
+      margin: 0 0 0.8rem;
+      padding-left: 1.2rem;
+    }
+    .steps li {
+      margin-bottom: 0.35rem;
+    }
+    .egbox {
+      background: rgba(0, 98, 51, 0.08);
+      border-left: 3px solid var(--green);
+      padding: 0.7rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.92rem;
+    }
+    .fine {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .coeffs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 0.4rem;
+    }
+    .coeff {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.35rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.88rem;
+    }
+    .coeff b {
+      color: var(--green);
+    }
+    dl {
+      margin: 0;
+    }
+    dt {
+      font-weight: 800;
+      margin-top: 0.6rem;
+    }
+    dd {
+      margin: 0.1rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .src {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+  </style>
+</Base>

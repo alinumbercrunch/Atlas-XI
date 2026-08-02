@@ -21,9 +21,15 @@ const lines = [
 <Base title="Best XI">
   <h1>The Atlas XI</h1>
   <p class="lede">
-    The strongest eleven of Moroccan-eligible, <strong>uncapped</strong> players — auto-picked by fair
-    rating into a 4-3-3. Minimum {MIN_MINUTES} league minutes to qualify.
+    The best footballers <strong>eligible for Morocco but not yet cap-tied</strong> — the ones the national
+    team could still recruit — auto-picked into a 4-3-3 by a fair, league-adjusted rating.
+    <a href="/about">How it works →</a>
   </p>
+  <div class="stats">
+    <div class="stat"><b>{summary.eligible}</b><span>eligible players</span></div>
+    <div class="stat"><b>{summary.scored}</b><span>rated this season</span></div>
+    <div class="stat"><b>16</b><span>leagues tracked</span></div>
+  </div>
 
   {
     filled === 0 ? (
@@ -36,35 +42,50 @@ const lines = [
         <div class="pitch">
           {lines.map((line) => (
             <div class="line">
-              {line.map((s) => (
-                <div class={`slot ${s && s.player ? "" : "empty-slot"}`}>
-                  {s && s.player ? (
-                    <>
-                      {playerImage(s.player.sofascoreId) ? (
-                        <img
-                          class="photo"
-                          src={playerImage(s.player.sofascoreId)}
-                          alt={s.player.name}
-                        />
-                      ) : (
-                        <span class="photo photo--initials">{initials(s.player.name)}</span>
-                      )}
-                      <span class="pos">{s.slot}</span>
-                      <span class="name">{s.player.name}</span>
-                      <span class="score">{s.player.score.toFixed(2)}</span>
-                      <span class="club">{s.player.club ?? ""}</span>
-                    </>
-                  ) : (
-                    <span class="pos">{s ? s.slot : ""}</span>
-                  )}
-                </div>
-              ))}
+              {line.map((s) => {
+                const filledSlot = s && s.player;
+                const Tag = filledSlot ? "a" : "div";
+                return (
+                  <Tag
+                    class={`slot ${filledSlot ? "" : "empty-slot"}`}
+                    href={filledSlot ? `/player/${s.player.id}` : undefined}
+                  >
+                    {filledSlot ? (
+                      <>
+                        {playerImage(s.player.sofascoreId) ? (
+                          <img
+                            class="photo"
+                            src={playerImage(s.player.sofascoreId)}
+                            alt={s.player.name}
+                          />
+                        ) : (
+                          <span class="photo photo--initials">{initials(s.player.name)}</span>
+                        )}
+                        <span class="pos">{s.slot}</span>
+                        <span class="name">{s.player.name}</span>
+                        <span class="score">{s.player.score.toFixed(2)}</span>
+                        <span class="club">{s.player.club ?? ""}</span>
+                      </>
+                    ) : (
+                      <span class="pos">{s ? s.slot : ""}</span>
+                    )}
+                  </Tag>
+                );
+              })}
             </div>
           ))}
         </div>
         <p class="note">
-          {filled}/11 slots filled · {summary.eligible} eligible players in pool. Score =
-          minutes-weighted rating, shrunk toward baseline, times league strength.
+          {filled}/11 slots filled · min {MIN_MINUTES} league minutes to qualify · tap a player for
+          his breakdown. Score
+          <span
+            class="info"
+            tabindex="0"
+            data-tip="A fair rating: each match rating weighted by minutes, pulled toward a baseline for small samples, then multiplied by league strength. See How it works."
+          >
+            i
+          </span>
+          — not the raw match rating.
         </p>
       </>
     )
@@ -97,6 +118,14 @@ const lines = [
       align-items: center;
       text-align: center;
       box-shadow: 0 2px 6px rgba(0, 0, 0, 0.25);
+      text-decoration: none;
+      transition:
+        transform 0.1s ease,
+        box-shadow 0.1s ease;
+    }
+    a.slot:hover {
+      transform: translateY(-3px);
+      box-shadow: 0 6px 16px rgba(0, 0, 0, 0.3);
     }
     .slot.empty-slot {
       background: rgba(255, 255, 255, 0.18);

@@ -77,6 +77,65 @@ export function getBestXI(db, { season = SEASON } = {}) {
   return { xi, filled: xi.filter((s) => s.player).length };
 }
 
+// Ids of every player who has a detail page (rated eligible/review players).
+export function getScoredPlayerIds(db, { season = SEASON } = {}) {
+  if (!db) return [];
+  return db
+    .prepare(
+      `SELECT p.id FROM players p
+       JOIN player_scores ps ON ps.player_id = p.id AND ps.season_id = ?
+       WHERE p.eligibility_status IN ('eligible', 'review') AND ps.score > 0`,
+    )
+    .all(season)
+    .map((r) => r.id);
+}
+
+// Full detail for one player: bio, score components, and a per-match breakdown
+// showing exactly how the fair score was built (league matches counted; cups shown
+// but excluded). Returns null if the player has no score.
+export function getPlayer(db, id, { season = SEASON } = {}) {
+  if (!db) return null;
+  const p = db
+    .prepare(
+      `SELECT p.id, p.name, p.primary_position AS position, p.eligibility_status AS status,
+              p.market_value AS marketValue, p.citizenships, p.senior_a_caps AS seniorCaps,
+              p.birthplace, p.sofascore_id AS sofascoreId,
+              c.name AS club,
+              COALESCE(
+                c.league_id,
+                (SELECT l.id FROM player_match_stats s
+                   JOIN matches m ON m.id = s.match_id
+                   JOIN leagues l ON l.id = m.league_id
+                  WHERE s.player_id = p.id
+                  GROUP BY l.id ORDER BY SUM(s.minutes) DESC LIMIT 1)
+              ) AS leagueId,
+              ps.score, ps.minutes, ps.matches_count AS matches,
+              ps.wavg_rating AS wavg, ps.shrunk_rating AS shrunk
+       FROM players p
+       LEFT JOIN clubs c ON c.id = p.club_id
+       JOIN player_scores ps ON ps.player_id = p.id AND ps.season_id = ?
+       WHERE p.id = ?`,
+    )
+    .get(season, id);
+  if (!p) return null;
+
+  p.citizenships = safeParse(p.citizenships);
+  // Effective (minutes-weighted) league coefficient, recovered from score / shrunk.
+  p.coefficient = p.shrunk ? p.score / p.shrunk : null;
+  p.matchLog = db
+    .prepare(
+      `SELECT m.match_date AS date, m.competition, l.name AS league, l.coefficient AS coeff,
+              s.rating, s.minutes, s.goals, s.assists
+       FROM player_match_stats s
+       JOIN matches m ON m.id = s.match_id
+       LEFT JOIN leagues l ON l.id = m.league_id
+       WHERE s.player_id = ?
+       ORDER BY m.match_date DESC`,
+    )
+    .all(id);
+  return p;
+}
+
 function safeParse(json) {
   try {
     return JSON.parse(json) || [];
