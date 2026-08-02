@@ -1,0 +1,177 @@
+---
+import Base from "../layouts/Base.astro";
+import { db } from "../lib/db.js";
+import { getLeagues, getSummary } from "../lib/queries.js";
+import { useT } from "../lib/i18n.js";
+
+const { lang = "en" } = Astro.props;
+const t = useT(lang);
+const leagues = getLeagues(db);
+const s = getSummary(db);
+---
+
+<Base title={t("nav_about")} lang={lang}>
+  <h1>{t("about_h1")}</h1>
+  <p class="lede" set:html={t("about_lede")} />
+
+  <section class="card">
+    <h2>{t("about_s1_h")}</h2>
+    <p set:html={t("about_s1_p")} />
+    <ul class="statuses">
+      <li>
+        <span class="badge eligible">{t("status_eligible")}</span>
+        <Fragment set:html={t("about_eligible")} />
+      </li>
+      <li>
+        <span class="badge review">{t("status_review")}</span>
+        <Fragment set:html={t("about_review")} />
+      </li>
+      <li>
+        <span class="badge excluded">{t("status_excluded")}</span>
+        <Fragment set:html={t("about_excluded")} />
+      </li>
+    </ul>
+  </section>
+
+  <section class="card">
+    <h2>{t("about_s2_h")}</h2>
+    <p set:html={t("about_s2_p")} />
+    <ol class="steps">
+      <li set:html={t("about_step1")} />
+      <li set:html={t("about_step2")} />
+      <li set:html={t("about_step3")} />
+    </ol>
+    <p class="egbox" set:html={t("about_example")} />
+    <p class="fine" set:html={t("about_fine")} />
+  </section>
+
+  <section class="card">
+    <h2>{t("about_s3_h")}</h2>
+    <p>{t("about_s3_p")}</p>
+    <div class="coeffs">
+      {
+        leagues.map((l) => (
+          <div class="coeff">
+            <span>{l.name}</span>
+            <b>{l.coefficient.toFixed(2)}</b>
+          </div>
+        ))
+      }
+    </div>
+  </section>
+
+  <section class="card">
+    <h2>{t("about_s4_h")}</h2>
+    <dl>
+      <dt>{t("gloss_score_t")}</dt>
+      <dd>{t("gloss_score_d")}</dd>
+      <dt>{t("gloss_rating_t")}</dt>
+      <dd>{t("gloss_rating_d")}</dd>
+      <dt>{t("gloss_mins_t")}</dt>
+      <dd>{t("gloss_mins_d")}</dd>
+      <dt>{t("gloss_pos_t")}</dt>
+      <dd>{t("gloss_pos_d")}</dd>
+    </dl>
+  </section>
+
+  <p class="src">{t("about_src", { eligible: s.eligible, leagues: leagues.length })}</p>
+
+  <style>
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.25rem 1.4rem;
+      margin-bottom: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    .card h2 {
+      margin: 0 0 0.6rem;
+      font-size: 1.15rem;
+    }
+    .card p {
+      margin: 0 0 0.7rem;
+    }
+    .statuses {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      flex-direction: column;
+      gap: 0.7rem;
+    }
+    .statuses li {
+      font-size: 0.92rem;
+    }
+    .badge {
+      font-size: 0.7rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      text-transform: capitalize;
+      margin-right: 0.35rem;
+    }
+    .badge.eligible {
+      background: rgba(0, 98, 51, 0.15);
+      color: var(--green);
+    }
+    .badge.review {
+      background: rgba(193, 39, 45, 0.13);
+      color: var(--red);
+    }
+    .badge.excluded {
+      background: var(--border);
+      color: var(--muted);
+    }
+    .steps {
+      margin: 0 0 0.8rem;
+      padding-left: 1.2rem;
+    }
+    .steps li {
+      margin-bottom: 0.35rem;
+    }
+    .egbox {
+      background: rgba(0, 98, 51, 0.08);
+      border-left: 3px solid var(--green);
+      padding: 0.7rem 0.9rem;
+      border-radius: 6px;
+      font-size: 0.92rem;
+    }
+    .fine {
+      color: var(--muted);
+      font-size: 0.85rem;
+    }
+    .coeffs {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(190px, 1fr));
+      gap: 0.4rem;
+    }
+    .coeff {
+      display: flex;
+      justify-content: space-between;
+      padding: 0.35rem 0.6rem;
+      border: 1px solid var(--border);
+      border-radius: 8px;
+      font-size: 0.88rem;
+    }
+    .coeff b {
+      color: var(--green);
+    }
+    dl {
+      margin: 0;
+    }
+    dt {
+      font-weight: 800;
+      margin-top: 0.6rem;
+    }
+    dd {
+      margin: 0.1rem 0 0;
+      color: var(--muted);
+      font-size: 0.92rem;
+    }
+    .src {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+  </style>
+</Base>

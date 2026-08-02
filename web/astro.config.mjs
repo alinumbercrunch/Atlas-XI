@@ -4,6 +4,11 @@ import { defineConfig } from "astro/config";
 // (kept external so the native module isn't bundled). fs.allow lets us import the
 // shared rating/ code and read ../data from the repo root.
 export default defineConfig({
+  i18n: {
+    locales: ["en", "fr"],
+    defaultLocale: "en",
+    routing: { prefixDefaultLocale: false }, // English at /, French at /fr/
+  },
   vite: {
     ssr: { external: ["better-sqlite3"] },
     server: { fs: { allow: [".."] } },

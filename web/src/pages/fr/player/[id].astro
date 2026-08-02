@@ -1,0 +1,11 @@
+---
+import PlayerDetailView from "../../../components/PlayerDetailView.astro";
+import { db } from "../../../lib/db.js";
+import { getScoredPlayerIds } from "../../../lib/queries.js";
+
+export function getStaticPaths() {
+  return getScoredPlayerIds(db).map((id) => ({ params: { id: String(id) } }));
+}
+---
+
+<PlayerDetailView lang="fr" id={Astro.params.id} />

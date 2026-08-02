@@ -1,47 +1,52 @@
 ---
-const { title = "Atlas XI" } = Astro.props;
-const path = Astro.url.pathname;
+import { useT, localePath } from "../lib/i18n.js";
+
+const { title = "Atlas XI", lang = "en" } = Astro.props;
+const t = useT(lang);
+
+// Normalize the current path and strip any /fr prefix to get the "bare" route.
+const norm = (p) => (p !== "/" && p.endsWith("/") ? p.slice(0, -1) : p);
+const current = norm(Astro.url.pathname);
+const bare = norm(current.replace(/^\/fr(?=\/|$)/, "")) || "/";
+
 const nav = [
-  { href: "/", label: "Best XI" },
-  { href: "/browse", label: "Browse & rank" },
-  { href: "/about", label: "How it works" },
+  { href: localePath(lang, "/"), bare: "/", label: t("nav_bestxi") },
+  { href: localePath(lang, "/browse"), bare: "/browse", label: t("nav_browse") },
+  { href: localePath(lang, "/about"), bare: "/about", label: t("nav_about") },
 ];
+
+const otherLang = lang === "fr" ? "en" : "fr";
+const otherHref = localePath(otherLang, bare);
 ---
 
 <!doctype html>
-<html lang="en">
+<html lang={lang}>
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
     <title>{title} · Atlas XI</title>
-    <meta
-      name="description"
-      content="Players eligible for the Morocco national team who haven't committed to a country yet, ranked by a fair, league-adjusted rating."
-    />
+    <meta name="description" content={t("meta_desc")} />
   </head>
   <body>
     <header class="site">
-      <a class="brand" href="/">
+      <a class="brand" href={localePath(lang, "/")}>
         <span class="star">★</span> Atlas XI
       </a>
       <nav>
         {
           nav.map((n) => (
-            <a href={n.href} class={path === n.href ? "active" : ""}>
+            <a href={n.href} class={n.bare === bare ? "active" : ""}>
               {n.label}
             </a>
           ))
         }
+        <a class="lang" href={otherHref} aria-label="Switch language">{otherLang.toUpperCase()}</a>
       </nav>
     </header>
     <main>
       <slot />
     </main>
-    <footer>
-      Atlas XI — players eligible for Morocco who haven't been called up yet, ranked by a
-      minutes-weighted, league-adjusted fair rating. Data: Transfermarkt (eligibility) · SofaScore
-      (stats).
-    </footer>
+    <footer>{t("footer")}</footer>
 
     <style is:global>
       :root {
@@ -116,6 +121,16 @@ const nav = [
       nav a.active {
         background: var(--red);
         color: #fff;
+      }
+      nav a.lang {
+        border: 1px solid var(--border);
+        color: var(--text);
+        font-size: 0.78rem;
+        padding: 0.35rem 0.55rem;
+      }
+      nav a.lang:hover {
+        border-color: var(--red);
+        color: var(--red);
       }
       main {
         max-width: 1100px;

@@ -26,11 +26,12 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
 - `rating/` — `score.js` (pure fair-score math + Best XI assignment), `run.js` (`npm run rate`: map matches→leagues,
   compute `player_scores`, Best XI). Cups excluded (league matches only); min-minutes gate 450.
 - `etl/` — `run.js` (`npm run etl`): chains discover → stats → rate on one DB, idempotent, injectable stages.
-- `web/` — Astro static site reading SQLite at build time. `src/lib/db.js` (read-only), `queries.js` (pure-SQL
-  query layer), `avatar.js` (photo/initials). Pages: `index.astro` (Best XI pitch, clickable cards), `browse.astro`
-  (rank + filters + header tooltips), `about.astro` (How it works: eligibility, fair score, coefficients, glossary),
-  `player/[id].astro` (per-player detail: eligibility + score breakdown + match log; `getStaticPaths` over scored
-  players). Reusable `.info` tooltip in Base. `npm run web:dev` / `web:build` (`astro … --root web`).
+- `web/` — Astro static site reading SQLite at build time. **Bilingual (EN at `/`, FR at `/fr/`)** via Astro i18n +
+  `src/lib/i18n.js` (string dictionary + `useT(lang)` + `localePath`); language toggle in Base. Page bodies live in
+  `src/components/*View.astro` (BestXI/Browse/About/PlayerDetail), each taking a `lang` prop; thin route wrappers in
+  `pages/` and `pages/fr/` (player routes keep `getStaticPaths`). `src/lib/db.js` (read-only), `queries.js` (pure-SQL,
+  incl. `getPlayer`/`getScoredPlayerIds`), `avatar.js`. Reusable `.info` tooltip in Base. `npm run web:dev` / `web:build`.
+  Note: player/club/country names come from the data (not translated); UI chrome is.
 - SQLite data is regenerable by the scrapers → **git-ignored** (`*.sqlite`, `data/`).
 
 ## Commands

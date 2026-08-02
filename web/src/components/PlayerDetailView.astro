@@ -1,0 +1,335 @@
+---
+import Base from "../layouts/Base.astro";
+import { db } from "../lib/db.js";
+import { getPlayer, getLeagues } from "../lib/queries.js";
+import { playerImage, initials } from "../lib/avatar.js";
+import { useT, localePath } from "../lib/i18n.js";
+
+const { lang = "en", id } = Astro.props;
+const t = useT(lang);
+
+const p = getPlayer(db, Number(id));
+const leagueName = Object.fromEntries(getLeagues(db).map((l) => [l.id, l.name]));
+const fmtMv = (v) => (v ? "€" + (v / 1_000_000).toFixed(1).replace(/\.0$/, "") + "m" : "—");
+const img = p ? playerImage(p.sofascoreId) : null;
+
+const elig =
+  p && p.status === "review"
+    ? t("elig_review", { n: p.seniorCaps, s: p.seniorCaps === 1 ? "" : "s" })
+    : t("elig_eligible");
+const leagueMatches = p ? p.matchLog.filter((m) => m.league) : [];
+const cupMatches = p ? p.matchLog.filter((m) => !m.league) : [];
+---
+
+<Base title={p ? p.name : t("nav_bestxi")} lang={lang}>
+  {
+    !p ? (
+      <div class="empty">{t("not_found")}</div>
+    ) : (
+      <>
+        <a class="back" href={localePath(lang, "/browse")}>
+          {t("back")}
+        </a>
+
+        <header class="phead">
+          {img ? (
+            <img class="pphoto" src={img} alt={p.name} />
+          ) : (
+            <span class="pphoto pphoto--initials">{initials(p.name)}</span>
+          )}
+          <div class="pmeta">
+            <h1>{p.name}</h1>
+            <div class="tags">
+              <span class="tag pos">{p.position ?? "—"}</span>
+              <span class="tag">{p.club ?? "—"}</span>
+              <span class="tag">{leagueName[p.leagueId] ?? "—"}</span>
+              <span class={`badge ${p.status}`}>{t(`status_${p.status}`)}</span>
+            </div>
+            <p class="bio">
+              {(p.citizenships || []).join(" · ")}
+              {p.birthplace ? ` · ${t("born")} ${p.birthplace}` : ""} · {t("value")}{" "}
+              {fmtMv(p.marketValue)}
+            </p>
+          </div>
+          <div class="bigscore">
+            <b>{p.score != null ? p.score.toFixed(2) : "—"}</b>
+            <span>{t("fair_score")}</span>
+          </div>
+        </header>
+
+        <section class="card">
+          <h2>{t("elig_h")}</h2>
+          <p>
+            <span class={`badge ${p.status}`}>{t(`status_${p.status}`)}</span> {elig}
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>
+            {t("build_h")}
+            <span class="info" tabindex="0" data-tip={t("build_tip")}>
+              i
+            </span>
+          </h2>
+          <div class="calc">
+            <div class="step">
+              <b>{p.wavg != null ? p.wavg.toFixed(2) : "—"}</b>
+              <span>{t("step_avg")}</span>
+            </div>
+            <div class="op">→</div>
+            <div class="step">
+              <b>{p.shrunk != null ? p.shrunk.toFixed(2) : "—"}</b>
+              <span>{t("step_adjusted", { min: p.minutes })}</span>
+            </div>
+            <div class="op">×</div>
+            <div class="step">
+              <b>{p.coefficient != null ? p.coefficient.toFixed(2) : "—"}</b>
+              <span>{t("step_league")}</span>
+            </div>
+            <div class="op">=</div>
+            <div class="step final">
+              <b>{p.score != null ? p.score.toFixed(2) : "—"}</b>
+              <span>{t("fair_score")}</span>
+            </div>
+          </div>
+          <p class="fine">
+            {t("based_on", {
+              n: p.matches,
+              matches: p.matches === 1 ? t("matches_one") : t("matches_many"),
+              min: p.minutes,
+            })}
+          </p>
+        </section>
+
+        <section class="card">
+          <h2>{t("matchlog_h")}</h2>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>{t("c_date")}</th>
+                  <th>{t("c_comp")}</th>
+                  <th class="num">{t("c_rating")}</th>
+                  <th class="num">{t("c_min")}</th>
+                  <th class="num">{t("c_g")}</th>
+                  <th class="num">{t("c_a")}</th>
+                </tr>
+              </thead>
+              <tbody>
+                {leagueMatches.map((m) => (
+                  <tr>
+                    <td>{m.date}</td>
+                    <td>{m.competition}</td>
+                    <td class="num">{m.rating != null ? m.rating.toFixed(1) : "—"}</td>
+                    <td class="num">{m.minutes}</td>
+                    <td class="num">{m.goals}</td>
+                    <td class="num">{m.assists}</td>
+                  </tr>
+                ))}
+                {cupMatches.map((m) => (
+                  <tr class="excluded-row">
+                    <td>{m.date}</td>
+                    <td>
+                      {m.competition} <span class="ex">{t("excluded_tag")}</span>
+                    </td>
+                    <td class="num">{m.rating != null ? m.rating.toFixed(1) : "—"}</td>
+                    <td class="num">{m.minutes}</td>
+                    <td class="num">{m.goals}</td>
+                    <td class="num">{m.assists}</td>
+                  </tr>
+                ))}
+              </tbody>
+            </table>
+          </div>
+          {cupMatches.length > 0 && <p class="fine">{t("cup_note")}</p>}
+        </section>
+      </>
+    )
+  }
+
+  <style>
+    .back {
+      display: inline-block;
+      margin-bottom: 1rem;
+      color: var(--muted);
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 0.9rem;
+    }
+    .back:hover {
+      color: var(--red);
+    }
+    .phead {
+      display: flex;
+      align-items: center;
+      gap: 1.1rem;
+      flex-wrap: wrap;
+    }
+    .pphoto {
+      width: 84px;
+      height: 84px;
+      border-radius: 50%;
+      object-fit: cover;
+      background: var(--border);
+      box-shadow: var(--shadow);
+    }
+    .pphoto--initials {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-weight: 800;
+      font-size: 1.6rem;
+      color: var(--green);
+    }
+    .pmeta {
+      flex: 1;
+      min-width: 200px;
+    }
+    .pmeta h1 {
+      margin: 0 0 0.4rem;
+    }
+    .tags {
+      display: flex;
+      gap: 0.4rem;
+      flex-wrap: wrap;
+      align-items: center;
+    }
+    .tag {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 999px;
+      padding: 0.2rem 0.6rem;
+      font-size: 0.82rem;
+      font-weight: 600;
+    }
+    .tag.pos {
+      color: var(--red);
+      font-weight: 800;
+    }
+    .bio {
+      color: var(--muted);
+      font-size: 0.85rem;
+      margin: 0.55rem 0 0;
+    }
+    .bigscore {
+      text-align: center;
+      background: var(--green);
+      color: #fff;
+      border-radius: 14px;
+      padding: 0.8rem 1.1rem;
+    }
+    .bigscore b {
+      display: block;
+      font-size: 2rem;
+      line-height: 1;
+    }
+    .bigscore span {
+      font-size: 0.72rem;
+      opacity: 0.9;
+    }
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.3rem;
+      margin-top: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    .card h2 {
+      margin: 0 0 0.7rem;
+      font-size: 1.1rem;
+    }
+    .badge {
+      font-size: 0.72rem;
+      font-weight: 700;
+      padding: 0.15rem 0.5rem;
+      border-radius: 999px;
+      text-transform: capitalize;
+    }
+    .badge.eligible {
+      background: rgba(0, 98, 51, 0.15);
+      color: var(--green);
+    }
+    .badge.review {
+      background: rgba(193, 39, 45, 0.13);
+      color: var(--red);
+    }
+    .calc {
+      display: flex;
+      align-items: stretch;
+      gap: 0.5rem;
+      flex-wrap: wrap;
+    }
+    .step {
+      background: var(--bg);
+      border: 1px solid var(--border);
+      border-radius: 10px;
+      padding: 0.6rem 0.8rem;
+      text-align: center;
+      min-width: 120px;
+      flex: 1;
+    }
+    .step b {
+      display: block;
+      font-size: 1.3rem;
+    }
+    .step span {
+      font-size: 0.72rem;
+      color: var(--muted);
+    }
+    .step.final {
+      background: rgba(0, 98, 51, 0.1);
+      border-color: var(--green);
+    }
+    .step.final b {
+      color: var(--green);
+    }
+    .op {
+      display: flex;
+      align-items: center;
+      color: var(--muted);
+      font-weight: 700;
+    }
+    .fine {
+      color: var(--muted);
+      font-size: 0.83rem;
+      margin: 0.7rem 0 0;
+    }
+    .table-wrap {
+      overflow-x: auto;
+    }
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      font-size: 0.9rem;
+    }
+    th,
+    td {
+      padding: 0.5rem 0.7rem;
+      text-align: left;
+      white-space: nowrap;
+      border-bottom: 1px solid var(--border);
+    }
+    thead th {
+      font-size: 0.72rem;
+      text-transform: uppercase;
+      letter-spacing: 0.04em;
+      color: var(--muted);
+    }
+    .num {
+      text-align: right;
+      font-variant-numeric: tabular-nums;
+    }
+    .excluded-row {
+      color: var(--muted);
+    }
+    .ex {
+      font-size: 0.68rem;
+      background: var(--border);
+      color: var(--muted);
+      padding: 0.05rem 0.35rem;
+      border-radius: 5px;
+      margin-left: 0.3rem;
+    }
+  </style>
+</Base>
