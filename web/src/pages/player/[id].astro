@@ -16,8 +16,8 @@ const img = p ? playerImage(p.sofascoreId) : null;
 
 const elig =
   p && p.status === "review"
-    ? `Has ${p.seniorCaps} senior cap${p.seniorCaps === 1 ? "" : "s"} for another country. Friendlies don't cap-tie, so he may still be switchable — worth a manual check.`
-    : "0 senior caps for any country — free to be called up by Morocco. (Youth caps don't count.)";
+    ? `Has ${p.seniorCaps} senior appearance${p.seniorCaps === 1 ? "" : "s"} for another country. If those were friendlies — which don't lock a player to a country — he could still switch to Morocco, so worth a manual check.`
+    : "Has never played a senior match for any country, so he's free to be called up by Morocco. (Youth-team games don't count.)";
 const leagueMatches = p ? p.matchLog.filter((m) => m.league) : [];
 const cupMatches = p ? p.matchLog.filter((m) => !m.league) : [];
 ---
