@@ -1,7 +1,13 @@
 ---
 import Base from "../layouts/Base.astro";
 import { db } from "../lib/db.js";
-import { getBrowsePlayers, getLeagues, getSummary, POSITIONS } from "../lib/queries.js";
+import {
+  getBrowsePlayers,
+  getLeagues,
+  getSummary,
+  POSITIONS,
+  MIN_RANK_MINUTES,
+} from "../lib/queries.js";
 import { playerImage, initials } from "../lib/avatar.js";
 import { useT, localePath } from "../lib/i18n.js";
 
@@ -18,7 +24,13 @@ const fmtMv = (v) => (v ? "€" + (v / 1_000_000).toFixed(1).replace(/\.0$/, "")
 <Base title={t("browse_h1")} lang={lang}>
   <h1>{t("browse_h1")}</h1>
   <p class="lede">
-    {t("browse_lede", { eligible: summary.eligible, review: summary.review })}
+    {
+      t("browse_lede", {
+        eligible: summary.eligible,
+        review: summary.review,
+        min: MIN_RANK_MINUTES,
+      })
+    }
   </p>
 
   {

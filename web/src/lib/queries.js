@@ -4,6 +4,8 @@
 // so it works identically in Astro's dev server and static build.
 const SEASON = "2025-2026";
 export const POSITIONS = ["GK", "CB", "FB", "DM", "CM", "AM", "W", "ST"];
+// Minimum league minutes to appear in the ranking (keeps tiny cameo samples out).
+export const MIN_RANK_MINUTES = 300;
 
 export function getLeagues(db) {
   if (!db) return [];
@@ -46,9 +48,10 @@ export function getBrowsePlayers(db, { season = SEASON } = {}) {
        JOIN player_scores ps ON ps.player_id = p.id AND ps.season_id = ?
        LEFT JOIN clubs c ON c.id = p.club_id
        WHERE p.eligibility_status IN ('eligible', 'review') AND ps.score > 0
+         AND ps.minutes >= ?
        ORDER BY ps.score DESC`,
     )
-    .all(season)
+    .all(season, MIN_RANK_MINUTES)
     .map((r) => ({ ...r, citizenships: safeParse(r.citizenships) }));
 }
 
@@ -147,7 +150,7 @@ function seasonKey(year) {
 // across leagues that season). Same formula as the rating engine (baseline 6.7, K 500).
 export function getPlayerSeasons(db, id) {
   if (!db) return [];
-  const BASELINE = 6.7;
+  const BASELINE = 6.2; // keep in sync with rating/score.js
   const K = 500;
   return db
     .prepare(

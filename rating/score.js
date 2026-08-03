@@ -6,7 +6,7 @@
 // and shrink small samples toward a baseline so a hot 10-minute cameo can't
 // outrank a solid season.
 
-const BASELINE = 6.7; // prior rating a player regresses toward until they earn minutes
+const BASELINE = 6.2; // prior rating a player regresses toward until they earn minutes
 const K = 500; // prior "minutes" — larger K => more skeptical of small samples
 
 // Compute a player's fair season score from their LEAGUE match stat lines.

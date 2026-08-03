@@ -49,7 +49,7 @@ const dict = {
     // browse
     browse_h1: "Browse & rank",
     browse_lede:
-      "Every eligible player, ranked by fair score. Filter by league and position. ({eligible} eligible, {review} in review.)",
+      "Every eligible player with {min}+ league minutes, ranked by fair score. Filter by league and position. ({eligible} eligible, {review} in review.)",
     f_league: "League",
     f_position: "Position",
     all_leagues: "All leagues",
@@ -95,9 +95,9 @@ const dict = {
     about_step3:
       "<b>Adjust for league strength.</b> The result is multiplied by a league coefficient, so a 7.0 in the Premier League outranks a 7.0 in a weaker division.",
     about_example:
-      "<b>Worked example.</b> An 8.0 across 50 minutes all season scores <b>6.82</b>; a 7.0 across 2700 minutes scores <b>6.95</b>. The steady starter correctly comes out on top.",
+      "<b>Worked example.</b> An 8.0 across 50 minutes all season scores <b>6.36</b>; a 7.0 across 2700 minutes scores <b>6.88</b>. The steady starter correctly comes out on top.",
     about_fine:
-      "Only <strong>league matches</strong> count (cups and internationals are excluded). A player needs <strong>450+ league minutes</strong> to make the Best XI. Scores sit lower than raw ratings because of the league multiplier and the pull toward baseline — that's expected, and it's what makes them comparable.",
+      "Only <strong>league matches</strong> count (cups and internationals are excluded). A player needs <strong>300+ league minutes</strong> to appear in the rankings, and <strong>450+</strong> to make the Best XI — so a handful of cameo appearances can't top the list. Scores sit lower than raw ratings because of the league multiplier and the pull toward baseline — that's expected, and it's what makes them comparable.",
     about_s3_h: "League strength",
     about_s3_p:
       "Hand-set starting coefficients (1.00 = strongest). Every match is weighted by its league:",
@@ -114,6 +114,9 @@ const dict = {
     gloss_pos_t: "Positions",
     gloss_pos_d:
       "GK goalkeeper · CB centre-back · FB full-back · DM/CM/AM midfield · W winger · ST striker.",
+    about_s5_h: "On each player's page",
+    about_s5_p:
+      "Click any player for the full picture: how his score was built, his match-by-match log, a <strong>season-form chart</strong> where each dot's size is the minutes he played, and — for players with enough history — a <strong>multi-season career trajectory</strong>.",
     about_src:
       "Covering {eligible} eligible players across {leagues} divisions. Data: Transfermarkt (eligibility) · SofaScore (match ratings & minutes). Season 2025/26.",
     // player detail
@@ -185,7 +188,7 @@ const dict = {
       "Aucun joueur noté pour l'instant. Remplissez la base de données, puis reconstruisez.",
     browse_h1: "Explorer & classer",
     browse_lede:
-      "Tous les joueurs éligibles, classés par note équitable. Filtrez par championnat et par poste. ({eligible} éligibles, {review} à vérifier.)",
+      "Tous les joueurs éligibles avec {min}+ minutes de championnat, classés par note équitable. Filtrez par championnat et par poste. ({eligible} éligibles, {review} à vérifier.)",
     f_league: "Championnat",
     f_position: "Poste",
     all_leagues: "Tous les championnats",
@@ -230,9 +233,9 @@ const dict = {
     about_step3:
       "<b>Ajuster selon la force du championnat.</b> Le résultat est multiplié par un coefficient de championnat : un 7,0 en Premier League passe devant un 7,0 dans une division plus faible.",
     about_example:
-      "<b>Exemple concret.</b> Un 8,0 sur 50 minutes toute la saison donne <b>6,82</b> ; un 7,0 sur 2700 minutes donne <b>6,95</b>. Le titulaire régulier ressort à juste titre en tête.",
+      "<b>Exemple concret.</b> Un 8,0 sur 50 minutes toute la saison donne <b>6,36</b> ; un 7,0 sur 2700 minutes donne <b>6,88</b>. Le titulaire régulier ressort à juste titre en tête.",
     about_fine:
-      "Seuls les <strong>matchs de championnat</strong> comptent (coupes et matchs internationaux exclus). Il faut <strong>450+ minutes de championnat</strong> pour intégrer le Meilleur XI. Les notes sont plus basses que les notes brutes à cause du multiplicateur de championnat et du recentrage vers la base — c'est normal, et c'est ce qui les rend comparables.",
+      "Seuls les <strong>matchs de championnat</strong> comptent (coupes et matchs internationaux exclus). Il faut <strong>300+ minutes de championnat</strong> pour apparaître au classement, et <strong>450+</strong> pour intégrer le Meilleur XI — ainsi quelques apparitions éclair ne peuvent pas dominer la liste. Les notes sont plus basses que les notes brutes à cause du multiplicateur de championnat et du recentrage vers la base — c'est normal, et c'est ce qui les rend comparables.",
     about_s3_h: "Force des championnats",
     about_s3_p:
       "Coefficients de départ fixés à la main (1,00 = le plus fort). Chaque match est pondéré par son championnat :",
@@ -249,6 +252,9 @@ const dict = {
     gloss_pos_t: "Postes",
     gloss_pos_d:
       "GK gardien · CB défenseur central · FB latéral · DM/CM/AM milieu · W ailier · ST attaquant.",
+    about_s5_h: "Sur la page de chaque joueur",
+    about_s5_p:
+      "Cliquez sur un joueur pour tout voir : comment sa note est calculée, son journal match par match, un <strong>graphique de forme sur la saison</strong> où la taille de chaque point correspond aux minutes jouées, et — pour les joueurs avec assez d'historique — une <strong>trajectoire de carrière sur plusieurs saisons</strong>.",
     about_src:
       "Couvre {eligible} joueurs éligibles dans {leagues} divisions. Données : Transfermarkt (éligibilité) · SofaScore (notes & minutes). Saison 2025/26.",
     back: "← Retour au classement",

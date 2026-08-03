@@ -4,11 +4,11 @@ const m = (rating, minutes, coefficient = 1) => ({ rating, minutes, coefficient 
 
 describe("computePlayerScore", () => {
   it("solves the cameo problem (PLAN.md worked example)", () => {
-    // Sub: 8.0 over 50 min; Starter: 7.0 over 2700 min. baseline 6.7, K 500, coeff 1.
+    // Sub: 8.0 over 50 min; Starter: 7.0 over 2700 min. baseline 6.2, K 500, coeff 1.
     const sub = computePlayerScore([m(8.0, 50)]);
     const starter = computePlayerScore([m(7.0, 2700)]);
-    expect(sub.score).toBeCloseTo(6.82, 2);
-    expect(starter.score).toBeCloseTo(6.95, 2);
+    expect(sub.score).toBeCloseTo(6.36, 2);
+    expect(starter.score).toBeCloseTo(6.875, 3);
     expect(starter.score).toBeGreaterThan(sub.score); // solid starter beats flashy cameo
   });
 

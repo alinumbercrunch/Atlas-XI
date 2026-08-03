@@ -62,8 +62,8 @@ describe("computeAllScores", () => {
     const ps = db.prepare("SELECT * FROM player_scores WHERE player_id = 1").get();
     expect(ps.matches_count).toBe(1); // cup excluded
     expect(ps.minutes).toBe(900);
-    // shrunk toward 6.7 with 900 min at 8.0: (8*900 + 6.7*500)/1400
-    expect(ps.shrunk_rating).toBeCloseTo((8 * 900 + 6.7 * 500) / 1400, 3);
+    // shrunk toward 6.2 with 900 min at 8.0: (8*900 + 6.2*500)/1400
+    expect(ps.shrunk_rating).toBeCloseTo((8 * 900 + 6.2 * 500) / 1400, 3);
     expect(ps.score).toBeCloseTo(ps.shrunk_rating * 1.0, 5); // PL coeff 1.0
     db.close();
   });

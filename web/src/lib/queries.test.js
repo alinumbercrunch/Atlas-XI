@@ -107,7 +107,19 @@ describe("query layer", () => {
     expect(seasons.map((s) => s.year)).toEqual(["24/25", "25/26"]); // chronological
     // improving player: later season scores higher
     expect(seasons[1].score).toBeGreaterThan(seasons[0].score);
-    expect(seasons[1].score).toBeCloseTo(((7.5 * 2000 + 6.7 * 500) / 2500) * 1.0, 3);
+    expect(seasons[1].score).toBeCloseTo(((7.5 * 2000 + 6.2 * 500) / 2500) * 1.0, 3);
+    db.close();
+  });
+
+  it("getBrowsePlayers applies the minutes floor", () => {
+    const db = seededDb();
+    db.prepare(
+      "INSERT INTO players (id, name, primary_position, eligibility_status) VALUES (3, 'Cameo Kid', 'ST', 'eligible')",
+    ).run();
+    db.prepare(
+      "INSERT INTO player_scores (player_id, season_id, matches_count, minutes, score) VALUES (3, '2025-2026', 2, 100, 6.5)",
+    ).run();
+    expect(getBrowsePlayers(db).map((p) => p.name)).not.toContain("Cameo Kid");
     db.close();
   });
 

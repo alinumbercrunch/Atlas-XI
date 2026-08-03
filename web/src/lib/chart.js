@@ -86,7 +86,7 @@ export function buildCareerChart(seasons, { width = 520, height = 170 } = {}) {
 // league matches to draw a meaningful trend.
 export function buildFormChart(
   matchLog,
-  { avg = null, baseline = 6.7, width = 680, height = 200 } = {},
+  { avg = null, baseline = 6.2, width = 680, height = 200 } = {},
 ) {
   const all = formSeries(matchLog);
   const league = all.filter((m) => m.isLeague);

@@ -77,13 +77,13 @@ shrunk = (wAvg × M + baseline × K) / (M + K)         // Bayesian shrinkage tow
 Score  = shrunk × leagueCoefficient(player.league)   // weight by league strength
 ```
 
-- `baseline` ≈ positional/league average rating (~6.7 start).
-- `K` = "prior minutes" constant (start ~500). Larger K = more skeptical of small samples.
+- `baseline` = **6.2** (≈ the eligible pool's average rating; tuned down from 6.7 so small samples don't float up).
+- `K` = "prior minutes" constant (500). Larger K = more skeptical of small samples.
 - Result: a small sample is pulled toward the baseline until minutes accumulate — this **solves the
   cameo problem** (an 8.0 over 10 minutes contributes almost nothing until the player earns real minutes).
 
-**Worked example (the exact cameo scenario):** with baseline 6.7, K 500 —
-a sub rated 8.0 over 50 min → **6.82**; a starter rated 7.0 over 2700 min → **6.95**.
+**Worked example (the exact cameo scenario):** with baseline 6.2, K 500 —
+a sub rated 8.0 over 50 min → **6.36**; a starter rated 7.0 over 2700 min → **6.88**.
 The solid starter correctly ranks higher. ✅
 
 ### League strength coefficient (starter values — tunable)
@@ -110,7 +110,7 @@ move or a cup game is weighted correctly, rather than tagging the whole season w
 
 ### Minimum-minutes gate
 
-For the **Best XI** only, require a floor (e.g. ≥ 450 season minutes) so a tiny-sample fluke can't take a
+**Ranking floor: ≥ 300 league minutes** to appear in Browse (Best XI: ≥ 450) — a tiny-sample fluke can't take a
 squad slot. The Browse view shows everyone (with minutes displayed so users can judge sample size).
 
 ### Future (not v1)

@@ -74,6 +74,11 @@ const s = getSummary(db);
     </dl>
   </section>
 
+  <section class="card">
+    <h2>{t("about_s5_h")}</h2>
+    <p set:html={t("about_s5_p")} />
+  </section>
+
   <p class="src">{t("about_src", { eligible: s.eligible, leagues: leagues.length })}</p>
 
   <style>
