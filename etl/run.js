@@ -10,7 +10,7 @@
 const { getDb, initSchema } = require("../db");
 const { seed } = require("../db/seed");
 
-const ALL_STAGES = ["discover", "stats", "clubmap", "rate", "images"];
+const ALL_STAGES = ["discover", "stats", "history", "clubmap", "rate", "images"];
 
 async function runEtl(opts = {}) {
   const {
@@ -27,6 +27,7 @@ async function runEtl(opts = {}) {
   const rating = deps.rating || require("../rating/run");
   const images = deps.images || require("../scrapers/sofascore/images");
   const competitions = deps.competitions || require("../scrapers/transfermarkt/competitions");
+  const history = deps.history || require("../scrapers/sofascore/history");
 
   const ownsDb = !opts.db;
   const db = opts.db || initSchema(getDb());
@@ -48,6 +49,9 @@ async function runEtl(opts = {}) {
   }
   if (stages.includes("stats")) {
     await time("stats", () => fetchStats({ limit: statsLimit, db }));
+  }
+  if (stages.includes("history")) {
+    await time("history", () => history.run({ db }));
   }
   if (stages.includes("clubmap")) {
     await time("clubmap", async () => {

@@ -47,6 +47,41 @@ export function last5(matchLog) {
     .map((m) => ({ ...m, tone: tone(m.rating) }));
 }
 
+// Multi-season career trajectory: a labeled line of fair score per season.
+// Needs >= 2 seasons. `seasons` is the output of getPlayerSeasons (ascending).
+export function buildCareerChart(seasons, { width = 520, height = 170 } = {}) {
+  if (!seasons || seasons.length < 2) return { hasEnough: false };
+  const PADL = 16,
+    PADR = 16,
+    PADT = 26,
+    PADB = 22;
+  const plotW = width - PADL - PADR;
+  const plotH = height - PADT - PADB;
+  const scores = seasons.map((s) => s.score);
+  const lo = Math.min(...scores) - 0.4;
+  const hi = Math.max(...scores) + 0.4;
+  const n = seasons.length;
+  const x = (i) => PADL + (i / (n - 1)) * plotW;
+  const y = (v) => PADT + ((hi - v) / (hi - lo || 1)) * plotH;
+  const points = seasons.map((s, i) => ({
+    cx: +x(i).toFixed(1),
+    cy: +y(s.score).toFixed(1),
+    score: s.score,
+    year: s.year,
+    apps: s.apps,
+    minutes: s.minutes,
+    leagues: s.leagues,
+  }));
+  return {
+    hasEnough: true,
+    width,
+    height,
+    points,
+    linePath: points.map((p, i) => `${i ? "L" : "M"}${p.cx},${p.cy}`).join(" "),
+    xLabels: points.map((p) => ({ x: p.cx, label: p.year })),
+  };
+}
+
 // Everything the SVG needs. Returns { hasEnough:false } when there aren't enough
 // league matches to draw a meaningful trend.
 export function buildFormChart(

@@ -11,6 +11,7 @@
     "tm:clubs": "node scrapers/transfermarkt/competitions.js",
     "sofa:stats": "node scrapers/sofascore/run.js",
     "sofa:images": "node scrapers/sofascore/images.js",
+    "sofa:history": "node scrapers/sofascore/history.js",
     "rate": "node rating/run.js",
     "etl": "node etl/run.js",
     "web:dev": "astro dev --root web",

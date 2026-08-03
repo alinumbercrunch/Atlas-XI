@@ -1,17 +1,19 @@
 ---
 import Base from "../layouts/Base.astro";
 import { db } from "../lib/db.js";
-import { getPlayer, getLeagues } from "../lib/queries.js";
+import { getPlayer, getLeagues, getPlayerSeasons } from "../lib/queries.js";
 import { playerImage, initials } from "../lib/avatar.js";
 import { useT, localePath } from "../lib/i18n.js";
 import { last5 } from "../lib/chart.js";
 import FormChart from "./FormChart.astro";
+import CareerChart from "./CareerChart.astro";
 
 const { lang = "en", id } = Astro.props;
 const t = useT(lang);
 
 const p = getPlayer(db, Number(id));
 const pills = p ? last5(p.matchLog) : [];
+const seasons = p ? getPlayerSeasons(db, p.id) : [];
 const leagueName = Object.fromEntries(getLeagues(db).map((l) => [l.id, l.name]));
 const fmtMv = (v) => (v ? "€" + (v / 1_000_000).toFixed(1).replace(/\.0$/, "") + "m" : "—");
 const img = p ? playerImage(p.sofascoreId) : null;
@@ -118,6 +120,8 @@ const cupMatches = p ? p.matchLog.filter((m) => !m.league) : [];
             })}
           </p>
         </section>
+
+        <CareerChart seasons={seasons} lang={lang} />
 
         <FormChart matchLog={p.matchLog} avg={p.wavg} lang={lang} />
 

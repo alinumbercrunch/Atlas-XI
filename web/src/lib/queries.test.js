@@ -9,6 +9,7 @@ import {
   getBestXI,
   getPlayer,
   getScoredPlayerIds,
+  getPlayerSeasons,
 } from "./queries.js";
 
 // Build a small realistic DB: two eligible players with Premier League stats.
@@ -92,6 +93,21 @@ describe("query layer", () => {
     expect(p.coefficient).toBeCloseTo(1, 5); // Premier League
     expect(p.matchLog.length).toBe(1);
     expect(p.matchLog[0].league).toBe("Premier League");
+    db.close();
+  });
+
+  it("getPlayerSeasons aggregates per season and orders chronologically", () => {
+    const db = seededDb();
+    const ins = db.prepare(
+      "INSERT INTO player_season_stats (player_id, season_year, league_id, rating, minutes, appearances, goals, assists) VALUES (?,?,?,?,?,?,?,?)",
+    );
+    ins.run(1, "25/26", "eng-1", 7.5, 2000, 25, 10, 5);
+    ins.run(1, "24/25", "eng-1", 7.0, 2000, 25, 8, 4);
+    const seasons = getPlayerSeasons(db, 1);
+    expect(seasons.map((s) => s.year)).toEqual(["24/25", "25/26"]); // chronological
+    // improving player: later season scores higher
+    expect(seasons[1].score).toBeGreaterThan(seasons[0].score);
+    expect(seasons[1].score).toBeCloseTo(((7.5 * 2000 + 6.7 * 500) / 2500) * 1.0, 3);
     db.close();
   });
 

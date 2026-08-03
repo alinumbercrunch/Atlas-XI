@@ -1,0 +1,88 @@
+---
+import { buildCareerChart } from "../lib/chart.js";
+import { useT } from "../lib/i18n.js";
+
+const { seasons, lang = "en" } = Astro.props;
+const t = useT(lang);
+const c = buildCareerChart(seasons);
+---
+
+{
+  c.hasEnough && (
+    <section class="card">
+      <h2>{t("career_h")}</h2>
+      <svg
+        class="career"
+        viewBox={`0 0 ${c.width} ${c.height}`}
+        role="img"
+        aria-label={t("career_h")}
+        preserveAspectRatio="xMidYMid meet"
+      >
+        <path class="cline" d={c.linePath} fill="none" />
+        {c.points.map((p) => (
+          <>
+            <circle class="cdot" cx={p.cx} cy={p.cy} r="5">
+              <title>{`${p.year} · ${p.score.toFixed(2)} · ${p.apps} ${t("apps_short")} · ${p.leagues}`}</title>
+            </circle>
+            <text class="cval" x={p.cx} y={p.cy - 11} text-anchor="middle">
+              {p.score.toFixed(1)}
+            </text>
+          </>
+        ))}
+        {c.xLabels.map((xl) => (
+          <text class="cxlabel" x={xl.x} y={c.height - 6} text-anchor="middle">
+            {xl.label}
+          </text>
+        ))}
+      </svg>
+      <p class="legend">{t("career_note")}</p>
+    </section>
+  )
+}
+
+<style>
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1.1rem 1.3rem;
+    margin-top: 1.1rem;
+    box-shadow: var(--shadow);
+  }
+  .card h2 {
+    margin: 0 0 0.7rem;
+    font-size: 1.1rem;
+  }
+  .career {
+    width: 100%;
+    height: auto;
+    display: block;
+    overflow: visible;
+    max-width: 560px;
+  }
+  .cline {
+    stroke: var(--accent);
+    stroke-width: 2;
+    stroke-linejoin: round;
+    stroke-linecap: round;
+  }
+  .cdot {
+    fill: var(--accent);
+  }
+  .cval {
+    fill: var(--text);
+    font-size: 11px;
+    font-weight: 800;
+    font-variant-numeric: tabular-nums;
+  }
+  .cxlabel {
+    fill: var(--muted);
+    font-size: 10px;
+    font-variant-numeric: tabular-nums;
+  }
+  .legend {
+    color: var(--muted);
+    font-size: 0.78rem;
+    margin: 0.6rem 0 0;
+  }
+</style>

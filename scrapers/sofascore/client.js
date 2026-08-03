@@ -95,6 +95,18 @@ class SofascoreClient {
   playerImage(id) {
     return this.getImageBytes(`/player/${id}/image`);
   }
+
+  // Tournaments + seasons a player has statistics for.
+  playerSeasons(id) {
+    return this.getJson(`/player/${id}/statistics/seasons`);
+  }
+
+  // Aggregate stats for a player in one tournament + season (incl. average rating).
+  playerSeasonOverall(id, utId, seasonId) {
+    return this.getJson(
+      `/player/${id}/unique-tournament/${utId}/season/${seasonId}/statistics/overall`,
+    );
+  }
 }
 
 module.exports = { SofascoreClient, API };

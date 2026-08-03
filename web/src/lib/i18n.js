@@ -152,6 +152,9 @@ const dict = {
     form_avg: "season avg",
     form_minutes: "dot size = minutes",
     last5_h: "Recent form",
+    career_h: "Career trajectory",
+    career_note: "Fair score per season (SofaScore average rating, league-adjusted).",
+    apps_short: "apps",
   },
 
   fr: {
@@ -283,5 +286,8 @@ const dict = {
     form_avg: "moy. saison",
     form_minutes: "taille = minutes",
     last5_h: "Forme récente",
+    career_h: "Trajectoire de carrière",
+    career_note: "Note équitable par saison (moyenne SofaScore, ajustée au championnat).",
+    apps_short: "matchs",
   },
 };

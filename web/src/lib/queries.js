@@ -136,6 +136,50 @@ export function getPlayer(db, id, { season = SEASON } = {}) {
   return p;
 }
 
+function seasonKey(year) {
+  const m = String(year || "").match(/^(\d{2,4})/);
+  if (!m) return 0;
+  const n = Number(m[1]);
+  return n < 100 ? n + 2000 : n;
+}
+
+// A player's per-season career trajectory: one fair score per season (aggregating
+// across leagues that season). Same formula as the rating engine (baseline 6.7, K 500).
+export function getPlayerSeasons(db, id) {
+  if (!db) return [];
+  const BASELINE = 6.7;
+  const K = 500;
+  return db
+    .prepare(
+      `SELECT s.season_year AS year,
+              SUM(s.minutes) AS minutes, SUM(s.appearances) AS apps,
+              SUM(s.goals) AS goals, SUM(s.assists) AS assists,
+              SUM(s.rating * s.minutes) / SUM(s.minutes) AS wrating,
+              SUM(l.coefficient * s.minutes) / SUM(s.minutes) AS wcoeff,
+              GROUP_CONCAT(DISTINCT l.name) AS leagues
+       FROM player_season_stats s
+       JOIN leagues l ON l.id = s.league_id
+       WHERE s.player_id = ? AND s.minutes > 0
+       GROUP BY s.season_year`,
+    )
+    .all(id)
+    .map((r) => {
+      const shrunk = (r.wrating * r.minutes + BASELINE * K) / (r.minutes + K);
+      return {
+        year: r.year,
+        minutes: r.minutes,
+        apps: r.apps,
+        goals: r.goals,
+        assists: r.assists,
+        rating: r.wrating,
+        score: shrunk * r.wcoeff,
+        leagues: r.leagues,
+        sort: seasonKey(r.year),
+      };
+    })
+    .sort((a, b) => a.sort - b.sort);
+}
+
 function safeParse(json) {
   try {
     return JSON.parse(json) || [];

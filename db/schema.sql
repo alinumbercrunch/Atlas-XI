@@ -110,6 +110,21 @@ CREATE TABLE IF NOT EXISTS player_scores (
   PRIMARY KEY (player_id, season_id)
 );
 
+-- Per-season aggregate stats from SofaScore (one row per player/season/league),
+-- for the multi-season career trajectory. Regenerable by `npm run sofa:history`.
+CREATE TABLE IF NOT EXISTS player_season_stats (
+  player_id           INTEGER NOT NULL REFERENCES players(id) ON DELETE CASCADE,
+  season_year         TEXT NOT NULL,                        -- e.g. "24/25"
+  league_id           TEXT REFERENCES leagues(id) ON DELETE SET NULL,
+  sofascore_season_id INTEGER,
+  rating              REAL,
+  minutes             INTEGER,
+  appearances         INTEGER,
+  goals               INTEGER,
+  assists             INTEGER,
+  PRIMARY KEY (player_id, season_year, league_id)
+);
+
 -- The computed Best XI (one row per formation slot), written by the rating step so
 -- the frontend can read it directly without importing the selection logic.
 CREATE TABLE IF NOT EXISTS best_xi (

@@ -1,4 +1,4 @@
-import { formSeries, rollingAverage, last5, buildFormChart } from "./chart.js";
+import { formSeries, rollingAverage, last5, buildFormChart, buildCareerChart } from "./chart.js";
 
 const log = (rows) =>
   rows.map(([date, rating, minutes, league]) => ({
@@ -46,6 +46,24 @@ describe("last5", () => {
     expect(p[p.length - 1].date).toBe("2026-01-07");
     expect(last5(log([["2026-01-01", 7.5, 90, true]]))[0].tone).toBe("good");
     expect(last5(log([["2026-01-01", 5.4, 90, true]]))[0].tone).toBe("poor");
+  });
+});
+
+describe("buildCareerChart", () => {
+  it("needs >= 2 seasons", () => {
+    expect(buildCareerChart([{ year: "25/26", score: 6 }]).hasEnough).toBe(false);
+  });
+  it("maps seasons to a line, first left, last right", () => {
+    const c = buildCareerChart([
+      { year: "23/24", score: 5.5, apps: 20 },
+      { year: "24/25", score: 6.2, apps: 25 },
+      { year: "25/26", score: 6.0, apps: 22 },
+    ]);
+    expect(c.hasEnough).toBe(true);
+    expect(c.points).toHaveLength(3);
+    expect(c.points[0].cx).toBeLessThan(c.points[2].cx);
+    expect(c.linePath.startsWith("M")).toBe(true);
+    expect(c.xLabels.map((l) => l.label)).toEqual(["23/24", "24/25", "25/26"]);
   });
 });
 

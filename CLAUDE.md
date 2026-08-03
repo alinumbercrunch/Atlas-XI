@@ -20,7 +20,8 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
   `__fixtures__/` (real saved TM pages).
 - `scrapers/sofascore/` — **Playwright**. `client.js` (`SofascoreClient`), `parse.js` (search/events/stats),
   `match.js` (accent-aware name+club matcher), `ingest.js` (matches + player_match_stats), `run.js`
-  (`npm run sofa:stats`), `verify.js` (Phase 0 proof), `__fixtures__/` (saved JSON)
+  (`npm run sofa:stats`), `images.js` (`sofa:images`), `history.js` (per-season aggregates → `player_season_stats`,
+  `npm run sofa:history`), `verify.js` (Phase 0 proof), `__fixtures__/` (saved JSON)
 - `db/` — SQLite via `better-sqlite3`: `schema.sql`, `index.js` (`getDb`/`initSchema`, in-memory via `:memory:`),
   `leagues.js` (16-division data + SofaScore tournament ids), `seed.js` (idempotent).
 - `rating/` — `score.js` (pure fair-score math + Best XI assignment), `run.js` (`npm run rate`: map matches→leagues,
@@ -30,9 +31,10 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
   `src/lib/i18n.js` (string dictionary + `useT(lang)` + `localePath`); language toggle in Base. Page bodies live in
   `src/components/*View.astro` (BestXI/Browse/About/PlayerDetail), each taking a `lang` prop; thin route wrappers in
   `pages/` and `pages/fr/` (player routes keep `getStaticPaths`). `src/lib/db.js` (read-only), `queries.js` (pure-SQL,
-  incl. `getPlayer`/`getScoredPlayerIds`), `avatar.js`, `chart.js` (pure SVG geometry — per-player season-form chart +
-  last-5). `FormChart.astro` renders inline SVG (single series, minutes=dot radius, baseline+avg reference lines,
-  `<title>` hover; needs ≥6 league matches). Reusable `.info` tooltip in Base. `npm run web:dev` / `web:build`.
+  incl. `getPlayer`/`getScoredPlayerIds`/`getPlayerSeasons`), `avatar.js`, `chart.js` (pure SVG geometry). Player page
+  has `FormChart.astro` (this-season form: minutes=dot radius, baseline+avg lines, ≥6 league matches) and
+  `CareerChart.astro` (multi-season fair-score line from `player_season_stats`, ≥2 seasons). Reusable `.info` tooltip
+  in Base. `npm run web:dev` / `web:build`.
   Note: player/club/country names come from the data (not translated); UI chrome is.
 - SQLite data is regenerable by the scrapers → **git-ignored** (`*.sqlite`, `data/`).
 

@@ -41,6 +41,12 @@ function makeDeps(calls) {
       },
       applyClubLeagues: () => 0,
     },
+    history: {
+      run: async () => {
+        calls.push("history");
+        return {};
+      },
+    },
   };
 }
 
@@ -52,6 +58,7 @@ describe("runEtl", () => {
     expect(calls).toEqual([
       "discover",
       "stats",
+      "history",
       "clubmap",
       "resolve",
       "clubleagues",
