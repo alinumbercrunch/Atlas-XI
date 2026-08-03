@@ -4,11 +4,14 @@ import { db } from "../lib/db.js";
 import { getPlayer, getLeagues } from "../lib/queries.js";
 import { playerImage, initials } from "../lib/avatar.js";
 import { useT, localePath } from "../lib/i18n.js";
+import { last5 } from "../lib/chart.js";
+import FormChart from "./FormChart.astro";
 
 const { lang = "en", id } = Astro.props;
 const t = useT(lang);
 
 const p = getPlayer(db, Number(id));
+const pills = p ? last5(p.matchLog) : [];
 const leagueName = Object.fromEntries(getLeagues(db).map((l) => [l.id, l.name]));
 const fmtMv = (v) => (v ? "€" + (v / 1_000_000).toFixed(1).replace(/\.0$/, "") + "m" : "—");
 const img = p ? playerImage(p.sofascoreId) : null;
@@ -50,6 +53,21 @@ const cupMatches = p ? p.matchLog.filter((m) => !m.league) : [];
               {p.birthplace ? ` · ${t("born")} ${p.birthplace}` : ""} · {t("value")}{" "}
               {fmtMv(p.marketValue)}
             </p>
+            {pills.length > 0 && (
+              <div class="form5">
+                <span class="form5-label">{t("last5_h")}</span>
+                <span class="pills">
+                  {pills.map((m) => (
+                    <span
+                      class={`pill ${m.tone}`}
+                      title={`${m.date} · ${m.rating.toFixed(1)} · ${m.minutes}′`}
+                    >
+                      {m.rating.toFixed(1)}
+                    </span>
+                  ))}
+                </span>
+              </div>
+            )}
           </div>
           <div class="bigscore">
             <b>{p.score != null ? p.score.toFixed(2) : "—"}</b>
@@ -100,6 +118,8 @@ const cupMatches = p ? p.matchLog.filter((m) => !m.league) : [];
             })}
           </p>
         </section>
+
+        <FormChart matchLog={p.matchLog} avg={p.wavg} lang={lang} />
 
         <section class="card">
           <h2>{t("matchlog_h")}</h2>
@@ -210,6 +230,43 @@ const cupMatches = p ? p.matchLog.filter((m) => !m.league) : [];
       color: var(--muted);
       font-size: 0.85rem;
       margin: 0.55rem 0 0;
+    }
+    .form5 {
+      display: flex;
+      align-items: center;
+      gap: 0.55rem;
+      margin-top: 0.6rem;
+      flex-wrap: wrap;
+    }
+    .form5-label {
+      font-size: 0.7rem;
+      font-weight: 700;
+      color: var(--muted);
+      text-transform: uppercase;
+      letter-spacing: 0.03em;
+    }
+    .pills {
+      display: flex;
+      gap: 0.3rem;
+    }
+    .pill {
+      min-width: 30px;
+      text-align: center;
+      font-size: 0.76rem;
+      font-weight: 800;
+      padding: 0.15rem 0.3rem;
+      border-radius: 6px;
+      color: #fff;
+      font-variant-numeric: tabular-nums;
+    }
+    .pill.good {
+      background: var(--accent);
+    }
+    .pill.ok {
+      background: var(--muted);
+    }
+    .pill.poor {
+      background: #c1272d;
     }
     .bigscore {
       text-align: center;

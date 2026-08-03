@@ -30,7 +30,9 @@ minutes-weighted, league-adjusted rating. Two views: **Best XI** and **Browse & 
   `src/lib/i18n.js` (string dictionary + `useT(lang)` + `localePath`); language toggle in Base. Page bodies live in
   `src/components/*View.astro` (BestXI/Browse/About/PlayerDetail), each taking a `lang` prop; thin route wrappers in
   `pages/` and `pages/fr/` (player routes keep `getStaticPaths`). `src/lib/db.js` (read-only), `queries.js` (pure-SQL,
-  incl. `getPlayer`/`getScoredPlayerIds`), `avatar.js`. Reusable `.info` tooltip in Base. `npm run web:dev` / `web:build`.
+  incl. `getPlayer`/`getScoredPlayerIds`), `avatar.js`, `chart.js` (pure SVG geometry — per-player season-form chart +
+  last-5). `FormChart.astro` renders inline SVG (single series, minutes=dot radius, baseline+avg reference lines,
+  `<title>` hover; needs ≥6 league matches). Reusable `.info` tooltip in Base. `npm run web:dev` / `web:build`.
   Note: player/club/country names come from the data (not translated); UI chrome is.
 - SQLite data is regenerable by the scrapers → **git-ignored** (`*.sqlite`, `data/`).
 

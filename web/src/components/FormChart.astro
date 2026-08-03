@@ -1,0 +1,159 @@
+---
+import { buildFormChart } from "../lib/chart.js";
+import { useT } from "../lib/i18n.js";
+
+const { matchLog, avg = null, lang = "en" } = Astro.props;
+const t = useT(lang);
+const c = buildFormChart(matchLog, { avg });
+---
+
+<section class="card">
+  <h2>{t("form_h")}</h2>
+  {
+    !c.hasEnough ? (
+      <p class="fine">{t("form_note_thin")}</p>
+    ) : (
+      <>
+        <svg
+          class="formchart"
+          viewBox={`0 0 ${c.width} ${c.height}`}
+          role="img"
+          aria-label={t("form_h")}
+          preserveAspectRatio="xMidYMid meet"
+        >
+          {c.yTicks.map((tk) => (
+            <>
+              <line class="grid" x1={c.PADL} x2={c.width - c.PADR} y1={tk.y} y2={tk.y} />
+              <text class="ylabel" x={c.PADL - 5} y={tk.y + 3}>
+                {tk.v}
+              </text>
+            </>
+          ))}
+
+          <line
+            class="ref baseline"
+            x1={c.PADL}
+            x2={c.width - c.PADR}
+            y1={c.baselineY}
+            y2={c.baselineY}
+          />
+          <line class="ref avg" x1={c.PADL} x2={c.width - c.PADR} y1={c.avgY} y2={c.avgY} />
+
+          <path class="trend" d={c.trendPath} fill="none" />
+
+          {c.points.map((p) => (
+            <circle class={`dot ${p.isLeague ? "league" : "cup"}`} cx={p.cx} cy={p.cy} r={p.r}>
+              <title>{`${p.date} · ${p.competition} · ${p.rating.toFixed(1)} · ${p.minutes}′`}</title>
+            </circle>
+          ))}
+
+          {c.xLabels.map((xl) => (
+            <text class="xlabel" x={xl.x} y={c.height - 6} text-anchor={xl.anchor}>
+              {xl.label}
+            </text>
+          ))}
+        </svg>
+
+        <p class="legend">
+          <span class="k trend-k">{t("form_avg")}</span>
+          <span class="k base-k">
+            {t("form_baseline")} {c.baseline}
+          </span>
+          <span class="k dot-k">{t("form_minutes")}</span>
+        </p>
+      </>
+    )
+  }
+
+  <style>
+    .card {
+      background: var(--card);
+      border: 1px solid var(--border);
+      border-radius: 14px;
+      padding: 1.1rem 1.3rem;
+      margin-top: 1.1rem;
+      box-shadow: var(--shadow);
+    }
+    .card h2 {
+      margin: 0 0 0.7rem;
+      font-size: 1.1rem;
+    }
+    .formchart {
+      width: 100%;
+      height: auto;
+      display: block;
+      overflow: visible;
+    }
+    .grid {
+      stroke: var(--border);
+      stroke-width: 1;
+    }
+    .ylabel,
+    .xlabel {
+      fill: var(--muted);
+      font-size: 9px;
+      font-variant-numeric: tabular-nums;
+    }
+    .ylabel {
+      text-anchor: end;
+    }
+    .ref {
+      stroke-width: 1;
+      stroke-dasharray: 4 3;
+    }
+    .ref.baseline {
+      stroke: var(--muted);
+      opacity: 0.7;
+    }
+    .ref.avg {
+      stroke: var(--accent);
+      opacity: 0.55;
+    }
+    .trend {
+      stroke: var(--accent);
+      stroke-width: 2;
+      stroke-linejoin: round;
+      stroke-linecap: round;
+    }
+    .dot.league {
+      fill: var(--accent);
+    }
+    .dot.cup {
+      fill: var(--muted);
+      opacity: 0.32;
+    }
+    .legend {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 1rem;
+      margin: 0.6rem 0 0;
+      color: var(--muted);
+      font-size: 0.78rem;
+    }
+    .k {
+      display: inline-flex;
+      align-items: center;
+    }
+    .k::before {
+      content: "";
+      display: inline-block;
+      margin-right: 0.4rem;
+    }
+    .trend-k::before {
+      width: 14px;
+      height: 0;
+      border-top: 2px solid var(--accent);
+    }
+    .base-k::before {
+      width: 14px;
+      height: 0;
+      border-top: 2px dashed var(--muted);
+    }
+    .dot-k::before {
+      width: 9px;
+      height: 9px;
+      border-radius: 50%;
+      background: var(--accent);
+    }
+  </style>
+</section>

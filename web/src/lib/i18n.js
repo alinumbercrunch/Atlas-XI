@@ -145,6 +145,13 @@ const dict = {
     born: "born",
     value: "value",
     not_found: "Player not found.",
+    // form chart
+    form_h: "Season form",
+    form_note_thin: "Not enough matches yet to show a trend.",
+    form_baseline: "baseline",
+    form_avg: "season avg",
+    form_minutes: "dot size = minutes",
+    last5_h: "Recent form",
   },
 
   fr: {
@@ -270,5 +277,11 @@ const dict = {
     born: "né à",
     value: "valeur",
     not_found: "Joueur introuvable.",
+    form_h: "Forme de la saison",
+    form_note_thin: "Pas encore assez de matchs pour dégager une tendance.",
+    form_baseline: "base",
+    form_avg: "moy. saison",
+    form_minutes: "taille = minutes",
+    last5_h: "Forme récente",
   },
 };
