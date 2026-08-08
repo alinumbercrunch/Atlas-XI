@@ -66,7 +66,9 @@ npm run format      # Prettier    (npm run format:check to verify)
   Verified endpoints + the pattern are in `scrapers/sofascore/verify.js` and PLAN.md §4.
   Map players by **name** via `/search/all?q=` (no pre-known IDs needed).
 - **Transfermarkt works with plain fetch** — use `lib/fetchWithHeaders.js` + `lib/parseHtml.js`, not Playwright.
-- Be polite to SofaScore: **throttle ~700 ms** between calls, **reuse one browser context**.
+- Be polite to SofaScore: **throttle ~700 ms + random jitter**, **reuse one browser context**, back off hard on
+  **429**, and persist the session (`data/sofa-session.json`, git-ignored). Stats/history runs are **incremental**
+  by default — matches/players already stored are skipped (huge fetch reduction); `FORCE=1` re-fetches everything.
 - SofaScore covers the Botola, so the official-Botola-site fallback is likely unnecessary (contingency only).
 
 ## Conventions

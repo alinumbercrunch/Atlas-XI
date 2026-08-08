@@ -5,6 +5,7 @@
 //   env LIMIT=N        cap how many players to process
 //   env SEASON=25/26   SofaScore season year to keep (default 25/26)
 //   env INCLUDE_ALL=1  process all players, not just eligible/review (debug)
+//   env FORCE=1        re-fetch matches already stored (default: incremental)
 const { getDb, initSchema } = require("../../db");
 const { seed } = require("../../db/seed");
 const { SofascoreClient } = require("./client");
@@ -37,17 +38,23 @@ async function resolveSofascoreId(db, client, player) {
   return match.id;
 }
 
-async function run({ limit = Infinity, includeAll = false, db = null } = {}) {
+async function run({ limit = Infinity, includeAll = false, force = false, db = null } = {}) {
   const ownsDb = !db;
   db = db || initSchema(getDb());
   seed(db); // ensure the current season exists (matches reference it)
   const client = new SofascoreClient();
 
+  // Incremental: skip matches we already have a stat row for (huge fetch reduction).
+  const hasStat = db.prepare(
+    `SELECT 1 FROM player_match_stats s JOIN matches m ON m.id = s.match_id
+     WHERE s.player_id = ? AND m.sofascore_event_id = ?`,
+  );
+
   let players = eligiblePlayers(db, { includeAll });
   if (players.length > limit) players = players.slice(0, limit);
   console.log(`[sofa] processing ${players.length} players (season ${SEASON_YEAR})…`);
 
-  const counts = { matched: 0, unmatched: 0, statRows: 0, failed: 0 };
+  const counts = { matched: 0, unmatched: 0, statRows: 0, skipped: 0, failed: 0 };
   try {
     for (const player of players) {
       try {
@@ -61,6 +68,10 @@ async function run({ limit = Infinity, includeAll = false, db = null } = {}) {
 
         const events = filterSeason(parseEvents(await client.playerEvents(sofaId, 0)), SEASON_YEAR);
         for (const ev of events) {
+          if (!force && hasStat.get(player.id, ev.id)) {
+            counts.skipped += 1; // already have it — don't re-fetch
+            continue;
+          }
           const stats = parseMatchStats(await client.matchStats(ev.id, sofaId));
           if (!stats || stats.minutes == null) continue; // didn't feature
           const matchId = upsertMatch(db, ev, { seasonId: SEASON_ID });
@@ -94,7 +105,8 @@ module.exports = { run, eligiblePlayers, resolveSofascoreId };
 if (require.main === module) {
   const limit = process.env.LIMIT ? Number(process.env.LIMIT) : Infinity;
   const includeAll = process.env.INCLUDE_ALL === "1";
-  run({ limit, includeAll }).catch((e) => {
+  const force = process.env.FORCE === "1";
+  run({ limit, includeAll, force }).catch((e) => {
     console.error("[sofa] fatal:", e);
     process.exit(1);
   });

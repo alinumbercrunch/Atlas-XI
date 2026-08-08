@@ -93,22 +93,27 @@ function upsertSeasonStats(db, playerId, rows) {
   return rows.length;
 }
 
-function playersNeedingHistory(db) {
+function playersNeedingHistory(db, { force = false } = {}) {
+  // Incremental by default: skip players already backfilled (past seasons don't
+  // change). Pass force to refresh everyone (e.g. to pull the latest season).
+  const skipDone = force
+    ? ""
+    : "AND p.id NOT IN (SELECT DISTINCT player_id FROM player_season_stats)";
   return db
     .prepare(
       `SELECT p.id, p.sofascore_id AS sofaId
        FROM players p JOIN player_scores ps ON ps.player_id = p.id
-       WHERE p.sofascore_id IS NOT NULL AND ps.score > 0`,
+       WHERE p.sofascore_id IS NOT NULL AND ps.score > 0 ${skipDone}`,
     )
     .all();
 }
 
-async function run({ limit = Infinity, db = null } = {}) {
+async function run({ limit = Infinity, force = false, db = null } = {}) {
   const ownsDb = !db;
   db = db || initSchema(getDb());
   seed(db);
   const client = new SofascoreClient();
-  let players = playersNeedingHistory(db);
+  let players = playersNeedingHistory(db, { force });
   if (players.length > limit) players = players.slice(0, limit);
   console.log(`[history] fetching season history for ${players.length} players…`);
 
@@ -146,7 +151,8 @@ module.exports = {
 
 if (require.main === module) {
   const limit = process.env.LIMIT ? Number(process.env.LIMIT) : Infinity;
-  run({ limit }).catch((e) => {
+  const force = process.env.FORCE === "1";
+  run({ limit, force }).catch((e) => {
     console.error("[history] fatal:", e);
     process.exit(1);
   });

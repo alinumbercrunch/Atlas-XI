@@ -11,6 +11,7 @@ class TransfermarktClient {
   constructor(opts = {}) {
     this.base = opts.base || BASE;
     this.delay = opts.delay ?? 1200; // ms between requests (be polite)
+    this.jitter = opts.jitter ?? Math.round(this.delay * 0.5); // random extra wait, 0..jitter
     this.retries = opts.retries ?? 3;
     this.backoff = opts.backoff ?? 800; // ms, multiplied by attempt number
     this.timeout = opts.timeout ?? 20000; // ms per request
@@ -21,8 +22,9 @@ class TransfermarktClient {
   // Space out requests by `delay`, correctly serializing concurrent callers.
   _throttle() {
     const now = Date.now();
-    const wait = Math.max(0, this._nextAt - now);
-    this._nextAt = Math.max(now, this._nextAt) + this.delay;
+    const jitter = this.jitter ? Math.floor(Math.random() * this.jitter) : 0;
+    const wait = Math.max(0, this._nextAt - now) + jitter;
+    this._nextAt = Math.max(now, this._nextAt) + this.delay + jitter;
     return wait > 0 ? sleep(wait) : Promise.resolve();
   }
 
